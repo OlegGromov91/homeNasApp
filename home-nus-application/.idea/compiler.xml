@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="validator" />
+        <module name="web-starter" />
+        <module name="schedule" />
+        <module name="core" />
+        <module name="qb-torrent-adapter" />
+        <module name="telegram-bot-adapter" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="adapter" target="17" />
+      <module name="core" target="17" />
+      <module name="home-nus-application" target="17" />
+      <module name="qb-torrent-adapter" target="17" />
+      <module name="qbTorrent" target="17" />
+      <module name="schedule" target="17" />
+      <module name="telegram-bot-adapter" target="17" />
+      <module name="ui" target="17" />
+      <module name="ui-adapter" target="17" />
+      <module name="validator" target="17" />
+      <module name="web" target="17" />
+      <module name="web-starter" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="adapter" options="-parameters" />
+      <module name="core" options="-parameters" />
+      <module name="home-nus-application" options="-parameters" />
+      <module name="qb-torrent-adapter" options="-parameters" />
+      <module name="qbTorrent" options="-parameters" />
+      <module name="schedule" options="-parameters" />
+      <module name="telegram-bot-adapter" options="-parameters" />
+      <module name="ui" options="-parameters" />
+      <module name="ui-adapter" options="-parameters" />
+      <module name="validator" options="-parameters" />
+      <module name="web" options="-parameters" />
+      <module name="web-starter" options="-parameters" />
+    </option>
+  </component>
+</project>

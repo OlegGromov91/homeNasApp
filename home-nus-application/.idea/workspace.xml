@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d7f15aeb-fb9c-43d3-99ac-b2ebd773258d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectId" id="2IMY5vFzXA8t51q4ukDK12jmx1J" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\WorkIntelij\Desktop\home-nus-application\core\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="HomeNusApplicationStarter" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="web-starter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="home.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="home.app.HomeNusApplicationStarter" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.HomeNusApplicationStarter" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d7f15aeb-fb9c-43d3-99ac-b2ebd773258d" name="Default Changelist" comment="" />
+      <created>1669992739465</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669992739465</updated>
+      <workItem from="1669992743931" duration="2500000" />
+      <workItem from="1669996973255" duration="350000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="419" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1669996531220">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="419" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1669996531220" />
+    <state x="798" y="449" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1669993568235">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="798" y="449" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1669993568235" />
+    <state width="1878" height="177" key="GridCell.Tab.0.bottom" timestamp="1669996681109">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1878" height="177" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1669996681109" />
+    <state width="1878" height="177" key="GridCell.Tab.0.center" timestamp="1669996681109">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1878" height="177" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1669996681109" />
+    <state width="1878" height="177" key="GridCell.Tab.0.left" timestamp="1669996681109">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1878" height="177" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1669996681109" />
+    <state width="1878" height="177" key="GridCell.Tab.0.right" timestamp="1669996681109">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1878" height="177" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1669996681109" />
+    <state width="1878" height="439" key="GridCell.Tab.1.bottom" timestamp="1669996495689">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1878" height="439" key="GridCell.Tab.1.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1669996495689" />
+    <state width="1878" height="439" key="GridCell.Tab.1.center" timestamp="1669996495689">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1878" height="439" key="GridCell.Tab.1.center/0.0.1920.1036@0.0.1920.1036" timestamp="1669996495689" />
+    <state width="1878" height="439" key="GridCell.Tab.1.left" timestamp="1669996495689">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1878" height="439" key="GridCell.Tab.1.left/0.0.1920.1036@0.0.1920.1036" timestamp="1669996495689" />
+    <state width="1878" height="439" key="GridCell.Tab.1.right" timestamp="1669996495689">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1878" height="439" key="GridCell.Tab.1.right/0.0.1920.1036@0.0.1920.1036" timestamp="1669996495689" />
+    <state x="556" y="255" key="Vcs.Push.Dialog.v2" timestamp="1669997155515">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="556" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1036@0.0.1920.1036" timestamp="1669997155515" />
+    <state x="669" y="131" width="581" height="774" key="find.popup" timestamp="1669996591299">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="669" y="131" width="581" height="774" key="find.popup/0.0.1920.1036@0.0.1920.1036" timestamp="1669996591299" />
+    <state x="250" y="244" key="new project wizard" timestamp="1669995653038">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="250" y="244" key="new project wizard/0.0.1920.1036@0.0.1920.1036" timestamp="1669995653038" />
+  </component>
+</project>
