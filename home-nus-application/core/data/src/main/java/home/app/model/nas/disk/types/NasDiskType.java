@@ -1,5 +1,8 @@
 package home.app.model.nas.disk.types;
 
+import lombok.Getter;
+
+@Getter
 public enum NasDiskType implements DiskType {
 
     TORRENT_DISK("Диск для торрента"),

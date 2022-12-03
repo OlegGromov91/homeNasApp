@@ -9,13 +9,15 @@
         <module name="web-starter" />
         <module name="qb-torrent-adapter" />
         <module name="data" />
-        <module name="validator" />
         <module name="schedule" />
+        <module name="validator" />
+        <module name="application" />
         <module name="telegram-bot-adapter" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="adapter" target="17" />
+      <module name="application" target="17" />
       <module name="core" target="17" />
       <module name="data" target="17" />
       <module name="home-nus-application" target="17" />
@@ -33,6 +35,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="adapter" options="-parameters" />
+      <module name="application" options="-parameters" />
       <module name="core" options="-parameters" />
       <module name="data" options="-parameters" />
       <module name="home-nus-application" options="-parameters" />
