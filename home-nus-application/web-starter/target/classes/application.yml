@@ -7,10 +7,9 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: create-drop
-
-# liquibase:
-#   enabled: true
-#   change-log:
+  liquibase:
+    enabled: false
+    change-log: classpath:liquibase/changeset-master.xml
 
 
 
