@@ -1,34 +1,55 @@
 package home.app.utils.calculator.information;
 
+import home.app.utils.calculator.base.Converter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import static com.google.common.base.Strings.isNullOrEmpty;
 import static home.app.utils.calculator.information.MultipleByteUnits.*;
 
+/**
+ * TODO: переделать на побитовые операции
+ */
 @Component
 @Slf4j
-public class InformationConverter {
+public class InformationConverter implements Converter {
 
-    public double convertByteToMegabyte(String value) {
-        checkValueBeforeConvert(value);
-        return Double.parseDouble(value) / MEGABYTE.getSIZE();
+    public double convertByteToKilobyte(Number byteValue) {
+        return byteValue.doubleValue() / KILOBYTE.getSize();
     }
 
-    public double convertByteToGigabyte(String value) {
-        checkValueBeforeConvert(value);
-        return Double.parseDouble(value) / GIGABYTE.getSIZE();
+    public double convertByteToMegabyte(Number byteValue) {
+        return byteValue.doubleValue() / MEGABYTE.getSize();
     }
 
-    public double convertByteToTerabyte(String value) {
-        checkValueBeforeConvert(value);
-        return Double.parseDouble(value) / TERABYTE.getSIZE();
+    public double convertByteToGigabyte(Number byteValue) {
+        return byteValue.doubleValue() / GIGABYTE.getSize();
     }
 
-    private void checkValueBeforeConvert(String value) {
-        boolean valueIsNotANumber = isNullOrEmpty(value) || !value.matches("\\d");
-        if (valueIsNotANumber) {
-            throw new ArithmeticException("value " + value + " is not a number");
+    public double convertByteToTerabyte(Number byteValue) {
+        return byteValue.doubleValue() / TERABYTE.getSize();
+    }
+
+    public Size autoConvert(Number byteValue) {
+        if (byteValue.longValue() <= KILOBYTE_MAX_VALUE) {
+            return buildSize(KILOBYTE, convertByteToKilobyte(byteValue));
         }
+        if (byteValue.longValue() <= MEGABYTE_MAX_VALUE) {
+            return buildSize(MEGABYTE, convertByteToMegabyte(byteValue));
+        }
+        if (byteValue.longValue() <= GIGABYTE_MAX_VALUE) {
+            return buildSize(GIGABYTE, convertByteToGigabyte(byteValue));
+        }
+        if (byteValue.longValue() > GIGABYTE_MAX_VALUE) {
+            return buildSize(TERABYTE, convertByteToTerabyte(byteValue));
+        }
+        return buildSize(BYTE, byteValue.doubleValue());
     }
+
+    private final Size buildSize(MultipleByteUnits units, Double size) {
+        return Size.builder()
+                .size(size)
+                .unit(units.getMetric())
+                .build();
+    }
+
 }

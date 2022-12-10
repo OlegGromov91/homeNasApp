@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class TorrentCalculator implements Calculator {
 
-// TODO смотреть на длинну файла и выбирать конвертер в зависимости зот значения
+    public Double calculateDownloadingPercent(Number totalSize, Number downloaded) {
+        return 100 * downloaded.doubleValue() / totalSize.doubleValue();
+    }
 
 }

@@ -11,13 +11,14 @@ public enum MultipleByteUnits {
     GIGABYTE("гигабайт", "Гбайт", Math.pow(2, 30)),
     TERABYTE("терабайт", "Тбайт", Math.pow(2, 40));
 
-    private final String NAME;
-    private final String METRIC;
-    private final double SIZE;
+    private final String name;
+    private final String metric;
+    private final double size;
 
-    MultipleByteUnits(String NAME, String METRIC, double SIZE) {
-        this.NAME = NAME;
-        this.METRIC = METRIC;
-        this.SIZE = SIZE;
+
+    MultipleByteUnits(String name, String metric, double size) {
+        this.name = name;
+        this.metric = metric;
+        this.size = size;
     }
 }
