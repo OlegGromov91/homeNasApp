@@ -4,6 +4,8 @@ import home.app.utils.calculator.base.Converter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.NotNull;
+
 import static home.app.utils.calculator.information.MultipleByteUnits.*;
 
 /**
@@ -13,23 +15,23 @@ import static home.app.utils.calculator.information.MultipleByteUnits.*;
 @Slf4j
 public class InformationConverter implements Converter {
 
-    public double convertByteToKilobyte(Number byteValue) {
-        return byteValue.doubleValue() / KILOBYTE.getSize();
+    public double convertByteToKilobyte(@NotNull Number byteValue) {
+        return doFormat(byteValue.doubleValue() / KILOBYTE.getSize());
     }
 
-    public double convertByteToMegabyte(Number byteValue) {
-        return byteValue.doubleValue() / MEGABYTE.getSize();
+    public double convertByteToMegabyte(@NotNull Number byteValue) {
+        return doFormat(byteValue.doubleValue() / MEGABYTE.getSize());
     }
 
-    public double convertByteToGigabyte(Number byteValue) {
-        return byteValue.doubleValue() / GIGABYTE.getSize();
+    public double convertByteToGigabyte(@NotNull Number byteValue) {
+        return doFormat(byteValue.doubleValue() / GIGABYTE.getSize());
     }
 
-    public double convertByteToTerabyte(Number byteValue) {
-        return byteValue.doubleValue() / TERABYTE.getSize();
+    public double convertByteToTerabyte(@NotNull Number byteValue) {
+        return doFormat(byteValue.doubleValue() / TERABYTE.getSize());
     }
 
-    public Size autoConvert(Number byteValue) {
+    public Size autoConvert(@NotNull Number byteValue) {
         if (byteValue.longValue() <= KILOBYTE_MAX_VALUE) {
             return buildSize(KILOBYTE, convertByteToKilobyte(byteValue));
         }
@@ -42,7 +44,7 @@ public class InformationConverter implements Converter {
         if (byteValue.longValue() > GIGABYTE_MAX_VALUE) {
             return buildSize(TERABYTE, convertByteToTerabyte(byteValue));
         }
-        return buildSize(BYTE, byteValue.doubleValue());
+        return buildSize(BYTE, doFormat(byteValue.doubleValue()));
     }
 
     private final Size buildSize(MultipleByteUnits units, Double size) {

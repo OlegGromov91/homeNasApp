@@ -4,6 +4,9 @@ import com.google.common.collect.Lists;
 import home.app.exception.ExtractRawDataException;
 import home.app.model.RawKeysQbTorrent;
 import home.app.model.TorrentData;
+import home.app.utils.calculator.information.InformationConverter;
+import home.app.utils.calculator.torrent.TorrentCalculator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +20,11 @@ public class RawTorrentDataParser {
 
     private static final String ROOT_TORRENTS_KEY = "torrents";
 
+    @Autowired
+    private InformationConverter informationConverter;
+    @Autowired
+    private TorrentCalculator torrentCalculator;
+
     @Lookup
     protected RawTorrent getRawData() {
         return null;
@@ -25,8 +33,7 @@ public class RawTorrentDataParser {
     public List<TorrentData> parse(String rawData) {
         RawTorrent rawTorrent = getRawData();
         rawTorrent.writeData(rawData);
-        convertData(rawTorrent);
-        return null;
+        return convertData(rawTorrent);
     }
 
     private List<TorrentData> convertData(RawTorrent rawTorrent) {
@@ -36,8 +43,7 @@ public class RawTorrentDataParser {
         for (String key : torrents.keySet()) {
             HashMap<String, Object> raw = (HashMap<String, Object>) torrents.get(key);
             TorrentData extractingData = extractData(key, raw);
-            extractingData.setHash(key);
-            torrentData.add(extractingData);
+            torrentData.add(finishBuilding(extractingData, key));
         }
         return torrentData;
     }
@@ -59,5 +65,13 @@ public class RawTorrentDataParser {
             e.printStackTrace();
             throw new ExtractRawDataException("Error when try extract data by torrent hash " + key, e);
         }
+    }
+
+    private TorrentData finishBuilding(TorrentData torrentData, String key) {
+        torrentData.setHash(key);
+        torrentData.setSizeTotal(informationConverter.autoConvert(torrentData.getTotalSize()));
+        torrentData.setSizeDownloaded(informationConverter.autoConvert(torrentData.getDownloaded()));
+        torrentData.setDownloadedPercent(torrentCalculator.calculateDownloadingPercent(torrentData.getTotalSize(), torrentData.getDownloaded()));
+        return torrentData;
     }
 }

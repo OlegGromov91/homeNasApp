@@ -1,5 +1,6 @@
 package home.app.model;
 
+import home.app.utils.calculator.information.Size;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,9 +15,10 @@ public class TorrentData {
     private String rootPath;  //save_path
     private String contentPath;
     private Long totalSize;
+    private Size sizeTotal;
     private Integer downloaded;
-    private Float downloadedPercent;  //считается динамически
+    private Size sizeDownloaded;
+    private Double downloadedPercent;  //считается динамически
     private String state;
-    private String systemTorrentType;
 
 }
