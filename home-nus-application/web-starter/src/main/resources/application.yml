@@ -17,7 +17,7 @@ spring:
 
 home-application:
   uri:
-    root: "http://192.168.0.14"
+    root: "http://192.168.0.12"
   qbTorrent:
     port: ":20909"
     uri:
@@ -25,5 +25,6 @@ home-application:
       deleteTorrent: "/api/v2/torrents/delete"
       pauseTorrent: "/api/v2/torrents/pause"
       resumeTorrent: "api/v2/torrents/resume"
+    requestTimeout: 1
 
 

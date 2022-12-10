@@ -41,9 +41,14 @@ public class RawTorrentDataParser {
         Map<String, Object> torrents = rawTorrent.getRawData().getJSONObject(ROOT_TORRENTS_KEY).toMap();
 
         for (String key : torrents.keySet()) {
-            HashMap<String, Object> raw = (HashMap<String, Object>) torrents.get(key);
-            TorrentData extractingData = extractData(key, raw);
-            torrentData.add(finishBuilding(extractingData, key));
+            try {
+                HashMap<String, Object> raw = (HashMap<String, Object>) torrents.get(key);
+                TorrentData extractingData = extractData(key, raw);
+                torrentData.add(finishBuilding(extractingData, key));
+            } catch (ClassCastException e) {
+                e.printStackTrace();
+                throw new ExtractRawDataException("Cannot cast data " + torrents + " to HashMap<String, Object>", e);
+            }
         }
         return torrentData;
     }

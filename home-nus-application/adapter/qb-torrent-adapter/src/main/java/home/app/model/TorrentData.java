@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @Builder
 public class TorrentData {
-
+// TODO: парсинг инфо о диске
     private String hash;
     private String name;
     private String rootPath;  //save_path
