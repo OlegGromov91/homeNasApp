@@ -1,0 +1,692 @@
+{
+  "categories": {},
+  "full_update": true,
+  "rid": 1,
+  "server_state": {
+    "alltime_dl": 13613187373,
+    "alltime_ul": 1471416097,
+    "average_time_queue": 59,
+    "connection_status": "firewalled",
+    "dht_nodes": 293,
+    "dl_info_data": 18577695,
+    "dl_info_speed": 0,
+    "dl_rate_limit": 0,
+    "free_space_on_disk": 937154052096,
+    "global_ratio": "0.10",
+    "queued_io_jobs": 0,
+    "queueing": true,
+    "read_cache_hits": "0",
+    "read_cache_overload": "0",
+    "refresh_interval": 1500,
+    "total_buffers_size": 0,
+    "total_peer_connections": 0,
+    "total_queued_size": 0,
+    "total_wasted_session": 112927,
+    "up_info_data": 0,
+    "up_info_speed": 0,
+    "up_rate_limit": 0,
+    "use_alt_speed_limits": false,
+    "write_cache_overload": "0"
+  },
+  "tags": [],
+  "torrents": {
+    "1e77657245a2193d1b4a8e3bb528a0c73b38d744": {
+      "added_on": 1670150534,
+      "amount_left": 14109235324,
+      "auto_tmm": false,
+      "availability": 0,
+      "category": "",
+      "completed": 18464768,
+      "completion_on": -14400,
+      "content_path": "/downloads/Scorn.DE.RePack.by.Chovka",
+      "dl_limit": -1,
+      "dlspeed": 592760,
+      "download_path": "",
+      "downloaded": 14222511,
+      "downloaded_session": 18577695,
+      "eta": 8640000,
+      "f_l_piece_prio": false,
+      "force_start": false,
+      "infohash_v1": "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "infohash_v2": "",
+      "last_activity": 1670150539,
+      "magnet_uri": "magnet:?xt=urn:btih:1e77657245a2193d1b4a8e3bb528a0c73b38d744&dn=Scorn.DE.RePack.by.Chovka&tr=udp%3a%2f%2fopentor.net%3a6969&tr=udp%3a%2f%2ftracker.coppersurfer.tk%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.leechers-paradise.org%3a6969%2fannounce&tr=udp%3a%2f%2f9.rarbg.me%3a2730%2fannounce&tr=udp%3a%2f%2f9.rarbg.to%3a2770%2fannounce&tr=udp%3a%2f%2ftracker.pirateparty.gr%3a6969%2fannounce&tr=http%3a%2f%2fretracker.ip.ncnet.ru%2fannounce&tr=udp%3a%2f%2ftracker.cyberia.is%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.open-internet.nl%3a6969%2fannounce&tr=udp%3a%2f%2f9.rarbg.me%3a2770%2fannounce&tr=udp%3a%2f%2f9.rarbg.to%3a2720%2fannounce&tr=udp%3a%2f%2f9.rarbg.to%3a2730%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=http%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a6969%2fannounce&tr=udp%3a%2f%2fexodus.desync.com%3a6969%2fannounce&tr=udp%3a%2f%2fwww.torrent.eu.org%3a451%2fannounce&tr=udp%3a%2f%2ftracker.torrent.eu.org%3a451%2fannounce&tr=udp%3a%2f%2ftracker.tiny-vps.com%3a6969%2fannounce&tr=udp%3a%2f%2fretracker.lanta-net.ru%3a2710%2fannounce&tr=udp%3a%2f%2fopen.stealth.si%3a80%2fannounce&tr=udp%3a%2f%2fvalakas.rollo.dnsabr.com%3a2710%2fannounce&tr=udp%3a%2f%2fopentracker.i2p.rocks%3a6969%2fannounce&tr=udp%3a%2f%2fopentor.org%3a2710%2fannounce&tr=udp%3a%2f%2fipv4.tracker.harry.lu%3a80%2fannounce&tr=udp%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=http%3a%2f%2fopentracker.i2p.rocks%3a6969%2fannounce&tr=http%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=udp%3a%2f%2fzephir.monocul.us%3a6969%2fannounce&tr=udp%3a%2f%2fwassermann.online%3a6969%2fannounce&tr=udp%3a%2f%2fvibe.community%3a6969%2fannounce&tr=udp%3a%2f%2fu.wwwww.wtf%3a1%2fannounce&tr=udp%3a%2f%2ftracker1.bt.moack.co.kr%3a80%2fannounce&tr=udp%3a%2f%2ftracker0.ufibox.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.zerobytes.xyz%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.zemoj.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.v6speed.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.uw0.xyz%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.shkinev.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.moeking.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.dler.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.blacksparrowmedia.net%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.army%3a6969%2fannounce&tr=udp%3a%2f%2fretracker.netbynet.ru%3a2710%2fannounce&tr=udp%3a%2f%2fmts.tvbit.co%3a6969%2fannounce&tr=udp%3a%2f%2fmovies.zsw.ca%3a6969%2fannounce&tr=udp%3a%2f%2fmail.realliferpg.de%3a6969%2fannounce&tr=udp%3a%2f%2fengplus.ru%3a6969%2fannounce&tr=udp%3a%2f%2fedu.uifr.ru%3a6969%2fannounce&tr=udp%3a%2f%2fdrumkitx.com%3a6969%2fannounce&tr=udp%3a%2f%2fdiscord.heihachi.pw%3a6969%2fannounce&tr=udp%3a%2f%2fcutiegirl.ru%3a6969%2fannounce&tr=udp%3a%2f%2fbubu.mapfactor.com%3a6969%2fannounce&tr=udp%3a%2f%2fbt2.archive.org%3a6969%2fannounce&tr=udp%3a%2f%2fbt1.archive.org%3a6969%2fannounce&tr=udp%3a%2f%2fadmin.videoenpoche.info%3a6969%2fannounce&tr=https%3a%2f%2fw.wwwww.wtf%3a443%2fannounce&tr=https%3a%2f%2ftracker.nanoha.org%3a443%2fannounce&tr=https%3a%2f%2ftracker.iriseden.eu%3a443%2fannounce&tr=http%3a%2f%2fvps02.net.orel.ru%3a80%2fannounce&tr=http%3a%2f%2fvpn.flying-datacenter.de%3a6969%2fannounce&tr=udp%3a%2f%2ftracker2.dler.org%3a80%2fannounce&tr=http%3a%2f%2ftracker1.bt.moack.co.kr%3a80%2fannounce&tr=http%3a%2f%2ftracker.zerobytes.xyz%3a1337%2fannounce&tr=http%3a%2f%2ftracker.gbitt.info%3a80%2fannounce&tr=http%3a%2f%2ftorrenttracker.nwc.acsalaska.net%3a6969%2fannounce&tr=http%3a%2f%2ft.overflow.biz%3a6969%2fannounce&tr=http%3a%2f%2ft.acg.rip%3a6699%2fannounce&tr=http%3a%2f%2fns3107607.ip-54-36-126.eu%3a6969%2fannounce&tr=udp%3a%2f%2fvibe.sleepyinternetfun.xyz%3a1738%2fannounce&tr=udp%3a%2f%2fus-tracker.publictracker.xyz%3a6969%2fannounce&tr=udp%3a%2f%2fudp-tracker.shittyurl.org%3a6969%2fannounce&tr=udp%3a%2f%2ftsundere.pw%3a6969%2fannounce&tr=udp%3a%2f%2ftracker4.itzmx.com%3a2710%2fannounce&tr=http%3a%2f%2ftracker2.dler.org%3a80%2fannounce&tr=udp%3a%2f%2ftracker.theoks.net%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.ololosh.space%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.nrx.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.nighthawk.pw%3a2052%2fannounce&tr=udp%3a%2f%2ftracker.loadbt.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.kali.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.filemail.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.ccp.ovh%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.altrosky.nl%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.0x.tf%3a6969%2fannounce&tr=udp%3a%2f%2ftracker-udp.gbitt.info%3a80%2fannounce&tr=udp%3a%2f%2ftr2.ysagin.top%3a2710%2fannounce&tr=udp%3a%2f%2ftr.bangumi.moe%3a6969%2fannounce&tr=udp%3a%2f%2ftorrentclub.online%3a54123%2fannounce&tr=udp%3a%2f%2ft3.leech.ie%3a1337%2fannounce&tr=udp%3a%2f%2ft2.leech.ie%3a1337%2fannounce&tr=udp%3a%2f%2ft1.leech.ie%3a1337%2fannounce&tr=udp%3a%2f%2fretracker.sevstar.net%3a2710%2fannounce&tr=udp%3a%2f%2fpublic.tracker.vraphim.com%3a6969%2fannounce&tr=udp%3a%2f%2fpublic.publictracker.xyz%3a6969%2fannounce&tr=udp%3a%2f%2fpublic-tracker.zooki.xyz%3a6969%2fannounce&tr=udp%3a%2f%2fopen.publictracker.xyz%3a6969%2fannounce&tr=udp%3a%2f%2fopen.lolicon.eu%3a7777%2fannounce&tr=udp%3a%2f%2fnewtoncity.org%3a6969%2fannounce&tr=udp%3a%2f%2finferno.demonoid.is%3a3391%2fannounce&tr=udp%3a%2f%2ffree.publictracker.xyz%3a6969%2fannounce&tr=udp%3a%2f%2ffe.dealclub.de%3a6969%2fannounce&tr=udp%3a%2f%2fconcen.org%3a6969%2fannounce&tr=udp%3a%2f%2fcode2chicken.nl%3a6969%2fannounce&tr=udp%3a%2f%2fcamera.lei001.com%3a6969%2fannounce&tr=udp%3a%2f%2fbt2.54new.com%3a8080%2fannounce&tr=udp%3a%2f%2fbt.firebit.org%3a2710%2fannounce&tr=udp%3a%2f%2fbclearning.top%3a6969%2fannounce&tr=udp%3a%2f%2fapp.icon256.com%3a8000%2fannounce&tr=udp%3a%2f%2fanidex.moe%3a6969%2fannounce&tr=https%3a%2f%2ftrakx.herokuapp.com%3a443%2fannounce&tr=https%3a%2f%2ftracker.tamersunion.org%3a443%2fannounce&tr=https%3a%2f%2ftracker.sloppyta.co%3a443%2fannounce&tr=https%3a%2f%2ftracker.nitrix.me%3a443%2fannounce&tr=https%3a%2f%2ftracker.imgoingto.icu%3a443%2fannounce&tr=https%3a%2f%2ftracker.hama3.net%3a443%2fannounce&tr=https%3a%2f%2ftracker.foreverpirates.co%3a443%2fannounce&tr=https%3a%2f%2ftracker.coalition.space%3a443%2fannounce&tr=https%3a%2f%2ftr.ready4.icu%3a443%2fannounce&tr=https%3a%2f%2fbt.nfshost.com%3a443%2fannounce&tr=http%3a%2f%2ftrk.publictracker.xyz%3a6969%2fannounce&tr=http%3a%2f%2ftracker4.itzmx.com%3a2710%2fannounce&tr=http%3a%2f%2ftracker.sloppyta.co%3a80%2fannounce&tr=http%3a%2f%2ftracker.noobsubs.net%3a80%2fannounce&tr=http%3a%2f%2ftracker.nighthawk.pw%3a2052%2fannounce&tr=http%3a%2f%2ftracker.loadbt.com%3a6969%2fannounce&tr=http%3a%2f%2ftracker.ccp.ovh%3a6969%2fannounce&tr=http%3a%2f%2ftracker.bt4g.com%3a2095%2fannounce&tr=http%3a%2f%2ftracker-cdn.moeking.me%3a2095%2fannounce&tr=http%3a%2f%2ftorrentclub.online%3a54123%2fannounce&tr=http%3a%2f%2frt.tace.ru%3a80%2fannounce&tr=http%3a%2f%2fretracker.sevstar.net%3a2710%2fannounce&tr=http%3a%2f%2fopen.acgtracker.com%3a1096%2fannounce&tr=http%3a%2f%2fopen.acgnxtracker.com%3a80%2fannounce&tr=http%3a%2f%2fh4.trakx.nibba.trade%3a80%2fannounce&tr=http%3a%2f%2fretracker.local%2fannounce&tr=http%3a%2f%2ftracker.grepler.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.dler.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.bitsearch.to%3a1337%2fannounce",
+      "max_ratio": -1,
+      "max_seeding_time": -1,
+      "name": "Scorn.DE.RePack.by.Chovka",
+      "num_complete": 174,
+      "num_incomplete": 18,
+      "num_leechs": 0,
+      "num_seeds": 0,
+      "priority": 2,
+      "progress": 0.0013069903720886547,
+      "ratio": 0,
+      "ratio_limit": -2,
+      "save_path": "/downloads/",
+      "seeding_time": 0,
+      "seeding_time_limit": -2,
+      "seen_complete": 1670150539,
+      "seq_dl": false,
+      "size": 14127700092,
+      "state": "pausedDL",
+      "super_seeding": false,
+      "tags": "",
+      "time_active": 5,
+      "total_size": 14127700092,
+      "tracker": "udp://free.publictracker.xyz:6969/announce",
+      "trackers_count": 139,
+      "up_limit": -1,
+      "uploaded": 0,
+      "uploaded_session": 0,
+      "upspeed": 0
+    },
+    "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3": {
+      "added_on": 1669984507,
+      "amount_left": 5450559670,
+      "auto_tmm": false,
+      "availability": 0.0010000000474974513,
+      "category": "",
+      "completed": 17760256,
+      "completion_on": -14400,
+      "content_path": "/downloads/Stray.RePack.by.Chovka",
+      "dl_limit": -1,
+      "dlspeed": 0,
+      "download_path": "",
+      "downloaded": 13152336,
+      "downloaded_session": 0,
+      "eta": 8640000,
+      "f_l_piece_prio": false,
+      "force_start": false,
+      "infohash_v1": "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3",
+      "infohash_v2": "",
+      "last_activity": 1669984511,
+      "magnet_uri": "magnet:?xt=urn:btih:3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3&dn=Stray.RePack.by.Chovka&tr=udp%3a%2f%2fopentor.net%3a6969&tr=udp%3a%2f%2ftracker.coppersurfer.tk%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.leechers-paradise.org%3a6969%2fannounce&tr=udp%3a%2f%2f9.rarbg.me%3a2730%2fannounce&tr=udp%3a%2f%2f9.rarbg.to%3a2770%2fannounce&tr=udp%3a%2f%2ftracker.pirateparty.gr%3a6969%2fannounce&tr=http%3a%2f%2fretracker.ip.ncnet.ru%2fannounce&tr=udp%3a%2f%2ftracker.cyberia.is%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.open-internet.nl%3a6969%2fannounce&tr=udp%3a%2f%2f9.rarbg.me%3a2770%2fannounce&tr=udp%3a%2f%2f9.rarbg.to%3a2720%2fannounce&tr=udp%3a%2f%2f9.rarbg.to%3a2730%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=http%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a6969%2fannounce&tr=udp%3a%2f%2fexodus.desync.com%3a6969%2fannounce&tr=udp%3a%2f%2fwww.torrent.eu.org%3a451%2fannounce&tr=udp%3a%2f%2ftracker.torrent.eu.org%3a451%2fannounce&tr=udp%3a%2f%2ftracker.tiny-vps.com%3a6969%2fannounce&tr=udp%3a%2f%2fretracker.lanta-net.ru%3a2710%2fannounce&tr=udp%3a%2f%2fopen.stealth.si%3a80%2fannounce&tr=udp%3a%2f%2fvalakas.rollo.dnsabr.com%3a2710%2fannounce&tr=udp%3a%2f%2fopentracker.i2p.rocks%3a6969%2fannounce&tr=udp%3a%2f%2fopentor.org%3a2710%2fannounce&tr=udp%3a%2f%2fipv4.tracker.harry.lu%3a80%2fannounce&tr=udp%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=http%3a%2f%2fopentracker.i2p.rocks%3a6969%2fannounce&tr=http%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=udp%3a%2f%2fzephir.monocul.us%3a6969%2fannounce&tr=udp%3a%2f%2fwassermann.online%3a6969%2fannounce&tr=udp%3a%2f%2fvibe.community%3a6969%2fannounce&tr=udp%3a%2f%2fu.wwwww.wtf%3a1%2fannounce&tr=udp%3a%2f%2ftracker1.bt.moack.co.kr%3a80%2fannounce&tr=udp%3a%2f%2ftracker0.ufibox.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.zerobytes.xyz%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.zemoj.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.v6speed.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.uw0.xyz%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.shkinev.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.moeking.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.dler.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.blacksparrowmedia.net%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.army%3a6969%2fannounce&tr=udp%3a%2f%2fretracker.netbynet.ru%3a2710%2fannounce&tr=udp%3a%2f%2fmts.tvbit.co%3a6969%2fannounce&tr=udp%3a%2f%2fmovies.zsw.ca%3a6969%2fannounce&tr=udp%3a%2f%2fmail.realliferpg.de%3a6969%2fannounce&tr=udp%3a%2f%2fengplus.ru%3a6969%2fannounce&tr=udp%3a%2f%2fedu.uifr.ru%3a6969%2fannounce&tr=udp%3a%2f%2fdrumkitx.com%3a6969%2fannounce&tr=udp%3a%2f%2fdiscord.heihachi.pw%3a6969%2fannounce&tr=udp%3a%2f%2fcutiegirl.ru%3a6969%2fannounce&tr=udp%3a%2f%2fbubu.mapfactor.com%3a6969%2fannounce&tr=udp%3a%2f%2fbt2.archive.org%3a6969%2fannounce&tr=udp%3a%2f%2fbt1.archive.org%3a6969%2fannounce&tr=udp%3a%2f%2fadmin.videoenpoche.info%3a6969%2fannounce&tr=https%3a%2f%2fw.wwwww.wtf%3a443%2fannounce&tr=https%3a%2f%2ftracker.nanoha.org%3a443%2fannounce&tr=https%3a%2f%2ftracker.iriseden.eu%3a443%2fannounce&tr=http%3a%2f%2fvps02.net.orel.ru%3a80%2fannounce&tr=http%3a%2f%2fvpn.flying-datacenter.de%3a6969%2fannounce&tr=udp%3a%2f%2ftracker2.dler.org%3a80%2fannounce&tr=http%3a%2f%2ftracker1.bt.moack.co.kr%3a80%2fannounce&tr=http%3a%2f%2ftracker.zerobytes.xyz%3a1337%2fannounce&tr=http%3a%2f%2ftracker.gbitt.info%3a80%2fannounce&tr=http%3a%2f%2ftorrenttracker.nwc.acsalaska.net%3a6969%2fannounce&tr=http%3a%2f%2ft.overflow.biz%3a6969%2fannounce&tr=http%3a%2f%2ft.acg.rip%3a6699%2fannounce&tr=http%3a%2f%2fns3107607.ip-54-36-126.eu%3a6969%2fannounce&tr=udp%3a%2f%2fvibe.sleepyinternetfun.xyz%3a1738%2fannounce&tr=udp%3a%2f%2fus-tracker.publictracker.xyz%3a6969%2fannounce&tr=udp%3a%2f%2fudp-tracker.shittyurl.org%3a6969%2fannounce&tr=udp%3a%2f%2ftsundere.pw%3a6969%2fannounce&tr=udp%3a%2f%2ftracker4.itzmx.com%3a2710%2fannounce&tr=http%3a%2f%2ftracker2.dler.org%3a80%2fannounce&tr=udp%3a%2f%2ftracker.theoks.net%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.ololosh.space%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.nrx.me%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.nighthawk.pw%3a2052%2fannounce&tr=udp%3a%2f%2ftracker.loadbt.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.kali.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.filemail.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.ccp.ovh%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.altrosky.nl%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.0x.tf%3a6969%2fannounce&tr=udp%3a%2f%2ftracker-udp.gbitt.info%3a80%2fannounce&tr=udp%3a%2f%2ftr2.ysagin.top%3a2710%2fannounce&tr=udp%3a%2f%2ftr.bangumi.moe%3a6969%2fannounce&tr=udp%3a%2f%2ftorrentclub.online%3a54123%2fannounce&tr=udp%3a%2f%2ft3.leech.ie%3a1337%2fannounce&tr=udp%3a%2f%2ft2.leech.ie%3a1337%2fannounce&tr=udp%3a%2f%2ft1.leech.ie%3a1337%2fannounce&tr=udp%3a%2f%2fretracker.sevstar.net%3a2710%2fannounce&tr=udp%3a%2f%2fpublic.tracker.vraphim.com%3a6969%2fannounce&tr=udp%3a%2f%2fpublic.publictracker.xyz%3a6969%2fannounce&tr=udp%3a%2f%2fpublic-tracker.zooki.xyz%3a6969%2fannounce&tr=udp%3a%2f%2fopen.publictracker.xyz%3a6969%2fannounce&tr=udp%3a%2f%2fopen.lolicon.eu%3a7777%2fannounce&tr=udp%3a%2f%2fnewtoncity.org%3a6969%2fannounce&tr=udp%3a%2f%2finferno.demonoid.is%3a3391%2fannounce&tr=udp%3a%2f%2ffree.publictracker.xyz%3a6969%2fannounce&tr=udp%3a%2f%2ffe.dealclub.de%3a6969%2fannounce&tr=udp%3a%2f%2fconcen.org%3a6969%2fannounce&tr=udp%3a%2f%2fcode2chicken.nl%3a6969%2fannounce&tr=udp%3a%2f%2fcamera.lei001.com%3a6969%2fannounce&tr=udp%3a%2f%2fbt2.54new.com%3a8080%2fannounce&tr=udp%3a%2f%2fbt.firebit.org%3a2710%2fannounce&tr=udp%3a%2f%2fbclearning.top%3a6969%2fannounce&tr=udp%3a%2f%2fapp.icon256.com%3a8000%2fannounce&tr=udp%3a%2f%2fanidex.moe%3a6969%2fannounce&tr=https%3a%2f%2ftrakx.herokuapp.com%3a443%2fannounce&tr=https%3a%2f%2ftracker.tamersunion.org%3a443%2fannounce&tr=https%3a%2f%2ftracker.sloppyta.co%3a443%2fannounce&tr=https%3a%2f%2ftracker.nitrix.me%3a443%2fannounce&tr=https%3a%2f%2ftracker.imgoingto.icu%3a443%2fannounce&tr=https%3a%2f%2ftracker.hama3.net%3a443%2fannounce&tr=https%3a%2f%2ftracker.foreverpirates.co%3a443%2fannounce&tr=https%3a%2f%2ftracker.coalition.space%3a443%2fannounce&tr=https%3a%2f%2ftr.ready4.icu%3a443%2fannounce&tr=https%3a%2f%2fbt.nfshost.com%3a443%2fannounce&tr=http%3a%2f%2ftrk.publictracker.xyz%3a6969%2fannounce&tr=http%3a%2f%2ftracker4.itzmx.com%3a2710%2fannounce&tr=http%3a%2f%2ftracker.sloppyta.co%3a80%2fannounce&tr=http%3a%2f%2ftracker.noobsubs.net%3a80%2fannounce&tr=http%3a%2f%2ftracker.nighthawk.pw%3a2052%2fannounce&tr=http%3a%2f%2ftracker.loadbt.com%3a6969%2fannounce&tr=http%3a%2f%2ftracker.ccp.ovh%3a6969%2fannounce&tr=http%3a%2f%2ftracker.bt4g.com%3a2095%2fannounce&tr=http%3a%2f%2ftracker-cdn.moeking.me%3a2095%2fannounce&tr=http%3a%2f%2ftorrentclub.online%3a54123%2fannounce&tr=http%3a%2f%2frt.tace.ru%3a80%2fannounce&tr=http%3a%2f%2fretracker.sevstar.net%3a2710%2fannounce&tr=http%3a%2f%2fopen.acgtracker.com%3a1096%2fannounce&tr=http%3a%2f%2fopen.acgnxtracker.com%3a80%2fannounce&tr=http%3a%2f%2fh4.trakx.nibba.trade%3a80%2fannounce&tr=http%3a%2f%2fretracker.local%2fannounce&tr=http%3a%2f%2ftracker.grepler.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.dler.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.bitsearch.to%3a1337%2fannounce",
+      "max_ratio": -1,
+      "max_seeding_time": -1,
+      "name": "Stray.RePack.by.Chovka",
+      "num_complete": 0,
+      "num_incomplete": 100,
+      "num_leechs": 0,
+      "num_seeds": 0,
+      "priority": 1,
+      "progress": 0.003247845085938741,
+      "ratio": 0,
+      "ratio_limit": -2,
+      "save_path": "/downloads/",
+      "seeding_time": 0,
+      "seeding_time_limit": -2,
+      "seen_complete": 1669984512,
+      "seq_dl": false,
+      "size": 5468319926,
+      "state": "pausedDL",
+      "super_seeding": false,
+      "tags": "",
+      "time_active": 4,
+      "total_size": 5468319926,
+      "tracker": "",
+      "trackers_count": 139,
+      "up_limit": -1,
+      "uploaded": 0,
+      "uploaded_session": 0,
+      "upspeed": 0
+    }
+  },
+  "trackers": {
+    "http://explodie.org:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://h4.trakx.nibba.trade:80/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://ns3107607.ip-54-36-126.eu:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://open.acgnxtracker.com:80/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://open.acgtracker.com:1096/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://opentracker.i2p.rocks:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://retracker.ip.ncnet.ru/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://retracker.local/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://retracker.sevstar.net:2710/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://rt.tace.ru:80/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://t.acg.rip:6699/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://t.overflow.biz:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://torrentclub.online:54123/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://torrenttracker.nwc.acsalaska.net:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://tracker-cdn.moeking.me:2095/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://tracker.bt4g.com:2095/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://tracker.ccp.ovh:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://tracker.gbitt.info:80/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://tracker.grepler.com:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://tracker.loadbt.com:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://tracker.nighthawk.pw:2052/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://tracker.noobsubs.net:80/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://tracker.opentrackr.org:1337/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://tracker.sloppyta.co:80/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://tracker.zerobytes.xyz:1337/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://tracker1.bt.moack.co.kr:80/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://tracker2.dler.org:80/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://tracker4.itzmx.com:2710/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://trk.publictracker.xyz:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://vpn.flying-datacenter.de:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "http://vps02.net.orel.ru:80/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "https://bt.nfshost.com:443/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "https://tr.ready4.icu:443/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "https://tracker.coalition.space:443/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "https://tracker.foreverpirates.co:443/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "https://tracker.hama3.net:443/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "https://tracker.imgoingto.icu:443/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "https://tracker.iriseden.eu:443/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "https://tracker.nanoha.org:443/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "https://tracker.nitrix.me:443/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "https://tracker.sloppyta.co:443/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "https://tracker.tamersunion.org:443/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "https://trakx.herokuapp.com:443/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "https://w.wwwww.wtf:443/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://9.rarbg.me:2730/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://9.rarbg.me:2770/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://9.rarbg.to:2720/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://9.rarbg.to:2730/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://9.rarbg.to:2770/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://admin.videoenpoche.info:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://anidex.moe:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://app.icon256.com:8000/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://bclearning.top:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://bt.firebit.org:2710/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://bt1.archive.org:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://bt2.54new.com:8080/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://bt2.archive.org:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://bubu.mapfactor.com:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://camera.lei001.com:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://code2chicken.nl:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://concen.org:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://cutiegirl.ru:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://discord.heihachi.pw:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://drumkitx.com:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://edu.uifr.ru:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://engplus.ru:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://exodus.desync.com:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://explodie.org:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://fe.dealclub.de:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://free.publictracker.xyz:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://inferno.demonoid.is:3391/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://ipv4.tracker.harry.lu:80/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://mail.realliferpg.de:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://movies.zsw.ca:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://mts.tvbit.co:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://newtoncity.org:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://open.lolicon.eu:7777/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://open.publictracker.xyz:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://open.stealth.si:80/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://opentor.net:6969": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://opentor.org:2710/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://opentracker.i2p.rocks:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://public-tracker.zooki.xyz:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://public.publictracker.xyz:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://public.tracker.vraphim.com:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://retracker.lanta-net.ru:2710/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://retracker.netbynet.ru:2710/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://retracker.sevstar.net:2710/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://t1.leech.ie:1337/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://t2.leech.ie:1337/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://t3.leech.ie:1337/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://torrentclub.online:54123/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tr.bangumi.moe:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tr2.ysagin.top:2710/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker-udp.gbitt.info:80/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.0x.tf:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.altrosky.nl:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.army:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.bitsearch.to:1337/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.blacksparrowmedia.net:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.ccp.ovh:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.coppersurfer.tk:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.cyberia.is:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.dler.com:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.dler.org:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.filemail.com:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.kali.org:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.leechers-paradise.org:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.loadbt.com:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.moeking.me:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.nighthawk.pw:2052/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.nrx.me:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.ololosh.space:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.open-internet.nl:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.openbittorrent.com:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.opentrackr.org:1337/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.pirateparty.gr:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.shkinev.me:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.theoks.net:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.tiny-vps.com:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.torrent.eu.org:451/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.uw0.xyz:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.v6speed.org:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.zemoj.com:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker.zerobytes.xyz:1337/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker0.ufibox.com:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker1.bt.moack.co.kr:80/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker2.dler.org:80/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tracker4.itzmx.com:2710/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://tsundere.pw:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://u.wwwww.wtf:1/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://udp-tracker.shittyurl.org:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://us-tracker.publictracker.xyz:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://valakas.rollo.dnsabr.com:2710/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://vibe.community:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://vibe.sleepyinternetfun.xyz:1738/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://wassermann.online:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://www.torrent.eu.org:451/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ],
+    "udp://zephir.monocul.us:6969/announce": [
+      "1e77657245a2193d1b4a8e3bb528a0c73b38d744",
+      "3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3"
+    ]
+  }
+}

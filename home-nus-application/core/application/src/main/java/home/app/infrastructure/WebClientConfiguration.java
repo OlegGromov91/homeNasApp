@@ -14,15 +14,15 @@ import javax.net.ssl.SSLException;
 @Configuration
 public class WebClientConfiguration {
 
-    @Bean
-    public WebClient webClient() throws SSLException {
-        SslContext sslContext = SslContextBuilder.forClient()
-                .trustManager(InsecureTrustManagerFactory.INSTANCE)
-                .build();
-        HttpClient httpClient = HttpClient.create().secure(context -> context.sslContext(sslContext));
-        ReactorClientHttpConnector httpConnector = new ReactorClientHttpConnector(httpClient);
-        return WebClient.builder()
-                .clientConnector(httpConnector)
-                .build();
-    }
+//    @Bean
+//    public WebClient webClient() throws SSLException {
+//        SslContext sslContext = SslContextBuilder.forClient()
+//                .trustManager(InsecureTrustManagerFactory.INSTANCE)
+//                .build();
+//        HttpClient httpClient = HttpClient.create().secure(context -> context.sslContext(sslContext));
+//        ReactorClientHttpConnector httpConnector = new ReactorClientHttpConnector(httpClient);
+//        return WebClient.builder()
+//                .clientConnector(httpConnector)
+//                .build();
+//    }
 }

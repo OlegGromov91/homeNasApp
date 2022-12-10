@@ -1,7 +1,9 @@
 package home.app.model.nas.disk;
 
 import home.app.model.nas.disk.types.NasDiskType;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
@@ -12,6 +14,8 @@ import javax.persistence.*;
 @DiscriminatorColumn(name = "nas_disk_type")
 @Data
 @SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
 public abstract class NasDisk {
 
     @Id
