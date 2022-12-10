@@ -1,27 +1,30 @@
 package home.app.model.qbTorrent;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import home.app.model.nas.disk.TorrentDisk;
+import home.app.model.qbTorrent.enums.Status;
+import home.app.model.qbTorrent.enums.SystemTorrentType;
+import lombok.Builder;
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 @Entity
 @Table(name = "TORRENT")
 @Data
-@SuperBuilder
+@Builder
 public class Torrent {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "TORRENT_ID")
     private Long id;
 
     @Column(name = "HASH_NAME")
     private String hash;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "DISK_ID", nullable = false)
     @JsonBackReference
     private TorrentDisk torrentDisk;
 
@@ -35,12 +38,12 @@ public class Torrent {
     private String contentPath;
 
     @Column(name = "TOTAL_SIZE")
-    private BigDecimal totalSize;
+    private Long totalSize;
 
     @Column(name = "DOWNLOADED_SIZE")
-    private BigDecimal downloaded;
+    private Long downloaded;
 
-    @Column(name = "DOWNLOADED_PROCENT", columnDefinition = "FLOAT(0,0)")
+    @Column(name = "DOWNLOADED_PROCENT")
     private Float downloadedPercent;  //считается динамически
 
     @Column(name = "STATE")
@@ -50,6 +53,5 @@ public class Torrent {
     @Column(name = "SYSTEM_TORRENT_TYPE")
     @Enumerated(value = EnumType.STRING)
     private SystemTorrentType systemTorrentType;
-
 
 }

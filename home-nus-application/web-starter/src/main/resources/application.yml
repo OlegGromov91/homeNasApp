@@ -6,10 +6,24 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create
+      use-new-id-generator-mappings: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
   liquibase:
     enabled: false
     change-log: classpath:liquibase/changeset-master.xml
 
+home-application:
+  uri:
+    root: "http://192.168.0.14"
+  qbTorrent:
+    port: ":20909"
+    uri:
+      getAllData: "/api/v2/sync/maindata"
+      deleteTorrent: "/api/v2/torrents/delete"
+      pauseTorrent: "/api/v2/torrents/pause"
+      resumeTorrent: "api/v2/torrents/resume"
 
 

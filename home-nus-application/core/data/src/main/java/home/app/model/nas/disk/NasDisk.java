@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "NAS_DISK")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "nas_disk_type")
+@DiscriminatorColumn(name = "NAS_DISK_TYPE")
 @Data
 @SuperBuilder
 @NoArgsConstructor
@@ -19,8 +19,8 @@ import javax.persistence.*;
 public abstract class NasDisk {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "nas_disk_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "DISK_ID")
     private Long id;
 
     private final NasDiskType diskType = initialDiskType();

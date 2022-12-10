@@ -1,4 +1,4 @@
-package home.app.model.qbTorrent;
+package home.app.model.qbTorrent.enums;
 
 public enum SystemTorrentType {
 

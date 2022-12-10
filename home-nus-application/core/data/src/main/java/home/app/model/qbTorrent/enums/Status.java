@@ -1,4 +1,4 @@
-package home.app.model.qbTorrent;
+package home.app.model.qbTorrent.enums;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -10,7 +10,7 @@ public enum Status {
     DISTRIBUTED("stalledUP", "Раздается"),
     DOWNLOADING("downloading", "Загружается"),
     DOWNLOADED("pausedUP", "Загружаен"),
-    UNKNOWN(null, "Неизвестно");
+    UNKNOWN("", "Неизвестно");
 
     private final String qbTorrentName;
     private final String description;
