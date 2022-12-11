@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.time.Duration;
@@ -30,6 +33,8 @@ public class RestQbTorrentService {
     private String resumeTorrentUri;
     @Value("${home-application.qbTorrent.requestTimeout}")
     private Long requestTimeout;
+    private final String REQUEST_HASH_KEY = "hashes";
+    private final String REQUEST_DELETE_FILES_KEY = "deleteFiles";
 
     @Autowired
     private WebClient webClient;
@@ -37,7 +42,7 @@ public class RestQbTorrentService {
     private RawTorrentDataParser rawTorrentDataParser;
 
     public List<TorrentData> getAllTorrents() {
-        String uri = (rootUri + port + allDataUri).trim();
+        String uri = rootUri + port + allDataUri;
         try {
             String result = webClient.get()
                     .uri(uri)
@@ -46,6 +51,52 @@ public class RestQbTorrentService {
                     })
                     .block(Duration.of(requestTimeout, ChronoUnit.MINUTES));
             return rawTorrentDataParser.parse(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RestQbTorrentException("get error when try request to " + uri + " " + e);
+        }
+    }
+
+    public Boolean pauseTorrent(String torrentHashName) {
+        String uri = rootUri + port + pauseTorrentUri;
+        return torrentActive(uri, torrentHashName);
+    }
+
+    public Boolean resumeTorrent(String torrentHashName) {
+        String uri = rootUri + port + resumeTorrentUri;
+        return torrentActive(uri, torrentHashName);
+    }
+
+    public Boolean deleteTorrent(String torrentHashName) {
+        String uri = rootUri + port + deleteTorrentUri;
+        MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
+        body.add(REQUEST_HASH_KEY, torrentHashName);
+        body.add(REQUEST_DELETE_FILES_KEY, Boolean.FALSE.toString());
+        try {
+            webClient.post()
+                    .uri(uri)
+                    .body(BodyInserters.fromFormData(body))
+                    .retrieve()
+                    .bodyToMono(new ParameterizedTypeReference<String>() {
+                    })
+                    .block(Duration.of(requestTimeout, ChronoUnit.MINUTES));
+            return Boolean.TRUE;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RestQbTorrentException("get error when try request to " + uri + " " + e);
+        }
+    }
+
+    private Boolean torrentActive(String uri, String torrentHashName) {
+        try {
+            webClient.post()
+                    .uri(uri)
+                    .body(BodyInserters.fromFormData(REQUEST_HASH_KEY, torrentHashName))
+                    .retrieve()
+                    .bodyToMono(new ParameterizedTypeReference<String>() {
+                    })
+                    .block(Duration.of(requestTimeout, ChronoUnit.MINUTES));
+            return Boolean.TRUE;
         } catch (Exception e) {
             e.printStackTrace();
             throw new RestQbTorrentException("get error when try request to " + uri + " " + e);

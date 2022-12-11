@@ -24,7 +24,7 @@ home-application:
       getAllData: "/api/v2/sync/maindata"
       deleteTorrent: "/api/v2/torrents/delete"
       pauseTorrent: "/api/v2/torrents/pause"
-      resumeTorrent: "api/v2/torrents/resume"
+      resumeTorrent: "/api/v2/torrents/resume"
     requestTimeout: 1
 
 
