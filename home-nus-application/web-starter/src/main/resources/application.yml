@@ -25,6 +25,13 @@ home-application:
       deleteTorrent: "/api/v2/torrents/delete"
       pauseTorrent: "/api/v2/torrents/pause"
       resumeTorrent: "/api/v2/torrents/resume"
+      downloadTorrent: "/api/v2/torrents/add"
     requestTimeout: 1
+
+bot:
+  name: "home_nas_app_bot"
+  token: ""
+  file-info: "https://api.telegram.org/bot{token}/getFile?file_id={fileId}"
+  file-storage: "https://api.telegram.org/file/bot{token}/{filePath}"
 
 

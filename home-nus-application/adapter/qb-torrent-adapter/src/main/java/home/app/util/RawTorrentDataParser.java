@@ -19,6 +19,8 @@ import java.util.Objects;
 public class RawTorrentDataParser {
 
     private static final String ROOT_TORRENTS_KEY = "torrents";
+    private static final String ROOT_DISK_KEY = "server_state";
+    private static final String FREE_SPACE_DISK_KEY = "free_space_on_disk";
 
     @Autowired
     private InformationConverter informationConverter;
@@ -79,4 +81,12 @@ public class RawTorrentDataParser {
         torrentData.setDownloadedPercent(torrentCalculator.calculateDownloadingPercent(torrentData.getTotalSize(), torrentData.getDownloaded()));
         return torrentData;
     }
+
+//    public void updateDiskSpace(RawTorrent rawTorrent, List<TorrentData> data) {
+//        Map<String, Object> serverInfo = rawTorrent.getRawData().getJSONObject(ROOT_DISK_KEY).toMap();
+//        Long freeSpaceValue = (Long) serverInfo.get(FREE_SPACE_DISK_KEY);
+//        if (Objects.nonNull(freeSpaceValue)) {
+//
+//        }
+//    }
 }

@@ -3,6 +3,9 @@ package home.app.service.rest;
 import home.app.exception.RestQbTorrentException;
 import home.app.model.TorrentData;
 import home.app.util.RawTorrentDataParser;
+import home.app.utils.downloader.DefaultFileDownloader;
+import okhttp3.*;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
@@ -11,10 +14,14 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
+import org.telegram.telegrambots.meta.api.objects.Document;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
+import java.util.Objects;
+
 
 @Service
 public class RestQbTorrentService {
@@ -31,8 +38,18 @@ public class RestQbTorrentService {
     private String pauseTorrentUri;
     @Value("${home-application.qbTorrent.uri.resumeTorrent}")
     private String resumeTorrentUri;
+    @Value("${home-application.qbTorrent.uri.downloadTorrent}")
+    private String downloadTorrentUri;
     @Value("${home-application.qbTorrent.requestTimeout}")
     private Long requestTimeout;
+    @Value("${bot.token}")
+    private String botToken;
+    @Value("${bot.file-info}")
+    private String fileInfoUri;
+    @Value("${bot.file-storage}")
+    private String fileStorageUri;
+
+
     private final String REQUEST_HASH_KEY = "hashes";
     private final String REQUEST_DELETE_FILES_KEY = "deleteFiles";
 
@@ -40,6 +57,10 @@ public class RestQbTorrentService {
     private WebClient webClient;
     @Autowired
     private RawTorrentDataParser rawTorrentDataParser;
+    @Autowired
+    private OkHttpClient okHttpClient;
+    @Autowired
+    private DefaultFileDownloader defaultFileDownloader;
 
     public List<TorrentData> getAllTorrents() {
         String uri = rootUri + port + allDataUri;
@@ -57,17 +78,39 @@ public class RestQbTorrentService {
         }
     }
 
-    public Boolean pauseTorrent(String torrentHashName) {
+    public void pauseTorrent(String torrentHashName) {
         String uri = rootUri + port + pauseTorrentUri;
-        return torrentActive(uri, torrentHashName);
+        torrentActive(uri, torrentHashName);
     }
 
-    public Boolean resumeTorrent(String torrentHashName) {
+    public void resumeTorrent(String torrentHashName) {
         String uri = rootUri + port + resumeTorrentUri;
-        return torrentActive(uri, torrentHashName);
+        torrentActive(uri, torrentHashName);
     }
 
-    public Boolean deleteTorrent(String torrentHashName) {
+    public void downloadTorrent(byte[] file, Document telegramDocument) {
+        String uri = rootUri + port + downloadTorrentUri;
+        RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
+                .addFormDataPart("file", telegramDocument.getFileName(),
+                        RequestBody.create(file))
+                .addFormDataPart("category", "музы")
+                .build();
+
+        Request request = new Request.Builder()
+                .url(uri)
+                .method("POST", body)
+                .build();
+        try {
+            Response response = okHttpClient.newCall(request).execute();
+            if (!Objects.equals(response.message(), "OK")) {
+                throw new RestQbTorrentException("get error when try request to " + downloadTorrentUri + " with file " + telegramDocument.getFileName());
+            }
+        } catch (IOException e) {
+            throw new RestQbTorrentException("get error when try request to " + downloadTorrentUri + " with file " + telegramDocument.getFileName() + "cause " + e);
+        }
+    }
+
+    public void deleteTorrent(String torrentHashName) {
         String uri = rootUri + port + deleteTorrentUri;
         MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
         body.add(REQUEST_HASH_KEY, torrentHashName);
@@ -80,14 +123,29 @@ public class RestQbTorrentService {
                     .bodyToMono(new ParameterizedTypeReference<String>() {
                     })
                     .block(Duration.of(requestTimeout, ChronoUnit.MINUTES));
-            return Boolean.TRUE;
         } catch (Exception e) {
             e.printStackTrace();
             throw new RestQbTorrentException("get error when try request to " + uri + " " + e);
         }
     }
 
-    private Boolean torrentActive(String uri, String torrentHashName) {
+    public JSONObject getFileInfo(String fileId) {
+        String fileInfoUri = this.fileInfoUri.replace("{token}", botToken)
+                .replace("{fileId}", fileId);
+        try {
+            return webClient.get()
+                    .uri(fileInfoUri)
+                    .retrieve()
+                    .bodyToMono(new ParameterizedTypeReference<JSONObject>() {
+                    })
+                    .block(Duration.of(requestTimeout, ChronoUnit.MINUTES));
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RestQbTorrentException("get error when try request to " + fileInfoUri + " " + e);
+        }
+    }
+
+    private void torrentActive(String uri, String torrentHashName) {
         try {
             webClient.post()
                     .uri(uri)
@@ -96,7 +154,6 @@ public class RestQbTorrentService {
                     .bodyToMono(new ParameterizedTypeReference<String>() {
                     })
                     .block(Duration.of(requestTimeout, ChronoUnit.MINUTES));
-            return Boolean.TRUE;
         } catch (Exception e) {
             e.printStackTrace();
             throw new RestQbTorrentException("get error when try request to " + uri + " " + e);

@@ -1,5 +1,6 @@
 package home.app.model;
 
+
 import home.app.utils.calculator.information.Size;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,5 +21,7 @@ public class TorrentData {
     private Size sizeDownloaded;
     private Double downloadedPercent;  //считается динамически
     private String state;
+    private String telegramUserHash;
+
 
 }

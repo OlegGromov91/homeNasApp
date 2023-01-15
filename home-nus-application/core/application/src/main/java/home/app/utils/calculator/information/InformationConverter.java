@@ -11,8 +11,8 @@ import static home.app.utils.calculator.information.MultipleByteUnits.*;
 /**
  * TODO: переделать на побитовые операции
  */
-@Component
 @Slf4j
+@Component
 public class InformationConverter implements Converter {
 
     public double convertByteToKilobyte(@NotNull Number byteValue) {

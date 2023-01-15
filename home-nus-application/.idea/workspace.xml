@@ -2,27 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7f15aeb-fb9c-43d3-99ac-b2ebd773258d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/model/Torrents.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/model/test.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/data/src/main/java/home/app/model/qbTorrent/Status.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/data/src/main/java/home/app/model/qbTorrent/SystemTorrentType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adapter/adapter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/adapter/adapter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapter/qb-torrent-adapter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/adapter/qb-torrent-adapter/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adapter/qb-torrent-adapter/qb-torrent-adapter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/adapter/qb-torrent-adapter/qb-torrent-adapter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/application/src/main/java/home/app/infrastructure/WebClientConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/application/src/main/java/home/app/infrastructure/WebClientConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/model/TorrentData.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/model/TorrentData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/QbTorrentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/QbTorrentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/rest/RestQbTorrentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/rest/RestQbTorrentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/util/RawTorrentDataParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/util/RawTorrentDataParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/application/src/main/java/home/app/infrastructure/configuration/WebClientConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/application/src/main/java/home/app/infrastructure/configuration/WebConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/application/src/main/java/home/app/utils/calculator/information/InformationConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/application/src/main/java/home/app/utils/calculator/information/InformationConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/core/core.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/data/data.iml" beforeDir="false" afterPath="$PROJECT_DIR$/core/data/data.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/data/src/main/java/home/app/model/nas/disk/NasDisk.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/data/src/main/java/home/app/model/nas/disk/NasDisk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/data/src/main/java/home/app/model/qbTorrent/Torrent.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/data/src/main/java/home/app/model/qbTorrent/Torrent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/data/src/main/java/home/app/model/qbTorrent/TorrentDisk.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/data/src/main/java/home/app/model/qbTorrent/TorrentDisk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/data/src/main/java/home/app/model/nas/disk/TorrentDisk.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/data/src/main/java/home/app/model/nas/disk/TorrentDisk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home-nus-application.iml" beforeDir="false" afterPath="$PROJECT_DIR$/home-nus-application.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedule/schedule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/schedule/schedule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schedule/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/schedule/schedule.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/telegram-bot-adapter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/telegram-bot-adapter.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/ui-adapter/ui-adapter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui-adapter/ui-adapter.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/ui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validator/validator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/validator/validator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/validator.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web-starter/src/main/java/home/app/HomeNusApplicationStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-starter/src/main/java/home/app/HomeNusApplicationStarter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-starter/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web-starter/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-starter/web-starter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/web-starter/web-starter.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,9 +59,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -93,8 +100,12 @@
     <property name="ToolWindowAnt.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/core/data/src/main/resources/liquibase/changelog/0.0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../back/homeNasApp/home-nus-application" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -102,18 +113,29 @@
       <recent name="C:\Users\WorkIntelij\Desktop\myNasProject\homeNasApp\home-nus-application\core\data\src\main\resources\liquibase" />
       <recent name="C:\Users\WorkIntelij\Desktop\myNasProject\homeNasApp\home-nus-application\core\data\src\main\resources" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="home.app.model.qbTorrent" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\WorkIntelij\Desktop\myNasProject\homeNasApp\home-nus-application\adapter\qb-torrent-adapter\src\main\resources" />
+      <recent name="C:\Users\WorkIntelij\Desktop\myNasProject\homeNasApp\home-nus-application\resources" />
       <recent name="C:\Users\WorkIntelij\Desktop\myNasProject\homeNasApp\home-nus-application\core\data\src\main\resources\liquibase\changelog\0.0.2" />
       <recent name="C:\Users\WorkIntelij\Desktop\myNasProject\homeNasApp\home-nus-application\core\data\src\main\resources\liquibase\changelog" />
       <recent name="C:\Users\WorkIntelij\Desktop\myNasProject\homeNasApp\home-nus-application\core\data\src\main\java" />
-      <recent name="C:\Users\WorkIntelij\Desktop\home-nus-application\core\src\main\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="home.app.service.rest" />
+      <recent name="home.app.exception" />
+      <recent name="home.app.model" />
+      <recent name="home.app.model.qbTorrent" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="home.app.utils.downloader" />
+      <recent name="home.app.model.user" />
     </key>
   </component>
   <component name="RunManager" selected="Application.HomeNusApplicationStarter">
     <configuration name="HomeNusApplicationStarter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
       <option name="MAIN_CLASS_NAME" value="home.app.HomeNusApplicationStarter" />
       <module name="web-starter" />
       <extension name="coverage">
@@ -135,10 +157,16 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="home.app.HomeNusApplicationStarter" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.HomeNusApplicationStarter" />
+      <item itemvalue="Spring Boot.HomeNusApplicationStarter" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.HomeNusApplicationStarter" />
@@ -176,7 +204,16 @@
       <workItem from="1670058630243" duration="6209000" />
       <workItem from="1670090323862" duration="2515000" />
       <workItem from="1670150202208" duration="3657000" />
-      <workItem from="1670667912321" duration="5222000" />
+      <workItem from="1670667912321" duration="32004000" />
+      <workItem from="1670757428595" duration="4860000" />
+      <workItem from="1670776695245" duration="1171000" />
+      <workItem from="1673184367571" duration="9575000" />
+      <workItem from="1673691654985" duration="5636000" />
+      <workItem from="1673709236468" duration="5952000" />
+      <workItem from="1673719004160" duration="7651000" />
+      <workItem from="1673726900330" duration="2803000" />
+      <workItem from="1673768985578" duration="383000" />
+      <workItem from="1673769415367" duration="4932000" />
     </task>
     <servers />
   </component>
@@ -188,86 +225,102 @@
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="556" y="181" key="#Plugins/0.0.1920.1036@0.0.1920.1036" timestamp="1670058668689" />
-    <state x="455" y="314" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1670010021663">
+    <state x="556" y="181" key="#Project_Structure" timestamp="1670681866555">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="455" y="314" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1670010021663" />
+    <state x="556" y="181" key="#Project_Structure/0.0.1920.1036@0.0.1920.1036" timestamp="1670681866555" />
+    <state x="455" y="314" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1673770078886">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="455" y="314" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1673770078886" />
     <state x="724" y="326" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1670057206238">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="724" y="326" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1036@0.0.1920.1036" timestamp="1670057206238" />
-    <state x="769" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1670670814423">
+    <state x="769" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1673771678773">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="769" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1036@0.0.1920.1036" timestamp="1670670814423" />
+    <state x="769" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1036@0.0.1920.1036" timestamp="1673771678773" />
     <state x="798" y="449" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1670012979880">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="798" y="449" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1670012979880" />
-    <state x="284" y="120" width="949" height="850" key="#xdebugger.evaluate" timestamp="1670154094791">
+    <state x="694" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1673773873765">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="284" y="120" width="949" height="850" key="#xdebugger.evaluate/0.0.1920.1036@0.0.1920.1036" timestamp="1670154094791" />
-    <state x="744" y="277" key="FileChooserDialogImpl" timestamp="1670011026402">
+    <state x="694" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1673773873765" />
+    <state x="548" y="399" width="949" height="637" key="#xdebugger.evaluate" timestamp="1673773669376">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="744" y="277" key="FileChooserDialogImpl/0.0.1920.1036@0.0.1920.1036" timestamp="1670011026402" />
-    <state width="1878" height="362" key="GridCell.Tab.0.bottom" timestamp="1670667945733">
+    <state x="548" y="399" width="949" height="637" key="#xdebugger.evaluate/0.0.1920.1036@0.0.1920.1036" timestamp="1673773669376" />
+    <state width="432" height="466" key="DebuggerActiveHint" timestamp="1673773746137">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1878" height="362" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1670667945733" />
-    <state width="1878" height="362" key="GridCell.Tab.0.center" timestamp="1670667945733">
+    <state width="432" height="466" key="DebuggerActiveHint/0.0.1920.1036@0.0.1920.1036" timestamp="1673773746137" />
+    <state x="744" y="277" key="FileChooserDialogImpl" timestamp="1673769186377">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1878" height="362" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1670667945733" />
-    <state width="1878" height="362" key="GridCell.Tab.0.left" timestamp="1670667945733">
+    <state x="744" y="277" key="FileChooserDialogImpl/0.0.1920.1036@0.0.1920.1036" timestamp="1673769186377" />
+    <state width="1878" height="263" key="GridCell.Tab.0.bottom" timestamp="1673774017943">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1878" height="362" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1670667945733" />
-    <state width="1878" height="362" key="GridCell.Tab.0.right" timestamp="1670667945733">
+    <state width="1878" height="263" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1673774017943" />
+    <state width="1878" height="263" key="GridCell.Tab.0.center" timestamp="1673774017943">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1878" height="362" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1670667945733" />
-    <state width="1878" height="362" key="GridCell.Tab.1.bottom" timestamp="1670667946918">
+    <state width="1878" height="263" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1673774017943" />
+    <state width="1878" height="263" key="GridCell.Tab.0.left" timestamp="1673774017943">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1878" height="362" key="GridCell.Tab.1.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1670667946918" />
-    <state width="1878" height="362" key="GridCell.Tab.1.center" timestamp="1670667946918">
+    <state width="1878" height="263" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1673774017943" />
+    <state width="1878" height="263" key="GridCell.Tab.0.right" timestamp="1673774017943">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1878" height="362" key="GridCell.Tab.1.center/0.0.1920.1036@0.0.1920.1036" timestamp="1670667946918" />
-    <state width="1878" height="362" key="GridCell.Tab.1.left" timestamp="1670667946918">
+    <state width="1878" height="263" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1673774017943" />
+    <state width="1878" height="225" key="GridCell.Tab.1.bottom" timestamp="1673773913072">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1878" height="362" key="GridCell.Tab.1.left/0.0.1920.1036@0.0.1920.1036" timestamp="1670667946918" />
-    <state width="1878" height="362" key="GridCell.Tab.1.right" timestamp="1670667946918">
+    <state width="1878" height="225" key="GridCell.Tab.1.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1673773913072" />
+    <state width="1878" height="225" key="GridCell.Tab.1.center" timestamp="1673773913072">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1878" height="362" key="GridCell.Tab.1.right/0.0.1920.1036@0.0.1920.1036" timestamp="1670667946918" />
-    <state width="187" height="454" key="HiddenNamespacesPopup" timestamp="1670009995350">
+    <state width="1878" height="225" key="GridCell.Tab.1.center/0.0.1920.1036@0.0.1920.1036" timestamp="1673773913072" />
+    <state width="1878" height="225" key="GridCell.Tab.1.left" timestamp="1673773913072">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="187" height="454" key="HiddenNamespacesPopup/0.0.1920.1036@0.0.1920.1036" timestamp="1670009995350" />
+    <state width="1878" height="225" key="GridCell.Tab.1.left/0.0.1920.1036@0.0.1920.1036" timestamp="1673773913072" />
+    <state width="1878" height="225" key="GridCell.Tab.1.right" timestamp="1673773913072">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1878" height="225" key="GridCell.Tab.1.right/0.0.1920.1036@0.0.1920.1036" timestamp="1673773913072" />
+    <state width="187" height="454" key="HiddenNamespacesPopup" timestamp="1670680702906">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="187" height="454" key="HiddenNamespacesPopup/0.0.1920.1036@0.0.1920.1036" timestamp="1670680702906" />
+    <state x="494" y="177" key="Maven.ArtifactSearchDialog" timestamp="1673770272400">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="494" y="177" key="Maven.ArtifactSearchDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1673770272400" />
     <state x="553" y="233" key="RollbackChangesDialog" timestamp="1670092857640">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="553" y="233" key="RollbackChangesDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1670092857640" />
-    <state x="487" y="154" key="SettingsEditor" timestamp="1670673006170">
+    <state x="487" y="154" key="SettingsEditor" timestamp="1673770113918">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="487" y="154" key="SettingsEditor/0.0.1920.1036@0.0.1920.1036" timestamp="1670673006170" />
-    <state x="565" y="229" key="VCS.ChangeListViewerDialog" timestamp="1670058271152">
+    <state x="487" y="154" key="SettingsEditor/0.0.1920.1036@0.0.1920.1036" timestamp="1673770113918" />
+    <state x="565" y="229" key="VCS.ChangeListViewerDialog" timestamp="1670684080883">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="565" y="229" key="VCS.ChangeListViewerDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1670058271152" />
+    <state x="565" y="229" key="VCS.ChangeListViewerDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1670684080883" />
     <state x="556" y="255" key="Vcs.Push.Dialog.v2" timestamp="1669997155515">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="556" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1036@0.0.1920.1036" timestamp="1669997155515" />
-    <state width="964" height="522" key="XDebugger.FullValuePopup" timestamp="1670153084117">
+    <state width="964" height="522" key="XDebugger.FullValuePopup" timestamp="1673714303243">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="964" height="522" key="XDebugger.FullValuePopup/0.0.1920.1036@0.0.1920.1036" timestamp="1670153084117" />
+    <state width="964" height="522" key="XDebugger.FullValuePopup/0.0.1920.1036@0.0.1920.1036" timestamp="1673714303243" />
     <state x="96" y="96" width="1728" height="844" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1670672860541">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
@@ -280,22 +333,26 @@
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="671" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1670667921218" />
-    <state x="669" y="131" width="581" height="774" key="find.popup" timestamp="1669996591299">
+    <state x="516" y="258" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1670776936001">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="669" y="131" width="581" height="774" key="find.popup/0.0.1920.1036@0.0.1920.1036" timestamp="1669996591299" />
-    <state x="250" y="244" key="new project wizard" timestamp="1670154121958">
+    <state x="516" y="258" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1036@0.0.1920.1036" timestamp="1670776936001" />
+    <state x="669" y="131" width="581" height="774" key="find.popup" timestamp="1673774399672">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="250" y="244" key="new project wizard/0.0.1920.1036@0.0.1920.1036" timestamp="1670154121958" />
+    <state x="669" y="131" width="581" height="774" key="find.popup/0.0.1920.1036@0.0.1920.1036" timestamp="1673774399672" />
+    <state x="250" y="244" key="new project wizard" timestamp="1673715192182">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="250" y="244" key="new project wizard/0.0.1920.1036@0.0.1920.1036" timestamp="1673715192182" />
     <state x="706" y="143" key="refactoring.ChangeSignatureDialog" timestamp="1670013339241">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="706" y="143" key="refactoring.ChangeSignatureDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1670013339241" />
-    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1670058660842">
+    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1673727034083">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup/0.0.1920.1036@0.0.1920.1036" timestamp="1670058660842" />
+    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup/0.0.1920.1036@0.0.1920.1036" timestamp="1673727034083" />
     <state x="501" y="206" key="spring file set editor" timestamp="1670090986177">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
@@ -306,25 +363,40 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/web-starter/src/main/java/home/app/HomeNusApplicationStarter.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/web-starter/src/main/java/home/app/HomeNusApplicationStarter.java</url>
           <line>33</line>
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="105" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/web-starter/src/main/java/home/app/HomeNusApplicationStarter.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/rest/FileStorage.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/web-starter/src/main/java/home/app/HomeNusApplicationStarter.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/rest/RestQbTorrentService.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/rest/RestQbTorrentService.java</url>
+          <line>135</line>
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/rest/RestQbTorrentService.java</url>
+          <line>142</line>
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/rest/RestQbTorrentService.java</url>
+          <line>143</line>
+          <option name="timeStamp" value="135" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((org.springframework.util.LinkedMultiValueMap)((MultipartBodyBuilder)bodyBuilder).parts).entrySet().toArray()[0]" custom="org.springframework.util.LinkedMultiValueMap,org.springframework.http.client.MultipartBodyBuilder" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

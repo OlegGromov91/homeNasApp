@@ -3,6 +3,7 @@ package home.app.infrastructure.configuration;
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
 import io.netty.handler.ssl.util.InsecureTrustManagerFactory;
+import okhttp3.OkHttpClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
@@ -12,7 +13,7 @@ import reactor.netty.http.client.HttpClient;
 import javax.net.ssl.SSLException;
 
 @Configuration
-public class WebClientConfiguration {
+public class WebConfiguration {
 
     @Bean
     public WebClient webClient() throws SSLException {
@@ -25,4 +26,11 @@ public class WebClientConfiguration {
                 .clientConnector(httpConnector)
                 .build();
     }
+
+    @Bean
+    public OkHttpClient okHttpClient() {
+        return new OkHttpClient().newBuilder()
+                .build();
+    }
+
 }

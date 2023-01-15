@@ -10,27 +10,23 @@
         <module name="web-starter" />
         <module name="qb-torrent-adapter" />
         <module name="data" />
-        <module name="schedule" />
-        <module name="validator" />
         <module name="application" />
         <module name="telegram-bot-adapter" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="adapter" target="17" />
-      <module name="application" target="17" />
-      <module name="core" target="17" />
-      <module name="data" target="17" />
-      <module name="home-nus-application" target="17" />
-      <module name="qb-torrent-adapter" target="17" />
-      <module name="qbTorrent" target="17" />
-      <module name="schedule" target="17" />
-      <module name="telegram-bot-adapter" target="17" />
-      <module name="ui" target="17" />
-      <module name="ui-adapter" target="17" />
-      <module name="validator" target="17" />
-      <module name="web" target="17" />
-      <module name="web-starter" target="17" />
+      <module name="adapter" target="11" />
+      <module name="application" target="11" />
+      <module name="core" target="11" />
+      <module name="data" target="11" />
+      <module name="home-nus-application" target="11" />
+      <module name="qb-torrent-adapter" target="11" />
+      <module name="schedule" target="11" />
+      <module name="telegram-bot-adapter" target="11" />
+      <module name="ui" target="11" />
+      <module name="ui-adapter" target="11" />
+      <module name="validator" target="11" />
+      <module name="web-starter" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -41,13 +37,11 @@
       <module name="data" options="-parameters" />
       <module name="home-nus-application" options="-parameters" />
       <module name="qb-torrent-adapter" options="-parameters" />
-      <module name="qbTorrent" options="-parameters" />
       <module name="schedule" options="-parameters" />
       <module name="telegram-bot-adapter" options="-parameters" />
       <module name="ui" options="-parameters" />
       <module name="ui-adapter" options="-parameters" />
       <module name="validator" options="-parameters" />
-      <module name="web" options="-parameters" />
       <module name="web-starter" options="-parameters" />
     </option>
   </component>
