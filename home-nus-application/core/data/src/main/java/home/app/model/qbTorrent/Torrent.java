@@ -1,7 +1,8 @@
 package home.app.model.qbTorrent;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import home.app.model.nas.disk.TorrentDisk;
+
+import home.app.model.disk.TorrentDisk;
 import home.app.model.qbTorrent.enums.Status;
 import home.app.model.qbTorrent.enums.SystemTorrentType;
 import lombok.Builder;

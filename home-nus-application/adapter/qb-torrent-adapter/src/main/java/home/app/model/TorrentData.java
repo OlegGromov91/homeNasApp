@@ -1,6 +1,5 @@
 package home.app.model;
 
-
 import home.app.utils.calculator.information.Size;
 import lombok.Builder;
 import lombok.Getter;

@@ -1,6 +1,7 @@
-package home.app.model.nas.disk;
+package home.app.model.disk;
 
-import home.app.model.nas.disk.types.NasDiskType;
+
+import home.app.model.disk.types.NasDiskType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

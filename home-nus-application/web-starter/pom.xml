@@ -19,13 +19,13 @@
         </dependency>
         <dependency>
             <groupId>ru.local</groupId>
-            <artifactId>application</artifactId>
+            <artifactId>qb-torrent-adapter</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>ru.local</groupId>
-            <artifactId>qb-torrent-adapter</artifactId>
+            <artifactId>telegram-bot-adapter</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

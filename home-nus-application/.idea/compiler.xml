@@ -10,7 +10,7 @@
         <module name="web-starter" />
         <module name="qb-torrent-adapter" />
         <module name="data" />
-        <module name="application" />
+        <module name="infrastructure" />
         <module name="telegram-bot-adapter" />
       </profile>
     </annotationProcessing>
@@ -18,14 +18,14 @@
       <module name="adapter" target="11" />
       <module name="application" target="11" />
       <module name="core" target="11" />
+      <module name="coreApp" target="11" />
       <module name="data" target="11" />
       <module name="home-nus-application" target="11" />
+      <module name="infrastructure" target="11" />
       <module name="qb-torrent-adapter" target="11" />
-      <module name="schedule" target="11" />
       <module name="telegram-bot-adapter" target="11" />
       <module name="ui" target="11" />
       <module name="ui-adapter" target="11" />
-      <module name="validator" target="11" />
       <module name="web-starter" target="11" />
     </bytecodeTargetLevel>
   </component>
@@ -34,14 +34,14 @@
       <module name="adapter" options="-parameters" />
       <module name="application" options="-parameters" />
       <module name="core" options="-parameters" />
+      <module name="coreApp" options="-parameters" />
       <module name="data" options="-parameters" />
       <module name="home-nus-application" options="-parameters" />
+      <module name="infrastructure" options="-parameters" />
       <module name="qb-torrent-adapter" options="-parameters" />
-      <module name="schedule" options="-parameters" />
       <module name="telegram-bot-adapter" options="-parameters" />
       <module name="ui" options="-parameters" />
       <module name="ui-adapter" options="-parameters" />
-      <module name="validator" options="-parameters" />
       <module name="web-starter" options="-parameters" />
     </option>
   </component>

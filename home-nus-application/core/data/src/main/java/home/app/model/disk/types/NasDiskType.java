@@ -1,4 +1,4 @@
-package home.app.model.nas.disk.types;
+package home.app.model.disk.types;
 
 import lombok.Getter;
 

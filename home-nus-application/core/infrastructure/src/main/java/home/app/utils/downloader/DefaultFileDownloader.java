@@ -12,14 +12,9 @@ public class DefaultFileDownloader implements FileDownloader {
 
     @Override
     public byte[] downloadFile(String filePath) {
-        throw new RuntimeException("not supported");
-    }
-
-    @Override
-    public byte[] downloadFile(String filePath, String url) {
         URL urlObj;
         try {
-            urlObj = new URL(url);
+            urlObj = new URL(filePath);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -29,7 +24,6 @@ public class DefaultFileDownloader implements FileDownloader {
         } catch (IOException e) {
             throw new RuntimeException(urlObj.toExternalForm(), e);
         }
-
     }
 
 }

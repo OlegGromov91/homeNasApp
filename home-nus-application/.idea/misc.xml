@@ -8,10 +8,8 @@
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/adapter/qbTorrent/pom.xml" />
-        <option value="$PROJECT_DIR$/schedule/pom.xml" />
-        <option value="$PROJECT_DIR$/validator/pom.xml" />
-        <option value="$PROJECT_DIR$/web/pom.xml" />
+        <option value="$PROJECT_DIR$/core/pom.xml" />
+        <option value="$PROJECT_DIR$/coreApp/pom.xml" />
       </set>
     </option>
   </component>

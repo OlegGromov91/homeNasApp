@@ -1,7 +1,8 @@
-package home.app.model.nas.disk;
+package home.app.model.disk;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import home.app.model.nas.disk.types.NasDiskType;
+
+import home.app.model.disk.types.NasDiskType;
 import home.app.model.qbTorrent.Torrent;
 import lombok.Data;
 

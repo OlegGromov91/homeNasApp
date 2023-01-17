@@ -1,4 +1,4 @@
-package home.app.infrastructure.configuration;
+package home.app.configuration;
 
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;

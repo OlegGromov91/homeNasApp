@@ -1,10 +1,14 @@
 package home.app;
 
+import home.app.model.TorrentData;
+import home.app.service.rest.RestQbTorrentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.IOException;
+import java.util.List;
 
 @SpringBootApplication(scanBasePackages = "home.app")
 
@@ -14,7 +18,11 @@ public class HomeNusApplicationStarter implements CommandLineRunner {
 //    @Autowired
 //    WebClient webClient;
 //
+@Autowired
+    RestQbTorrentService restQbTorrentService;
 
+@Autowired
+TelegramBot telegramBot;
 //    @Autowired
 //    FileStorage fileStorage;
 
@@ -31,10 +39,10 @@ public class HomeNusApplicationStarter implements CommandLineRunner {
 
     public void doWeb() throws IOException {
        //
-   //     List<TorrentData> getAllTorrents = restQbTorrentService.getAllTorrents();
+    //    List<TorrentData> getAllTorrents = restQbTorrentService.getAllTorrents();
     //    String resp =  restQbTorrentService.test(null);
 
-    //    System.out.println(getAllTorrents);
+    //   System.out.println(getAllTorrents);
         //fileStorage.processDoc();
     }
 

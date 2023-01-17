@@ -16,6 +16,7 @@ import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.telegram.telegrambots.meta.api.objects.Document;
 
+import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
@@ -62,7 +63,7 @@ public class RestQbTorrentService {
     @Autowired
     private DefaultFileDownloader defaultFileDownloader;
 
-    public List<TorrentData> getAllTorrents() {
+    public List<TorrentData> getAllDownloadingTorrents() {
         String uri = rootUri + port + allDataUri;
         try {
             String result = webClient.get()
@@ -86,6 +87,39 @@ public class RestQbTorrentService {
     public void resumeTorrent(String torrentHashName) {
         String uri = rootUri + port + resumeTorrentUri;
         torrentActive(uri, torrentHashName);
+    }
+
+    public void downloadTorrent(
+            @NotNull byte[] file,
+            @NotNull String fileName,
+            String category,
+            String savePath) {
+
+        String uri = rootUri + port + downloadTorrentUri;
+
+        RequestBody body = (Objects.nonNull(category)) ?
+                new MultipartBody.Builder().setType(MultipartBody.FORM)
+                        .addFormDataPart("file", fileName, RequestBody.create(file))
+                        .addFormDataPart("category", category)
+                        .addFormDataPart("savepath", savePath)
+                        .build()
+                :
+                new MultipartBody.Builder().setType(MultipartBody.FORM)
+                        .addFormDataPart("file", fileName, RequestBody.create(file))
+                        .build();
+
+        Request request = new Request.Builder()
+                .url(uri)
+                .method("POST", body)
+                .build();
+        try {
+            Response response = okHttpClient.newCall(request).execute();
+            if (!Objects.equals(response.message(), "OK")) {
+                throw new RestQbTorrentException("get error when try request to " + downloadTorrentUri + " with file " + fileName);
+            }
+        } catch (IOException e) {
+            throw new RestQbTorrentException("get error when try request to " + downloadTorrentUri + " with file " + fileName + "cause " + e);
+        }
     }
 
     public void downloadTorrent(byte[] file, Document telegramDocument) {
@@ -133,16 +167,25 @@ public class RestQbTorrentService {
         String fileInfoUri = this.fileInfoUri.replace("{token}", botToken)
                 .replace("{fileId}", fileId);
         try {
-            return webClient.get()
+            String response = webClient.get()
                     .uri(fileInfoUri)
                     .retrieve()
-                    .bodyToMono(new ParameterizedTypeReference<JSONObject>() {
+                    .bodyToMono(new ParameterizedTypeReference<String>() {
                     })
                     .block(Duration.of(requestTimeout, ChronoUnit.MINUTES));
+            return new JSONObject(response);
         } catch (Exception e) {
             e.printStackTrace();
-            throw new RestQbTorrentException("get error when try request to " + fileInfoUri + " " + e);
+            throw new RestQbTorrentException("get error when try request to telegram with url " + fileInfoUri + " " + e);
         }
+
+
+    }
+
+    public byte[] downloadFileFromTelegram(String filePath) {
+        String storageUri = fileStorageUri.replace("{token}", botToken)
+                .replace("{filePath}", filePath);
+        return defaultFileDownloader.downloadFile(storageUri);
     }
 
     private void torrentActive(String uri, String torrentHashName) {
