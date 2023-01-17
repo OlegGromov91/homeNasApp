@@ -1,7 +1,7 @@
-package home.app;
+package home.app.service;
 
 import home.app.exception.RestQbTorrentException;
-import home.app.service.rest.RestQbTorrentService;
+import home.app.service.rest.RestTelegramBotService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,8 +13,9 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 public class BotResolveService {
 
     @Autowired
-    private RestQbTorrentService restQbTorrentService;
-
+    private RestTelegramBotService restTelegramBotService;
+    @Autowired
+    private QbTorrentService qbTorrentService;
 
     public void resolve(Update update) {
         processDoc(update.getMessage());
@@ -23,16 +24,16 @@ public class BotResolveService {
     private void processDoc(Message telegramMessage) {
         Document telegramDoc = telegramMessage.getDocument();
         String fileId = telegramDoc.getFileId();
-        JSONObject fileInfo = restQbTorrentService.getFileInfo(fileId);
+        JSONObject fileInfo = restTelegramBotService.getFileInfo(fileId);
 
         if (fileInfo.keySet().contains("ok")) {
             String filePath = String.valueOf(fileInfo
                     .getJSONObject("result")
                     .getString("file_path"));
 
-            byte[] file = restQbTorrentService.downloadFileFromTelegram(filePath);
+            byte[] file = restTelegramBotService.downloadFileFromTelegram(filePath);
 
-            restQbTorrentService.downloadTorrent(file, telegramDoc);
+            qbTorrentService.downloadTorrent(file, telegramDoc.getFileName(), null);
         } else {
             throw new RestQbTorrentException("when try get fileInfo response get wrong code");
         }

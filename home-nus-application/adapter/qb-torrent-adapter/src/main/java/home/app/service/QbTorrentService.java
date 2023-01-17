@@ -47,5 +47,13 @@ public class QbTorrentService {
                 .findFirst().orElseThrow(() -> new TorrentException("Can not find category " + category));
     }
 
+    public void deleteTorrent(String torrentHashName) {
+        restQbTorrentService.deleteTorrent(torrentHashName, Boolean.FALSE);
+    }
+
+    public void deleteTorrentAndData(String torrentHashName) {
+        restQbTorrentService.deleteTorrent(torrentHashName, Boolean.TRUE);
+    }
+
 
 }

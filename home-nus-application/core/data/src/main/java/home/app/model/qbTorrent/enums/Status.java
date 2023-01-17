@@ -1,8 +1,11 @@
 package home.app.model.qbTorrent.enums;
 
+import lombok.Getter;
+
 import java.util.Arrays;
 import java.util.Objects;
 
+@Getter
 public enum Status {
 
     PAUSED("pausedDL", "Приостановлен"),
