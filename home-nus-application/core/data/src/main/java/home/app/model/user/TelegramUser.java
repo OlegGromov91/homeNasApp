@@ -1,18 +1,24 @@
 package home.app.model.user;
 
-import lombok.Data;
+import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.Embeddable;
 
-@Entity
-@Table(name = "APP_USERS")
-@DiscriminatorValue(value = "TelegramUser")
-@Data
-public class TelegramUser extends ApplicationUser {
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Embeddable
+public class TelegramUser {
 
-    @Column(name = "USER_HASH", unique = true, nullable = false, updatable = false)
-    private String hash;
+    private Long id;
+
+    private String firstName;
+
+    private String secondName;
+
+    private String userName;
+
+    private Boolean isBot;
 }

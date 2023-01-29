@@ -1,5 +1,8 @@
 package home.app.model.qbTorrent.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum SystemTorrentType {
 
     VIDEO("Видео"),

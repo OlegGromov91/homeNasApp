@@ -1,23 +1,43 @@
 package home.app.model.user;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
+import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 
 @Entity
 @Table(name = "APP_USERS")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "USER_TYPE")
-@Data
-@SuperBuilder
+@Getter
+@Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class ApplicationUser {
+public class ApplicationUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID")
     private Long id;
+
+    @Column(name = "FIRST_NAME")
+    private String firstName;
+
+    @Column(name = "SECOND_NAME")
+    private String secondName;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "id", column = @Column(name = "TG_ID")),
+            @AttributeOverride(name = "firstName", column = @Column(name = "TG_FIRST_NAME")),
+            @AttributeOverride(name = "secondName", column = @Column(name = "TG_SECOND_NAME")),
+            @AttributeOverride(name = "userName", column = @Column(name = "TG_USER_NAME")),
+            @AttributeOverride(name = "isBot", column = @Column(name = "TG_IS_BOT")),
+    })
+    private TelegramUser telegramUser;
+
+    @Email
+    @Column(name = "EMAIL")
+    private String email;
+
+
 }

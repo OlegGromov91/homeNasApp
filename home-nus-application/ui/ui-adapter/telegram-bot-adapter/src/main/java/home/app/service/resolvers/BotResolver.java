@@ -1,13 +1,20 @@
 package home.app.service.resolvers;
 
-import org.telegram.telegrambots.meta.api.objects.Message;
+import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 public interface BotResolver {
 
-    void resolve(Update update);
+    SendMessage resolve(Update update);
 
     Class<? extends BotResolver> type();
 
-    boolean identifyResolver(Message tgMessage);
+    /**
+     * Метод должен однозначно определить подходит ли резолвер для данных, приходящих с телеграмма
+     *
+     * @param update
+     * @return
+     */
+    boolean identifyResolver(Update update);
+
 }
