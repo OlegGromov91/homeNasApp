@@ -9,17 +9,25 @@ import home.app.model.user.ApplicationUser;
 import home.app.repository.TelegramFilesRepository;
 import home.app.repository.UserRepository;
 import home.app.service.QbTorrentService;
+import home.app.service.enums.TorrentButtonData;
 import home.app.service.rest.RestTelegramBotService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.Document;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 
+import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Objects;
 
 import static home.app.service.enums.FileSuffix.TORRENT;
@@ -40,16 +48,17 @@ public class TorrentFileBotResolver extends FileBotResolver {
     private TelegramFilesRepository telegramFilesRepository;
 
     private final String FILE_MESSAGE = "Выберите тип загружаемого файла";
-    private final String CALL_BACK_MESSAGE = "Файл добавлен в загрузки";
+    private final String CALL_BACK_MESSAGE = "Файл %s добавлен в загрузки";
 
     @Override
-    public SendMessage resolve(Update update) {
+    @Transactional
+    public BotApiMethod<? extends Serializable> resolve(Update update) {
         Message message = update.getMessage();
         CallbackQuery callbackQuery = update.getCallbackQuery();
         if (Objects.nonNull(message)) {
-            return processDocument(update.getMessage(), update.getMessage().getFrom().getId(), update.getMessage().getChatId());
+            return processDocument(message);
         } else if (Objects.nonNull(callbackQuery)) {
-            return processCallbackQuery(callbackQuery, callbackQuery.getFrom().getId(), callbackQuery.getFrom().getId());
+            return processCallbackQuery(callbackQuery);
         }
         throw new UnsupportedOperationException("can not find data for resolver + " + type());
     }
@@ -81,10 +90,12 @@ public class TorrentFileBotResolver extends FileBotResolver {
         return false;
     }
 
-    private SendMessage processDocument(Message telegramMessage, Long userId, Long chatId) {
+    private SendMessage processDocument(Message telegramMessage) {
         Document document = telegramMessage.getDocument();
         String fileId = document.getFileId();
         JSONObject fileInfo = restTelegramBotService.getFileInfo(fileId);
+        Long userId = telegramMessage.getFrom().getId();
+        Long chatId = telegramMessage.getChatId();
 
         ApplicationUser user = userRepository.findByTelegramUserId(userId).orElseThrow(RuntimeException::new);
 
@@ -95,25 +106,6 @@ public class TorrentFileBotResolver extends FileBotResolver {
 
         message.setText(FILE_MESSAGE);
         message.setReplyMarkup(torrentInlineKeyboardMarkup);
-////
-////
-////        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
-////        List<List<InlineKeyboardButton>> rows = new ArrayList<>();
-////
-////        List<InlineKeyboardButton> rowInline = new ArrayList<>();
-////
-////        InlineKeyboardButton button = new InlineKeyboardButton();
-////        InlineKeyboardButton button2 = new InlineKeyboardButton();
-////        button.setText("yes");
-////        button.setCallbackData("TG_VIDEO");
-////
-////        button2.setText("no");
-////        button2.setCallbackData("TG_BUTTON");
-////        rowInline.add(button);
-////        rowInline.add(button2);
-////        rows.add(rowInline);
-////        inlineKeyboardMarkup.setKeyboard(rows);
-////
 
         if (fileInfo.keySet().contains("ok")) {
             String filePath = String.valueOf(fileInfo
@@ -125,6 +117,7 @@ public class TorrentFileBotResolver extends FileBotResolver {
                     .user(user)
                     .filePath(filePath)
                     .fileName(document.getFileName())
+                    .creatingDate(LocalDateTime.now())
                     .build();
 
             telegramFilesRepository.save(torrentFile);
@@ -135,20 +128,28 @@ public class TorrentFileBotResolver extends FileBotResolver {
         return message;
     }
 
-    private SendMessage processCallbackQuery(CallbackQuery callbackQuery, Long userId, Long chatId) {
+    private EditMessageText processCallbackQuery(CallbackQuery callbackQuery) {
+        Long userId = callbackQuery.getFrom().getId();
+        Long chatId = callbackQuery.getMessage().getChatId();
+        Integer messageId = callbackQuery.getMessage().getMessageId();
+        String data = callbackQuery.getData();
+
         ApplicationUser user = userRepository.findByTelegramUserId(userId).orElseThrow(RuntimeException::new);
-        TelegramFiles tgFile = telegramFilesRepository.findByUser(user).orElseThrow(RuntimeException::new);
+        List<TelegramFiles> tgFiles = telegramFilesRepository.findByUser(user);
+        TelegramFiles tgFile = tgFiles.stream().max(Comparator.comparing(TelegramFiles::getCreatingDate)).orElseThrow(RuntimeException::new);
 
         byte[] file = restTelegramBotService.downloadFileFromTelegram(tgFile.getFilePath());
 
-        qbTorrentService.downloadTorrent(file, tgFile.getFileName(), null);
+        qbTorrentService.downloadTorrent(file, tgFile.getFileName(), TorrentButtonData.valueOf(data).getTorrentCategory());
 
-        SendMessage message = new SendMessage();
+        EditMessageText message = new EditMessageText();
 
+        message.setText(String.format(CALL_BACK_MESSAGE, tgFile.getFileName()));
         message.setChatId(chatId);
+        message.setMessageId(messageId);
 
-        message.setText(CALL_BACK_MESSAGE);
         return message;
     }
+
 
 }

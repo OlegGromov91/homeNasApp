@@ -6,6 +6,7 @@ import lombok.Getter;
 public enum TorrentCategory {
 
     MUSIC("Музыка", "/downloads/media/music"),
+    VIDEO("Видео", "/downloads/media/video"),
     FILM("Фильм", "/downloads/media/films"),
     SERIAL("Сериал", "/downloads/media/serials"),
     GAME("Игры", "/downloads/games"),
@@ -14,11 +15,11 @@ public enum TorrentCategory {
     OTHER("Другое", "/downloads/other"),
     ;
 
-    TorrentCategory(String categoryDescription, String savePath) {
-        this.categoryDescription = categoryDescription;
+    TorrentCategory(String description, String savePath) {
+        this.description = description;
         this.savePath = savePath;
     }
 
-    private final String categoryDescription;
+    private final String description;
     private final String savePath;
 }

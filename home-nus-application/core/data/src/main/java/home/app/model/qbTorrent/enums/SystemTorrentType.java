@@ -5,10 +5,13 @@ import lombok.Getter;
 @Getter
 public enum SystemTorrentType {
 
-    VIDEO("Видео"),
+    MUSIC("Музыка"),
     FILM("Фильм"),
-    GAME("Игра"),
-    PROGRAM("Программа"),
+    VIDEO("Видео"),
+    SERIAL("Сериал"),
+    GAME("Игры"),
+    PROGRAM("Программы"),
+    OPERATION_SYSTEM("Операционные системы"),
     OTHER("Другое"),
     ;
 

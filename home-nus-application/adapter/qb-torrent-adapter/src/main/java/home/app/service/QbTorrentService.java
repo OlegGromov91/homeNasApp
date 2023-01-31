@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.NotNull;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -32,19 +31,20 @@ public class QbTorrentService {
 
     public void downloadTorrent(@NotNull byte[] file,
                                 @NotNull String fileName,
-                                String category) {
-        if (Objects.nonNull(category)) {
-            TorrentCategory torrentCategory = extractTorrentCategory(category);
-            restQbTorrentService.downloadTorrent(file, fileName, torrentCategory.getCategoryDescription(), torrentCategory.getSavePath());
+                                TorrentCategory torrentCategory) {
+        if (Objects.nonNull(torrentCategory)) {
+            restQbTorrentService.downloadTorrent(file, fileName, torrentCategory.getDescription(), torrentCategory.getSavePath());
         } else {
             restQbTorrentService.downloadTorrent(file, fileName, null, null);
         }
     }
 
     private TorrentCategory extractTorrentCategory(String category) {
-        return Arrays.stream(TorrentCategory.values())
-                .filter(torrentCategory -> torrentCategory.getCategoryDescription().equals(category))
-                .findFirst().orElseThrow(() -> new TorrentException("Can not find category " + category));
+        try {
+            return TorrentCategory.valueOf(category);
+        } catch (IllegalArgumentException e) {
+            throw new TorrentException("Can not find category " + category);
+        }
     }
 
     public void deleteTorrent(String torrentHashName) {
