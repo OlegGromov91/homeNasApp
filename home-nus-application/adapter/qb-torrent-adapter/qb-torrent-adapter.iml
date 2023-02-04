@@ -105,6 +105,7 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.24" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.7.6" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.36" level="project" />
+    <orderEntry type="module" module-name="data" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-jpa:2.7.6" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-aop:2.7.6" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.24" level="project" />

@@ -28,4 +28,8 @@ public abstract class AbstractBotResolver implements BotResolver {
     protected abstract EditMessageText processCallbackQuery(CallbackQuery callbackQuery);
 
     protected abstract SendMessage processMessage(Message telegramMessage);
+
+    protected Long extractChatIdFromCallbackQuery(CallbackQuery callbackQuery){
+        return callbackQuery.getMessage().getChatId();
+    }
 }

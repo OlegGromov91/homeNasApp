@@ -1,30 +1,20 @@
-package home.app.service.resolvers.menu;
+package home.app.service.resolvers.menu.torrent;
 
 import com.google.common.base.Strings;
-import home.app.model.qbTorrent.enums.SystemTorrentType;
-import home.app.service.enums.MenuCommands;
+import home.app.model.TorrentData;
+import home.app.service.enums.TorrentMenuResolverButtonData;
 import home.app.service.resolvers.BotResolver;
 import org.springframework.stereotype.Component;
-import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
-import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Component
-public class TestMenuBotResolver extends MenuBotResolver {
-
-    private static final String COMMAND = MenuCommands.TEST_MENU_COMMAND.getCommand();
-
-
-    @Override
-    protected boolean identifyCommand(Update update) {
-        System.out.println();
-        return Objects.equals(update.getMessage().getEntities().get(0).getText(), COMMAND);
-    }
-
+public class TorrentShowAllMenuBotResolver extends TorrentMenuBotResolver {
 
     @Override
     public Class<? extends BotResolver> type() {
@@ -37,8 +27,7 @@ public class TestMenuBotResolver extends MenuBotResolver {
             CallbackQuery callbackQuery = update.getCallbackQuery();
             String buttonData = callbackQuery.getData();
             try {
-                SystemTorrentType.valueOf(buttonData);
-                return true;
+                return Objects.equals(TorrentMenuResolverButtonData.TG_MENU_SNOW_ALL.name(), (buttonData));
             } catch (IllegalArgumentException ignored) {
             }
         }
@@ -47,11 +36,17 @@ public class TestMenuBotResolver extends MenuBotResolver {
 
     @Override
     protected EditMessageText processCallbackQuery(CallbackQuery callbackQuery) {
-        return null;
+        List<TorrentData> torrentData = qbTorrentService.getInfoAboutAllDownloadingTorrents();
+
+        String data = torrentData.isEmpty() ? "Список загрузок пуст" : torrentData.stream().map(TorrentData::toString).collect(Collectors.joining());
+
+        Long chatId = extractChatIdFromCallbackQuery(callbackQuery);
+        Integer messageId = callbackQuery.getMessage().getMessageId();
+        EditMessageText message = new EditMessageText();
+        message.setText(data);
+        message.setChatId(chatId);
+        message.setMessageId(messageId);
+        return message;
     }
 
-    @Override
-    protected SendMessage processMessage(Message telegramMessage) {
-        return null;
-    }
 }
