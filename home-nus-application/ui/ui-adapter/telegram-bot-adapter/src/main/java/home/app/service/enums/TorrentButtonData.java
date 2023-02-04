@@ -20,7 +20,6 @@ public enum TorrentButtonData {
     TorrentButtonData(InlineKeyboardButton button, TorrentCategory torrentCategory) {
         this.button = button;
         this.torrentCategory = torrentCategory;
-
     }
 
     private final InlineKeyboardButton button;

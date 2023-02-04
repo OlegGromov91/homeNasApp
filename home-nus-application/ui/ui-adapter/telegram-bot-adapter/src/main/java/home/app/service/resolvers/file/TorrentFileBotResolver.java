@@ -1,4 +1,4 @@
-package home.app.service.resolvers;
+package home.app.service.resolvers.file;
 
 import com.google.common.base.Strings;
 import home.app.exception.RestQbTorrentException;
@@ -10,6 +10,7 @@ import home.app.repository.TelegramFilesRepository;
 import home.app.repository.UserRepository;
 import home.app.service.QbTorrentService;
 import home.app.service.enums.TorrentButtonData;
+import home.app.service.resolvers.BotResolver;
 import home.app.service.rest.RestTelegramBotService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,16 +50,26 @@ public class TorrentFileBotResolver extends FileBotResolver {
 
     private final String FILE_MESSAGE = "Выберите тип загружаемого файла";
     private final String CALL_BACK_MESSAGE = "Файл %s добавлен в загрузки";
+    private final String ERROR_MESSAGE = "Во время выполнения программы произошла ошибка";
 
     @Override
     @Transactional
     public BotApiMethod<? extends Serializable> resolve(Update update) {
         Message message = update.getMessage();
         CallbackQuery callbackQuery = update.getCallbackQuery();
-        if (Objects.nonNull(message)) {
-            return processDocument(message);
-        } else if (Objects.nonNull(callbackQuery)) {
-            return processCallbackQuery(callbackQuery);
+        Long chatId = (Objects.nonNull(message)) ? message.getChatId() : (Objects.nonNull(callbackQuery)) ? callbackQuery.getMessage().getChatId() : null;
+
+        try {
+            if (Objects.nonNull(message)) {
+                return processDocument(message);
+            } else if (Objects.nonNull(callbackQuery)) {
+                return processCallbackQuery(callbackQuery);
+            }
+        } catch (Exception e) {
+            SendMessage errorMessage = new SendMessage();
+            errorMessage.setChatId(chatId);
+            errorMessage.setText(ERROR_MESSAGE);
+            return errorMessage;
         }
         throw new UnsupportedOperationException("can not find data for resolver + " + type());
     }
@@ -70,25 +81,32 @@ public class TorrentFileBotResolver extends FileBotResolver {
 
     @Override
     public boolean identifyResolver(Update update) {
-        Message message = update.getMessage();
-        if (Objects.nonNull(message)) {
-            Document document = message.getDocument();
-            return Objects.nonNull(document) &&
-                    (Objects.equals(document.getMimeType(), TORRENT.getMimeType()) || document.getFileName().endsWith(TORRENT.getSuffix()));
-        }
+        return super.identifyResolver(update) && identifyFileType(update);
+    }
 
-        CallbackQuery callbackQuery = update.getCallbackQuery();
-        if (Objects.nonNull(callbackQuery) && !Strings.isNullOrEmpty(callbackQuery.getData())) {
+    @Override
+    public boolean identifyCallBackResolver(Update update) {
+        if (update.hasCallbackQuery() && !Strings.isNullOrEmpty(update.getCallbackQuery().getData())) {
+            CallbackQuery callbackQuery = update.getCallbackQuery();
             String buttonData = callbackQuery.getData().replace(SUFFIX_BUTTON_NAME, "");
             try {
                 SystemTorrentType.valueOf(buttonData);
                 return true;
-            } catch (IllegalArgumentException e) {
-                return false;
+            } catch (IllegalArgumentException ignored) {
             }
         }
         return false;
     }
+
+    @Override
+    protected boolean identifyFileType(Update update) {
+        if (update.getMessage().hasDocument()) {
+            Document document = update.getMessage().getDocument();
+            return Objects.equals(document.getMimeType(), TORRENT.getMimeType()) || document.getFileName().endsWith(TORRENT.getSuffix());
+        }
+        return false;
+    }
+
 
     private SendMessage processDocument(Message telegramMessage) {
         Document document = telegramMessage.getDocument();
@@ -97,13 +115,10 @@ public class TorrentFileBotResolver extends FileBotResolver {
         Long userId = telegramMessage.getFrom().getId();
         Long chatId = telegramMessage.getChatId();
 
-        ApplicationUser user = userRepository.findByTelegramUserId(userId).orElseThrow(RuntimeException::new);
-
+        ApplicationUser user = userRepository.findByTelegramUserId(userId).orElseThrow(() -> new RuntimeException("can not find user with id " + userId));
 
         SendMessage message = new SendMessage();
-
         message.setChatId(chatId);
-
         message.setText(FILE_MESSAGE);
         message.setReplyMarkup(torrentInlineKeyboardMarkup);
 

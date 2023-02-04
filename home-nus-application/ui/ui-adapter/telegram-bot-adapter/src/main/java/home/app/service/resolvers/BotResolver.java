@@ -19,4 +19,6 @@ public interface BotResolver {
      */
     boolean identifyResolver(Update update);
 
+    boolean identifyCallBackResolver(Update update);
+
 }
