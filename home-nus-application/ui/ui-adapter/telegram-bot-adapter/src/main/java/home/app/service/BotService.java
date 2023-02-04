@@ -21,18 +21,18 @@ public class BotService {
     private List<BotResolver> resolvers = new ArrayList<>();
 
     public BotApiMethod<? extends Serializable> resolve(Update update) {
-        try {
+//        try {
             BotResolver botResolver = resolvers.stream()
                     .filter(resolver -> resolver.identifyResolver(update) || resolver.identifyCallBackResolver(update))
                     .findFirst().orElseThrow(() -> new BotResolveException("Can not find resolver"));
             return botResolver.resolve(update);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        SendMessage message = new SendMessage();
-        message.setChatId(update.getMessage().getChatId());
-        message.setText("сообщение дошло до бота, но что-то пошло не так :)");
-        return message;
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        SendMessage message = new SendMessage();
+//        message.setChatId(update.getMessage().getChatId());
+//        message.setText("сообщение дошло до бота, но что-то пошло не так :)");
+//        return message;
 
 
     }

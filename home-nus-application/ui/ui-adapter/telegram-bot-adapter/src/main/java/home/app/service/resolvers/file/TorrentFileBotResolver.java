@@ -9,14 +9,12 @@ import home.app.model.user.ApplicationUser;
 import home.app.repository.TelegramFilesRepository;
 import home.app.repository.UserRepository;
 import home.app.service.QbTorrentService;
-import home.app.service.enums.TorrentButtonData;
+import home.app.service.enums.TorrentFileResolverButtonData;
 import home.app.service.resolvers.BotResolver;
 import home.app.service.rest.RestTelegramBotService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
-import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
@@ -25,14 +23,13 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
 import static home.app.service.enums.FileSuffix.TORRENT;
-import static home.app.service.enums.TorrentButtonData.SUFFIX_BUTTON_NAME;
+import static home.app.service.enums.TorrentFileResolverButtonData.SUFFIX_BUTTON_NAME;
 
 @Component
 public class TorrentFileBotResolver extends FileBotResolver {
@@ -42,7 +39,7 @@ public class TorrentFileBotResolver extends FileBotResolver {
     @Autowired
     private QbTorrentService qbTorrentService;
     @Autowired
-    private InlineKeyboardMarkup torrentInlineKeyboardMarkup;
+    private InlineKeyboardMarkup torrentFileInlineKeyboardMarkup;
     @Autowired
     private UserRepository userRepository;
     @Autowired
@@ -50,29 +47,6 @@ public class TorrentFileBotResolver extends FileBotResolver {
 
     private final String FILE_MESSAGE = "Выберите тип загружаемого файла";
     private final String CALL_BACK_MESSAGE = "Файл %s добавлен в загрузки";
-    private final String ERROR_MESSAGE = "Во время выполнения программы произошла ошибка";
-
-    @Override
-    @Transactional
-    public BotApiMethod<? extends Serializable> resolve(Update update) {
-        Message message = update.getMessage();
-        CallbackQuery callbackQuery = update.getCallbackQuery();
-        Long chatId = (Objects.nonNull(message)) ? message.getChatId() : (Objects.nonNull(callbackQuery)) ? callbackQuery.getMessage().getChatId() : null;
-
-        try {
-            if (Objects.nonNull(message)) {
-                return processDocument(message);
-            } else if (Objects.nonNull(callbackQuery)) {
-                return processCallbackQuery(callbackQuery);
-            }
-        } catch (Exception e) {
-            SendMessage errorMessage = new SendMessage();
-            errorMessage.setChatId(chatId);
-            errorMessage.setText(ERROR_MESSAGE);
-            return errorMessage;
-        }
-        throw new UnsupportedOperationException("can not find data for resolver + " + type());
-    }
 
     @Override
     public Class<? extends BotResolver> type() {
@@ -107,8 +81,8 @@ public class TorrentFileBotResolver extends FileBotResolver {
         return false;
     }
 
-
-    private SendMessage processDocument(Message telegramMessage) {
+    @Override
+    protected SendMessage processMessage(Message telegramMessage) {
         Document document = telegramMessage.getDocument();
         String fileId = document.getFileId();
         JSONObject fileInfo = restTelegramBotService.getFileInfo(fileId);
@@ -120,7 +94,7 @@ public class TorrentFileBotResolver extends FileBotResolver {
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
         message.setText(FILE_MESSAGE);
-        message.setReplyMarkup(torrentInlineKeyboardMarkup);
+        message.setReplyMarkup(torrentFileInlineKeyboardMarkup);
 
         if (fileInfo.keySet().contains("ok")) {
             String filePath = String.valueOf(fileInfo
@@ -143,7 +117,8 @@ public class TorrentFileBotResolver extends FileBotResolver {
         return message;
     }
 
-    private EditMessageText processCallbackQuery(CallbackQuery callbackQuery) {
+    @Override
+    protected EditMessageText processCallbackQuery(CallbackQuery callbackQuery) {
         Long userId = callbackQuery.getFrom().getId();
         Long chatId = callbackQuery.getMessage().getChatId();
         Integer messageId = callbackQuery.getMessage().getMessageId();
@@ -155,7 +130,7 @@ public class TorrentFileBotResolver extends FileBotResolver {
 
         byte[] file = restTelegramBotService.downloadFileFromTelegram(tgFile.getFilePath());
 
-        qbTorrentService.downloadTorrent(file, tgFile.getFileName(), TorrentButtonData.valueOf(data).getTorrentCategory());
+        qbTorrentService.downloadTorrent(file, tgFile.getFileName(), TorrentFileResolverButtonData.valueOf(data).getTorrentCategory());
 
         EditMessageText message = new EditMessageText();
 
