@@ -1,7 +1,7 @@
 package home.app.service.resolvers.menu.torrent;
 
 import com.google.common.base.Strings;
-import home.app.model.TorrentData;
+import home.app.view.qbTorrent.TorrentDataView;
 import home.app.service.resolvers.BotResolver;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
@@ -57,10 +57,10 @@ public class ActionTorrentMenuBotResolver extends TorrentMenuBotResolver {
 
     protected InlineKeyboardMarkup buildKeyboardFromTorrents(String action) {
 
-        List<TorrentData> torrentData = qbTorrentService.getInfoAboutAllDownloadingTorrents();
+        List<TorrentDataView> torrentDatumViews = qbTorrentService.getInfoAboutAllDownloadingTorrents();
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         inlineKeyboardMarkup.setKeyboard(
-                torrentData.stream().map(torrent -> List.of(
+                torrentDatumViews.stream().map(torrent -> List.of(
                         InlineKeyboardButton.builder().text(torrent.getName()).callbackData(CALLBACK_DATA + action + torrent.getHash()).build()
                         )
                 ).collect(Collectors.toList())
@@ -89,7 +89,7 @@ public class ActionTorrentMenuBotResolver extends TorrentMenuBotResolver {
     }
 
     private String extractTorrentHash(String buttonData, String action) {
-        return buttonData.substring(0, CALLBACK_DATA.length() + action.length());
+        return buttonData.substring(CALLBACK_DATA.length() + action.length());
     }
 
 }

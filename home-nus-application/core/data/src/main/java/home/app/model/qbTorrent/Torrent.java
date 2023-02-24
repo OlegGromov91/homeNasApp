@@ -1,7 +1,7 @@
 package home.app.model.qbTorrent;
 
 import home.app.model.qbTorrent.enums.Status;
-import home.app.model.qbTorrent.enums.SystemTorrentType;
+import home.app.model.qbTorrent.enums.TorrentCategory;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -61,8 +61,8 @@ public class Torrent {
     @Enumerated(value = EnumType.STRING)
     private Status state;
 
-    @Column(name = "SYSTEM_TORRENT_TYPE")
+    @Column(name = "TORRENT_CATEGORY")
     @Enumerated(value = EnumType.STRING)
-    private SystemTorrentType systemTorrentType;
+    private TorrentCategory torrentCategory;
 
 }

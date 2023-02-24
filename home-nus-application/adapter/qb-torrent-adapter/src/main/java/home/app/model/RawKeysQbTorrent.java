@@ -9,7 +9,9 @@ public enum RawKeysQbTorrent {
     CONTENT_PATH("content_path", String.class),
     TOTAL_SIZE("total_size", Long.class),
     DOWNLOADED("downloaded", Integer.class),
-    STATE("state", String.class);
+    STATE("state", String.class),
+    CATEGORY("category", String.class),
+    ;
 
     RawKeysQbTorrent(String key, Class<?> value) {
         this.key = key;

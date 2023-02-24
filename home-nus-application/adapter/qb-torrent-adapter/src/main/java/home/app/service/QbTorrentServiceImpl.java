@@ -2,7 +2,7 @@ package home.app.service;
 
 import home.app.exception.TorrentException;
 import home.app.model.TorrentCategory;
-import home.app.model.TorrentData;
+import home.app.view.qbTorrent.TorrentDataView;
 import home.app.service.rest.RestQbTorrentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
@@ -19,7 +19,7 @@ public class QbTorrentServiceImpl implements QbTorrentService {
     @Autowired
     private RestQbTorrentService restQbTorrentService;
 
-    public List<TorrentData> getInfoAboutAllDownloadingTorrents() {
+    public List<TorrentDataView> getInfoAboutAllDownloadingTorrents() {
         return restQbTorrentService.getAllDownloadingTorrents();
     }
 

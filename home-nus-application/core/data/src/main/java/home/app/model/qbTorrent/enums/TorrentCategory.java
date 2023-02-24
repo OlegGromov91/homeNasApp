@@ -3,7 +3,7 @@ package home.app.model.qbTorrent.enums;
 import lombok.Getter;
 
 @Getter
-public enum SystemTorrentType {
+public enum TorrentCategory {
 
     MUSIC("Музыка"),
     FILM("Фильм"),
@@ -13,9 +13,9 @@ public enum SystemTorrentType {
     PROGRAM("Программы"),
     OPERATION_SYSTEM("Операционные системы"),
     OTHER("Другое"),
-    ;
+    UNKNOWN("Неизвестно");
 
-    SystemTorrentType(String description) {
+    TorrentCategory(String description) {
         this.description = description;
     }
 

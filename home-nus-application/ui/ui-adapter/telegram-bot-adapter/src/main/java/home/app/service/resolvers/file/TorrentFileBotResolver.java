@@ -4,7 +4,7 @@ import com.google.common.base.Strings;
 import home.app.exception.RestQbTorrentException;
 import home.app.model.files.TelegramFiles;
 import home.app.model.files.types.ApplicationFileTypes;
-import home.app.model.qbTorrent.enums.SystemTorrentType;
+import home.app.model.qbTorrent.enums.TorrentCategory;
 import home.app.model.user.ApplicationUser;
 import home.app.repository.TelegramFilesRepository;
 import home.app.repository.UserRepository;
@@ -61,7 +61,7 @@ public class TorrentFileBotResolver extends FileBotResolver {
             CallbackQuery callbackQuery = update.getCallbackQuery();
             String buttonData = callbackQuery.getData().replace(SUFFIX_BUTTON_NAME, "");
             try {
-                SystemTorrentType.valueOf(buttonData);
+                TorrentCategory.valueOf(buttonData);
                 return true;
             } catch (IllegalArgumentException ignored) {
             }
