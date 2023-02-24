@@ -35,7 +35,7 @@ public class BotConfiguration {
     public InlineKeyboardMarkup torrentMenuInlineKeyboardMarkup() {
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         inlineKeyboardMarkup.setKeyboard(
-                List.of(Arrays.stream(TorrentMenuResolverButtonData.values()).map(TorrentMenuResolverButtonData::getButton).collect(Collectors.toList()))
+                Arrays.stream(TorrentMenuResolverButtonData.values()).map(button -> List.of(button.getButton())).collect(Collectors.toList())
         );
         return inlineKeyboardMarkup;
     }

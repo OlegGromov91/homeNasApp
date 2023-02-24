@@ -1,5 +1,8 @@
 package home.app.service.resolvers;
 
+import home.app.service.MockQbTorrentService;
+import home.app.service.QbTorrentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -11,6 +14,9 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import java.io.Serializable;
 
 public abstract class AbstractBotResolver implements BotResolver {
+
+    @Autowired
+    protected QbTorrentService qbTorrentService;
 
     @Override
     @Transactional
@@ -29,7 +35,7 @@ public abstract class AbstractBotResolver implements BotResolver {
 
     protected abstract SendMessage processMessage(Message telegramMessage);
 
-    protected Long extractChatIdFromCallbackQuery(CallbackQuery callbackQuery){
+    protected Long extractChatIdFromCallbackQuery(CallbackQuery callbackQuery) {
         return callbackQuery.getMessage().getChatId();
     }
 }

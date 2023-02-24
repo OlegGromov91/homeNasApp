@@ -8,6 +8,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 
 public abstract class MenuBotResolver extends AbstractBotResolver {
 
+
     @Override
     public boolean identifyResolver(Update update) {
         if (update.hasMessage() && update.getMessage().getEntities().size() == 1) {

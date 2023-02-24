@@ -1,59 +1,27 @@
 package home.app.service;
 
-import home.app.exception.TorrentException;
 import home.app.model.TorrentCategory;
 import home.app.model.TorrentData;
-import home.app.service.rest.RestQbTorrentService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
-import java.util.Objects;
 
 @Service
-public class QbTorrentService {
+public interface QbTorrentService {
 
-    @Autowired
-    private RestQbTorrentService restQbTorrentService;
 
-    public List<TorrentData> getInfoAboutAllDownloadingTorrents() {
-        return restQbTorrentService.getAllDownloadingTorrents();
-    }
+    List<TorrentData> getInfoAboutAllDownloadingTorrents();
 
-    public void pauseTorrent(String torrentHashName) {
-        restQbTorrentService.pauseTorrent(torrentHashName);
-    }
+    void pauseTorrent(String torrentHashName);
 
-    public void resumeTorrent(String torrentHashName) {
-        restQbTorrentService.resumeTorrent(torrentHashName);
-    }
+    void resumeTorrent(String torrentHashName);
 
-    public void downloadTorrent(@NotNull byte[] file,
-                                @NotNull String fileName,
-                                TorrentCategory torrentCategory) {
-        if (Objects.nonNull(torrentCategory)) {
-            restQbTorrentService.downloadTorrent(file, fileName, torrentCategory.getDescription(), torrentCategory.getSavePath());
-        } else {
-            restQbTorrentService.downloadTorrent(file, fileName, null, null);
-        }
-    }
+    void downloadTorrent(@NotNull byte[] file, @NotNull String fileName, TorrentCategory torrentCategory);
 
-    private TorrentCategory extractTorrentCategory(String category) {
-        try {
-            return TorrentCategory.valueOf(category);
-        } catch (IllegalArgumentException e) {
-            throw new TorrentException("Can not find category " + category);
-        }
-    }
+    void deleteTorrent(String torrentHashName);
 
-    public void deleteTorrent(String torrentHashName) {
-        restQbTorrentService.deleteTorrent(torrentHashName, Boolean.FALSE);
-    }
-
-    public void deleteTorrentAndData(String torrentHashName) {
-        restQbTorrentService.deleteTorrent(torrentHashName, Boolean.TRUE);
-    }
+    void deleteTorrentAndData(String torrentHashName);
 
 
 }

@@ -1,7 +1,6 @@
 package home.app.service.resolvers.menu.torrent;
 
 import com.google.common.base.Strings;
-import home.app.model.TorrentData;
 import home.app.service.enums.TorrentMenuResolverButtonData;
 import home.app.service.resolvers.BotResolver;
 import org.springframework.stereotype.Component;
@@ -9,12 +8,10 @@ import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageTe
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
-import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 @Component
-public class TorrentShowAllMenuBotResolver extends TorrentMenuBotResolver {
+public class DeleteTorrentMenuBotResolver extends ActionTorrentMenuBotResolver {
 
     @Override
     public Class<? extends BotResolver> type() {
@@ -27,7 +24,7 @@ public class TorrentShowAllMenuBotResolver extends TorrentMenuBotResolver {
             CallbackQuery callbackQuery = update.getCallbackQuery();
             String buttonData = callbackQuery.getData();
             try {
-                return Objects.equals(TorrentMenuResolverButtonData.TG_MENU_SNOW_ALL.name(), (buttonData));
+                return Objects.equals(TorrentMenuResolverButtonData.TG_MENU_DELETE.name(), buttonData);
             } catch (IllegalArgumentException ignored) {
             }
         }
@@ -36,9 +33,8 @@ public class TorrentShowAllMenuBotResolver extends TorrentMenuBotResolver {
 
     @Override
     protected EditMessageText processCallbackQuery(CallbackQuery callbackQuery) {
-        List<TorrentData> torrentData = qbTorrentService.getInfoAboutAllDownloadingTorrents();
 
-        String data = torrentData.isEmpty() ? "Список загрузок пуст" : torrentData.stream().map(TorrentData::toString).collect(Collectors.joining());
+        String data = "Какой именно торрент вы хотели бы удалить? \n (!!!ПРЕДУПРЕЖДЕНИЕ: Так же удалятся загруженные файлы)";
 
         Long chatId = extractChatIdFromCallbackQuery(callbackQuery);
         Integer messageId = callbackQuery.getMessage().getMessageId();
@@ -46,7 +42,9 @@ public class TorrentShowAllMenuBotResolver extends TorrentMenuBotResolver {
         message.setText(data);
         message.setChatId(chatId);
         message.setMessageId(messageId);
+        message.setReplyMarkup(buildKeyboardFromTorrents(DELETE_ACTION));
         return message;
     }
+
 
 }

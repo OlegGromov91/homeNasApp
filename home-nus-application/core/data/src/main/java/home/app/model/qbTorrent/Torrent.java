@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import home.app.model.disk.TorrentDisk;
 import home.app.model.qbTorrent.enums.Status;
 import home.app.model.qbTorrent.enums.SystemTorrentType;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -14,6 +16,8 @@ import javax.persistence.*;
 @Table(name = "TORRENT")
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Torrent {
 
     @Id

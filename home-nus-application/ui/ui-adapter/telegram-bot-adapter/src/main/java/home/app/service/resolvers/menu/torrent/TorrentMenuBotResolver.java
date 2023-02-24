@@ -1,6 +1,5 @@
 package home.app.service.resolvers.menu.torrent;
 
-import home.app.service.QbTorrentService;
 import home.app.service.enums.MenuCommands;
 import home.app.service.resolvers.menu.MenuBotResolver;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,23 +20,10 @@ public abstract class TorrentMenuBotResolver extends MenuBotResolver {
 
     @Autowired
     private InlineKeyboardMarkup torrentMenuInlineKeyboardMarkup;
-    @Autowired
-    protected QbTorrentService qbTorrentService;
 
     @Override
     protected boolean identifyCommand(Update update) {
         return Objects.equals(update.getMessage().getEntities().get(0).getText(), COMMAND);
-    }
-
-    @Override
-    protected EditMessageText processCallbackQuery(CallbackQuery callbackQuery) {
-        Long chatId = callbackQuery.getMessage().getChatId();
-        Integer messageId = callbackQuery.getMessage().getMessageId();
-        EditMessageText message = new EditMessageText();
-        message.setText("COOL");
-        message.setChatId(chatId);
-        message.setMessageId(messageId);
-        return message;
     }
 
     @Override

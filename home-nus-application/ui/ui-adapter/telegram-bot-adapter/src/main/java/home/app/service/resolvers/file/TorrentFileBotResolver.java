@@ -8,7 +8,6 @@ import home.app.model.qbTorrent.enums.SystemTorrentType;
 import home.app.model.user.ApplicationUser;
 import home.app.repository.TelegramFilesRepository;
 import home.app.repository.UserRepository;
-import home.app.service.QbTorrentService;
 import home.app.service.enums.TorrentFileResolverButtonData;
 import home.app.service.resolvers.BotResolver;
 import home.app.service.rest.RestTelegramBotService;
@@ -36,8 +35,6 @@ public class TorrentFileBotResolver extends FileBotResolver {
 
     @Autowired
     private RestTelegramBotService restTelegramBotService;
-    @Autowired
-    private QbTorrentService qbTorrentService;
     @Autowired
     private InlineKeyboardMarkup torrentFileInlineKeyboardMarkup;
     @Autowired
