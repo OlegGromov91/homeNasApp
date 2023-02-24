@@ -2,8 +2,9 @@ package home.app.service;
 
 import home.app.model.TorrentCategory;
 import home.app.model.TorrentData;
+import home.app.model.qbTorrent.Size;
 import home.app.service.rest.RestQbTorrentService;
-import home.app.utils.calculator.information.Size;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
@@ -14,7 +15,7 @@ import java.util.List;
 
 @Slf4j
 @Service
-@Primary
+//@Primary
 public class MockQbTorrentService implements QbTorrentService {
 
     @Autowired
@@ -27,13 +28,12 @@ public class MockQbTorrentService implements QbTorrentService {
                 .name("Mock")
                 .rootPath("MockRootPath")
                 .rootPath("MockContentPath")
-                .totalSize(444L)
-                .sizeTotal(Size.builder().size(3.4).unit("Mb").build())
-                .downloaded(50)
-                .sizeDownloaded(Size.builder().size(5.5).unit("Mb").build())
+                .rawTotalSize(444L)
+                .convertedTotalSize(Size.builder().size(3.4).unit("Mb").build())
+                .downloadedPercent(50.)
+                .convertedDownloadedSize(Size.builder().size(5.5).unit("Mb").build())
                 .downloadedPercent(3.3)
                 .state("Приостановлен")
-                .telegramUserHash("sadlkjnasl")
                 .build()
                 ,
                 TorrentData.builder()
@@ -41,13 +41,12 @@ public class MockQbTorrentService implements QbTorrentService {
                         .name("ASdkjdfhbl-kjm3k,fkkkkkkkkkkkkkkkkkkkkkk")
                         .rootPath("MockRootPath")
                         .rootPath("MockContentPath")
-                        .totalSize(444L)
-                        .sizeTotal(Size.builder().size(3.4).unit("Mb").build())
-                        .downloaded(50)
-                        .sizeDownloaded(Size.builder().size(5.5).unit("Mb").build())
+                        .rawTotalSize(444L)
+                        .convertedTotalSize(Size.builder().size(3.4).unit("Mb").build())
+                        .downloadedPercent(50.)
+                        .convertedDownloadedSize(Size.builder().size(5.5).unit("Mb").build())
                         .downloadedPercent(3.3)
                         .state("pausedDL")
-                        .telegramUserHash("aaa")
                         .build()
                 ,
                 TorrentData.builder()
@@ -55,13 +54,12 @@ public class MockQbTorrentService implements QbTorrentService {
                         .name("SSSSSSfgklji4ds-sdakfl.eefd")
                         .rootPath("MockRootPath")
                         .rootPath("MockContentPath")
-                        .totalSize(444L)
-                        .sizeTotal(Size.builder().size(3.4).unit("Mb").build())
-                        .downloaded(50)
-                        .sizeDownloaded(Size.builder().size(5.5).unit("Mb").build())
+                        .rawTotalSize(444L)
+                        .convertedTotalSize(Size.builder().size(3.4).unit("Mb").build())
+                        .downloadedPercent(50.)
+                        .convertedDownloadedSize(Size.builder().size(5.5).unit("Mb").build())
                         .downloadedPercent(3.3)
                         .state("downloading")
-                        .telegramUserHash("aaa")
                         .build()
         );
     }

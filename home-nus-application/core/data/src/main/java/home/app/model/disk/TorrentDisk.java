@@ -1,14 +1,12 @@
 package home.app.model.disk;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import home.app.model.disk.types.NasDiskType;
-import home.app.model.qbTorrent.Torrent;
 import lombok.Data;
 
-import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "NAS_DISK")
@@ -20,9 +18,6 @@ public class TorrentDisk extends NasDisk {
     private Double freeSpace;
     @Column(name = "UNIT")
     private String unit;
-    @OneToMany(mappedBy = "torrentDisk", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    @JsonManagedReference
-    private Set<Torrent> torrents = new HashSet<>();
 
     @Override
     public NasDiskType initialDiskType() {

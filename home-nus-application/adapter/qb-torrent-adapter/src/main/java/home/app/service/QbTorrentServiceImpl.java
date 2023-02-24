@@ -5,6 +5,7 @@ import home.app.model.TorrentCategory;
 import home.app.model.TorrentData;
 import home.app.service.rest.RestQbTorrentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.NotNull;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Service
+@Primary
 public class QbTorrentServiceImpl implements QbTorrentService {
 
     @Autowired

@@ -64,8 +64,8 @@ public class RawTorrentDataParser {
                     .name(String.valueOf(raw.get(RawKeysQbTorrent.NAME.getKey())))
                     .rootPath(String.valueOf(raw.get(RawKeysQbTorrent.ROOT_PATH.getKey())))
                     .contentPath(String.valueOf(raw.get(RawKeysQbTorrent.CONTENT_PATH.getKey())))
-                    .totalSize((Long) raw.get(RawKeysQbTorrent.TOTAL_SIZE.getKey()))
-                    .downloaded((Integer) raw.get(RawKeysQbTorrent.DOWNLOADED.getKey()))
+                    .rawTotalSize((Long) raw.get(RawKeysQbTorrent.TOTAL_SIZE.getKey()))
+                    .rawDownloadedSize((Integer) raw.get(RawKeysQbTorrent.DOWNLOADED.getKey()))
                     .state(String.valueOf(raw.get(RawKeysQbTorrent.STATE.getKey())))
                     .build();
         } catch (Exception e) {
@@ -76,9 +76,9 @@ public class RawTorrentDataParser {
 
     private TorrentData finishBuilding(TorrentData torrentData, String key) {
         torrentData.setHash(key);
-        torrentData.setSizeTotal(informationConverter.autoConvert(torrentData.getTotalSize()));
-        torrentData.setSizeDownloaded(informationConverter.autoConvert(torrentData.getDownloaded()));
-        torrentData.setDownloadedPercent(torrentCalculator.calculateDownloadingPercent(torrentData.getTotalSize(), torrentData.getDownloaded()));
+        torrentData.setConvertedTotalSize(informationConverter.autoConvert(torrentData.getRawTotalSize()));
+        torrentData.setConvertedDownloadedSize(informationConverter.autoConvert(torrentData.getRawDownloadedSize()));
+        torrentData.setDownloadedPercent(torrentCalculator.calculateDownloadingPercent(torrentData.getRawTotalSize(), torrentData.getRawDownloadedSize()));
         return torrentData;
     }
 

@@ -1,5 +1,6 @@
 package home.app.utils.calculator.information;
 
+import home.app.model.qbTorrent.Size;
 import home.app.utils.calculator.base.Converter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

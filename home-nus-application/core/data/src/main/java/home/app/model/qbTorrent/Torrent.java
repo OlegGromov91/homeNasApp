@@ -1,8 +1,5 @@
 package home.app.model.qbTorrent;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
-import home.app.model.disk.TorrentDisk;
 import home.app.model.qbTorrent.enums.Status;
 import home.app.model.qbTorrent.enums.SystemTorrentType;
 import lombok.AllArgsConstructor;
@@ -22,34 +19,43 @@ public class Torrent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "TORRENT_ID")
     private Long id;
 
     @Column(name = "HASH_NAME")
     private String hash;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "DISK_ID", nullable = false)
-    @JsonBackReference
-    private TorrentDisk torrentDisk;
-
     @Column(name = "TORRENT_NAME")
     private String name;
 
     @Column(name = "ROOT_PATH")
-    private String rootPath;  //save_path
+    private String rootPath;
 
     @Column(name = "CONTENT_PATH")
     private String contentPath;
 
-    @Column(name = "TOTAL_SIZE")
-    private Long totalSize;
+    @Column(name = "RAW_TOTAL_SIZE")
+    private Long rawTotalSize;
 
-    @Column(name = "DOWNLOADED_SIZE")
-    private Long downloaded;
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "size", column = @Column(name = "CONVERTED_TOTAL_SIZE")),
+            @AttributeOverride(name = "unit", column = @Column(name = "CONVERTED_TOTAL_UNIT")),
+    })
+    private Size convertedTotalSize;
+
+    @Column(name = "RAW_DOWNLOADED_SIZE")
+    private Integer rawDownloadedSize;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "size", column = @Column(name = "CONVERTED_DOWNLOADED_SIZE")),
+            @AttributeOverride(name = "unit", column = @Column(name = "CONVERTED_DOWNLOADED_UNIT")),
+    })
+    private Size convertedDownloadedSize;
+
 
     @Column(name = "DOWNLOADED_PROCENT")
-    private Float downloadedPercent;  //считается динамически
+    private Double downloadedPercent;
 
     @Column(name = "STATE")
     @Enumerated(value = EnumType.STRING)
