@@ -2,13 +2,11 @@ package home.app.service;
 
 import home.app.model.TorrentCategory;
 import home.app.view.qbTorrent.SizeView;
-import home.app.view.qbTorrent.TorrentDataView;
-import home.app.model.qbTorrent.Size;
+import home.app.view.qbTorrent.TorrentView;
 import home.app.service.rest.RestQbTorrentService;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.NotNull;
@@ -23,8 +21,8 @@ public class MockQbTorrentService implements QbTorrentService {
     private RestQbTorrentService restQbTorrentService;
 
     //TODO у телеграмма могут быть проблеммы с длинной строки и в ActionsTorrentMenuBotResolver лучше использовать id из базы
-    public List<TorrentDataView> getInfoAboutAllDownloadingTorrents() {
-        return List.of(TorrentDataView.builder()
+    public List<TorrentView> getInfoAboutAllDownloadingTorrents() {
+        return List.of(TorrentView.builder()
                 .hash("3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3")
                 .name("Mock")
                 .rootPath("MockRootPath")
@@ -37,7 +35,7 @@ public class MockQbTorrentService implements QbTorrentService {
                 .state("Приостановлен")
                 .build()
                 ,
-                TorrentDataView.builder()
+                TorrentView.builder()
                         .hash("3cd13f28cdc138b87165gggbcb2d4ab0ee7956e3")
                         .name("ASdkjdfhbl-kjm3k,fkkkkkkkkkkkkkkkkkkkkkk")
                         .rootPath("MockRootPath")
@@ -50,7 +48,7 @@ public class MockQbTorrentService implements QbTorrentService {
                         .state("pausedDL")
                         .build()
                 ,
-                TorrentDataView.builder()
+                TorrentView.builder()
                         .hash("3cd13f28cdc138b33365gggbcb2d4ab0ee7956e3")
                         .name("SSSSSSfgklji4ds-sdakfl.eefd")
                         .rootPath("MockRootPath")

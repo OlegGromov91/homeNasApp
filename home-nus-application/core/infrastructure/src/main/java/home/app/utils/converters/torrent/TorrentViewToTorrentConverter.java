@@ -1,20 +1,20 @@
-package home.app.utils.converters;
+package home.app.utils.converters.torrent;
 
 import home.app.model.qbTorrent.Size;
 import home.app.model.qbTorrent.Torrent;
 import home.app.model.qbTorrent.enums.Status;
 import home.app.model.qbTorrent.enums.TorrentCategory;
-import home.app.view.qbTorrent.TorrentDataView;
+import home.app.view.qbTorrent.TorrentView;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
 @Component
-public class TorrentDataViewToTorrentConverter implements Converter<TorrentDataView, Torrent> {
+public class TorrentViewToTorrentConverter implements Converter<TorrentView, Torrent> {
 
     @Override
-    public Torrent convert(TorrentDataView source) {
+    public Torrent convert(TorrentView source) {
         return Torrent.builder()
                 .id(source.getId())
                 .hash(source.getHash())

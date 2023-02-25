@@ -1,7 +1,7 @@
 package home.app.service;
 
 import home.app.model.TorrentCategory;
-import home.app.view.qbTorrent.TorrentDataView;
+import home.app.view.qbTorrent.TorrentView;
 import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.NotNull;
@@ -11,7 +11,7 @@ import java.util.List;
 public interface QbTorrentService {
 
 
-    List<TorrentDataView> getInfoAboutAllDownloadingTorrents();
+    List<TorrentView> getInfoAboutAllDownloadingTorrents();
 
     void pauseTorrent(String torrentHashName);
 

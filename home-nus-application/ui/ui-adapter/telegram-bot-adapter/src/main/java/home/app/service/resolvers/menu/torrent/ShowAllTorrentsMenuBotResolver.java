@@ -3,7 +3,7 @@ package home.app.service.resolvers.menu.torrent;
 import com.google.common.base.Strings;
 import home.app.service.enums.TorrentMenuResolverButtonData;
 import home.app.service.resolvers.BotResolver;
-import home.app.view.qbTorrent.TorrentDataView;
+import home.app.view.qbTorrent.TorrentView;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
@@ -36,9 +36,9 @@ public class ShowAllTorrentsMenuBotResolver extends ActionTorrentMenuBotResolver
 
     @Override
     protected EditMessageText processCallbackQuery(CallbackQuery callbackQuery) {
-        List<TorrentDataView> torrentDatumViews = qbTorrentService.getInfoAboutAllDownloadingTorrents();
+        List<TorrentView> torrentDatumViews = qbTorrentService.getInfoAboutAllDownloadingTorrents();
 
-        String data = torrentDatumViews.isEmpty() ? "Список загрузок пуст" : torrentDatumViews.stream().map(TorrentDataView::toString).collect(Collectors.joining());
+        String data = torrentDatumViews.isEmpty() ? "Список загрузок пуст" : torrentDatumViews.stream().map(TorrentView::getTorrentInfo).collect(Collectors.joining());
 
         Long chatId = extractChatIdFromCallbackQuery(callbackQuery);
         Integer messageId = callbackQuery.getMessage().getMessageId();

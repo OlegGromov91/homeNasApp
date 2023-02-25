@@ -5,7 +5,7 @@ import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TypeConverter {
+public class ApplicationTypeConverter {
 
     @Autowired
     private ConversionService conversionService;

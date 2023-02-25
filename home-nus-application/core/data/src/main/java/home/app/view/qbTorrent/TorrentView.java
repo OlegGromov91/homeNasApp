@@ -12,7 +12,7 @@ import java.util.Arrays;
 @Getter
 @Setter
 @Builder
-public class TorrentDataView {
+public class TorrentView {
     // TODO: парсинг инфо о диске
     private Long id;
     private String hash;
@@ -27,8 +27,7 @@ public class TorrentDataView {
     private String state;
     private String torrentCategory;
 
-    @Override
-    public String toString() {
+    public String getTorrentInfo() {
         return "\tИмя='" + name + '\'' +
                 ",\n Размер файла =" + convertedTotalSize.getSize() + " " + convertedTotalSize.getUnit() +
                 ", Скаченно=" + convertedDownloadedSize.getSize() + " " + convertedDownloadedSize.getUnit() +
@@ -38,7 +37,6 @@ public class TorrentDataView {
                 '\''
                 + "\n_________________\n"
                 ;
-
     }
 
     private String extractStatus() {

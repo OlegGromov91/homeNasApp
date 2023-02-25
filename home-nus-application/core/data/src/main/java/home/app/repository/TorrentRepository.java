@@ -11,4 +11,6 @@ public interface TorrentRepository extends CrudRepository<Torrent, Long> {
 
     Optional<Torrent> findTorrentByHash(String hash);
 
+    Optional<Torrent> findTorrentByHashAndName(String hash, String name);
+
 }

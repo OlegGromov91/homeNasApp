@@ -1,6 +1,6 @@
 package home.app.configuration;
 
-import home.app.utils.converters.TorrentDataViewToTorrentConverter;
+import home.app.utils.converters.torrent.TorrentViewToTorrentConverter;
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
 import io.netty.handler.ssl.util.InsecureTrustManagerFactory;
@@ -38,7 +38,7 @@ public class WebConfiguration implements WebMvcConfigurer {
 
     @Override
     public void addFormatters(FormatterRegistry registry) {
-        registry.addConverter(new TorrentDataViewToTorrentConverter());
+        registry.addConverter(new TorrentViewToTorrentConverter());
     }
 
 }

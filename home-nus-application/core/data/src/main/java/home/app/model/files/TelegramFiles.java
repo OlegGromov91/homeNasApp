@@ -1,11 +1,11 @@
 package home.app.model.files;
 
-        import home.app.model.files.types.ApplicationFileTypes;
-        import home.app.model.user.ApplicationUser;
-        import lombok.*;
+import home.app.model.files.types.ApplicationFileTypes;
+import home.app.model.user.ApplicationUser;
+import lombok.*;
 
-        import javax.persistence.*;
-        import java.time.LocalDateTime;
+import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "APPLICATION_FILES")

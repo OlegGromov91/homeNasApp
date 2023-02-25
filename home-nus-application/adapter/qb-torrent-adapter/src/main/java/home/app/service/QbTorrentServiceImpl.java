@@ -1,16 +1,21 @@
 package home.app.service;
 
-import home.app.exception.TorrentException;
 import home.app.model.TorrentCategory;
-import home.app.view.qbTorrent.TorrentDataView;
+import home.app.model.qbTorrent.Torrent;
+import home.app.repository.TorrentRepository;
+import home.app.repository.UserRepository;
 import home.app.service.rest.RestQbTorrentService;
+import home.app.utils.converters.ApplicationTypeConverter;
+import home.app.view.qbTorrent.TorrentView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 @Primary
@@ -18,9 +23,21 @@ public class QbTorrentServiceImpl implements QbTorrentService {
 
     @Autowired
     private RestQbTorrentService restQbTorrentService;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private TorrentRepository torrentRepository;
+    @Autowired
+    private ApplicationTypeConverter converter;
 
-    public List<TorrentDataView> getInfoAboutAllDownloadingTorrents() {
-        return restQbTorrentService.getAllDownloadingTorrents();
+    /**
+     * TODO Джоба, которая чистит загруженные торренты, будет кидать в телеграм сообщение о том, что файл загружен
+     */
+    @Transactional
+    public List<TorrentView> getInfoAboutAllDownloadingTorrents() {
+        List<TorrentView> torrentViews = restQbTorrentService.getAllDownloadingTorrents();
+        torrentViews.forEach(this::updateTorrent);
+        return torrentViews;
     }
 
     @Override
@@ -54,11 +71,10 @@ public class QbTorrentServiceImpl implements QbTorrentService {
         restQbTorrentService.deleteTorrent(torrentHashName, Boolean.TRUE);
     }
 
-    private TorrentCategory extractTorrentCategory(String category) {
-        try {
-            return TorrentCategory.valueOf(category);
-        } catch (IllegalArgumentException e) {
-            throw new TorrentException("Can not find category " + category);
-        }
+    private void updateTorrent(TorrentView torrentView) {
+        Optional<Torrent> torrent = torrentRepository.findTorrentByHashAndName(torrentView.getHash(), torrentView.getName());
+        Torrent saveCandidate = converter.convert(torrentView, Torrent.class);
+        torrent.ifPresent(value -> saveCandidate.setId(value.getId()));
+        torrentRepository.save(saveCandidate);
     }
 }

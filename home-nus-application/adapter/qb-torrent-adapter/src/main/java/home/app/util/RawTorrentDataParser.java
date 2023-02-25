@@ -3,7 +3,7 @@ package home.app.util;
 import com.google.common.collect.Lists;
 import home.app.exception.ExtractRawDataException;
 import home.app.model.RawKeysQbTorrent;
-import home.app.view.qbTorrent.TorrentDataView;
+import home.app.view.qbTorrent.TorrentView;
 import home.app.utils.calculator.information.InformationConverter;
 import home.app.utils.calculator.torrent.TorrentCalculator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,20 +32,20 @@ public class RawTorrentDataParser {
         return null;
     }
 
-    public List<TorrentDataView> parse(String rawData) {
+    public List<TorrentView> parse(String rawData) {
         RawTorrent rawTorrent = getRawData();
         rawTorrent.writeData(rawData);
         return convertData(rawTorrent);
     }
 
-    private List<TorrentDataView> convertData(RawTorrent rawTorrent) {
-        List<TorrentDataView> torrentDatumViews = Lists.newArrayList();
+    private List<TorrentView> convertData(RawTorrent rawTorrent) {
+        List<TorrentView> torrentDatumViews = Lists.newArrayList();
         Map<String, Object> torrents = rawTorrent.getRawData().getJSONObject(ROOT_TORRENTS_KEY).toMap();
 
         for (String key : torrents.keySet()) {
             try {
                 HashMap<String, Object> raw = (HashMap<String, Object>) torrents.get(key);
-                TorrentDataView extractingData = extractData(key, raw);
+                TorrentView extractingData = extractData(key, raw);
                 torrentDatumViews.add(finishBuilding(extractingData, key));
             } catch (ClassCastException e) {
                 e.printStackTrace();
@@ -55,12 +55,12 @@ public class RawTorrentDataParser {
         return torrentDatumViews;
     }
 
-    private TorrentDataView extractData(String key, HashMap<String, Object> raw) {
+    private TorrentView extractData(String key, HashMap<String, Object> raw) {
         if (Objects.isNull(raw) || raw.isEmpty()) {
             throw new ExtractRawDataException("There is empty data by torrent hash " + key);
         }
         try {
-            return TorrentDataView.builder()
+            return TorrentView.builder()
                     .name(String.valueOf(raw.get(RawKeysQbTorrent.NAME.getKey())))
                     .rootPath(String.valueOf(raw.get(RawKeysQbTorrent.ROOT_PATH.getKey())))
                     .contentPath(String.valueOf(raw.get(RawKeysQbTorrent.CONTENT_PATH.getKey())))
@@ -75,12 +75,12 @@ public class RawTorrentDataParser {
         }
     }
 
-    private TorrentDataView finishBuilding(TorrentDataView torrentDataView, String key) {
-        torrentDataView.setHash(key);
-        torrentDataView.setConvertedTotalSize(informationConverter.autoConvert(torrentDataView.getRawTotalSize()));
-        torrentDataView.setConvertedDownloadedSize(informationConverter.autoConvert(torrentDataView.getRawDownloadedSize()));
-        torrentDataView.setDownloadedPercent(torrentCalculator.calculateDownloadingPercent(torrentDataView.getRawTotalSize(), torrentDataView.getRawDownloadedSize()));
-        return torrentDataView;
+    private TorrentView finishBuilding(TorrentView torrentView, String key) {
+        torrentView.setHash(key);
+        torrentView.setConvertedTotalSize(informationConverter.autoConvert(torrentView.getRawTotalSize()));
+        torrentView.setConvertedDownloadedSize(informationConverter.autoConvert(torrentView.getRawDownloadedSize()));
+        torrentView.setDownloadedPercent(torrentCalculator.calculateDownloadingPercent(torrentView.getRawTotalSize(), torrentView.getRawDownloadedSize()));
+        return torrentView;
     }
 
 //    public void updateDiskSpace(RawTorrent rawTorrent, List<TorrentData> data) {

@@ -21,7 +21,7 @@ public class Torrent {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "HASH_NAME")
+    @Column(name = "HASH_NAME", unique = true, nullable = false)
     private String hash;
 
     @Column(name = "TORRENT_NAME")

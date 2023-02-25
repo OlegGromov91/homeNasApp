@@ -1,7 +1,7 @@
 package home.app.service.rest;
 
 import home.app.exception.RestQbTorrentException;
-import home.app.view.qbTorrent.TorrentDataView;
+import home.app.view.qbTorrent.TorrentView;
 import home.app.util.RawTorrentDataParser;
 import okhttp3.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,7 +53,7 @@ public class RestQbTorrentService {
     @Autowired
     private OkHttpClient okHttpClient;
 
-    public List<TorrentDataView> getAllDownloadingTorrents() {
+    public List<TorrentView> getAllDownloadingTorrents() {
         String uri = rootUri + port + allDataUri;
         try {
             String result = webClient.get()
