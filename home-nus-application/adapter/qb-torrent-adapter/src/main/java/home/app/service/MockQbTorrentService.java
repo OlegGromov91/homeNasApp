@@ -1,12 +1,14 @@
 package home.app.service;
 
 import home.app.model.TorrentCategory;
+import home.app.view.qbTorrent.SizeView;
 import home.app.view.qbTorrent.TorrentDataView;
 import home.app.model.qbTorrent.Size;
 import home.app.service.rest.RestQbTorrentService;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.NotNull;
@@ -28,9 +30,9 @@ public class MockQbTorrentService implements QbTorrentService {
                 .rootPath("MockRootPath")
                 .rootPath("MockContentPath")
                 .rawTotalSize(444L)
-                .convertedTotalSize(Size.builder().size(3.4).unit("Mb").build())
+                .convertedTotalSize(SizeView.builder().size(3.4).unit("Mb").build())
                 .downloadedPercent(50.)
-                .convertedDownloadedSize(Size.builder().size(5.5).unit("Mb").build())
+                .convertedDownloadedSize(SizeView.builder().size(5.5).unit("Mb").build())
                 .downloadedPercent(3.3)
                 .state("Приостановлен")
                 .build()
@@ -41,9 +43,9 @@ public class MockQbTorrentService implements QbTorrentService {
                         .rootPath("MockRootPath")
                         .rootPath("MockContentPath")
                         .rawTotalSize(444L)
-                        .convertedTotalSize(Size.builder().size(3.4).unit("Mb").build())
+                        .convertedTotalSize(SizeView.builder().size(3.4).unit("Mb").build())
                         .downloadedPercent(50.)
-                        .convertedDownloadedSize(Size.builder().size(5.5).unit("Mb").build())
+                        .convertedDownloadedSize(SizeView.builder().size(5.5).unit("Mb").build())
                         .downloadedPercent(3.3)
                         .state("pausedDL")
                         .build()
@@ -54,9 +56,9 @@ public class MockQbTorrentService implements QbTorrentService {
                         .rootPath("MockRootPath")
                         .rootPath("MockContentPath")
                         .rawTotalSize(444L)
-                        .convertedTotalSize(Size.builder().size(3.4).unit("Mb").build())
+                        .convertedTotalSize(SizeView.builder().size(3.4).unit("Mb").build())
                         .downloadedPercent(50.)
-                        .convertedDownloadedSize(Size.builder().size(5.5).unit("Mb").build())
+                        .convertedDownloadedSize(SizeView.builder().size(5.5).unit("Mb").build())
                         .downloadedPercent(3.3)
                         .state("downloading")
                         .build()

@@ -2,6 +2,7 @@ package home.app.utils.calculator.information;
 
 import home.app.model.qbTorrent.Size;
 import home.app.utils.calculator.base.Converter;
+import home.app.view.qbTorrent.SizeView;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -32,7 +33,7 @@ public class InformationConverter implements Converter {
         return doFormat(byteValue.doubleValue() / TERABYTE.getSize());
     }
 
-    public Size autoConvert(@NotNull Number byteValue) {
+    public SizeView autoConvert(@NotNull Number byteValue) {
         if (byteValue.longValue() <= KILOBYTE_MAX_VALUE) {
             return buildSize(KILOBYTE, convertByteToKilobyte(byteValue));
         }
@@ -48,8 +49,8 @@ public class InformationConverter implements Converter {
         return buildSize(BYTE, doFormat(byteValue.doubleValue()));
     }
 
-    private final Size buildSize(MultipleByteUnits units, Double size) {
-        return Size.builder()
+    private final SizeView buildSize(MultipleByteUnits units, Double size) {
+        return SizeView.builder()
                 .size(size)
                 .unit(units.getMetric())
                 .build();

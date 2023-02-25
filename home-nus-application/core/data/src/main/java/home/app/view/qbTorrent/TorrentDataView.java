@@ -1,6 +1,5 @@
 package home.app.view.qbTorrent;
 
-import home.app.model.qbTorrent.Size;
 import home.app.model.qbTorrent.enums.Status;
 import home.app.model.qbTorrent.enums.TorrentCategory;
 import lombok.Builder;
@@ -21,9 +20,9 @@ public class TorrentDataView {
     private String rootPath;
     private String contentPath;
     private Long rawTotalSize;
-    private Size convertedTotalSize;
+    private SizeView convertedTotalSize;
     private Integer rawDownloadedSize;
-    private Size convertedDownloadedSize;
+    private SizeView convertedDownloadedSize;
     private Double downloadedPercent;
     private String state;
     private String torrentCategory;

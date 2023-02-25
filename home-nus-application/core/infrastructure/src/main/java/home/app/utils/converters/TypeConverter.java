@@ -1,4 +1,4 @@
-package home.app.utils;
+package home.app.utils.converters;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.ConversionService;

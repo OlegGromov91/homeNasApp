@@ -1,12 +1,9 @@
 package home.app.service.resolvers.menu.torrent;
 
 import com.google.common.base.Strings;
-import home.app.model.qbTorrent.Torrent;
 import home.app.service.enums.TorrentMenuResolverButtonData;
 import home.app.service.resolvers.BotResolver;
-import home.app.utils.TypeConverter;
 import home.app.view.qbTorrent.TorrentDataView;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
