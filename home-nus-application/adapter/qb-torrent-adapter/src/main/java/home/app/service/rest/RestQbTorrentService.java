@@ -108,28 +108,6 @@ public class RestQbTorrentService {
         }
     }
 
-    public void downloadTorrent(byte[] file, Document telegramDocument) {
-        String uri = rootUri + port + downloadTorrentUri;
-        RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
-                .addFormDataPart("file", telegramDocument.getFileName(),
-                        RequestBody.create(file))
-                .addFormDataPart("category", "музы")
-                .build();
-
-        Request request = new Request.Builder()
-                .url(uri)
-                .method("POST", body)
-                .build();
-        try {
-            Response response = okHttpClient.newCall(request).execute();
-            if (!Objects.equals(response.message(), "OK")) {
-                throw new RestQbTorrentException("get error when try request to " + downloadTorrentUri + " with file " + telegramDocument.getFileName());
-            }
-        } catch (IOException e) {
-            throw new RestQbTorrentException("get error when try request to " + downloadTorrentUri + " with file " + telegramDocument.getFileName() + "cause " + e);
-        }
-    }
-
     public void deleteTorrent(String torrentHashName, boolean isNeedDeleteData) {
         String uri = rootUri + port + deleteTorrentUri;
         MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
