@@ -1,6 +1,6 @@
 package home.app.service.rest;
 
-import home.app.service.exceptions.RestMeTubeException;
+import home.app.exceptions.RestMeTubeException;
 import lombok.NonNull;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package home.app.service;
 
-import home.app.service.exceptions.BotResolveException;
+import home.app.exceptions.BotResolveException;
 import home.app.service.resolvers.BotResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;

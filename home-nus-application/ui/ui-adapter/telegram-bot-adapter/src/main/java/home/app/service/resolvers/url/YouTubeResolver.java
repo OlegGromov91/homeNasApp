@@ -1,31 +1,42 @@
-package home.app.service.resolvers;
+package home.app.service.resolvers.url;
 
+import home.app.service.MeTubeService;
+import home.app.service.resolvers.BotResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.Message;
+import org.telegram.telegrambots.meta.api.objects.MessageEntity;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import home.app.service.rest.RestMeTubeService;
 
 @Component
-public class TestYouTube extends AbstractBotResolver{
+public class YouTubeResolver extends AbstractUrlResolver {
+
+    private static final String BASIC_SITE_URL = "https://www.youtube.com/";
 
     @Autowired
-    private RestMeTubeService restMeTubeService;
+    private MeTubeService meTubeService;
+
     @Override
     protected EditMessageText processCallbackQuery(CallbackQuery callbackQuery) {
         return null;
     }
 
+    //TODO заполнять формат динамически
     @Override
     protected SendMessage processMessage(Message telegramMessage) {
-        restMeTubeService.addVideoToDownload("sadadsa");
+        String url = telegramMessage.getEntities().stream()
+                .filter(messageEntity -> messageEntity.getText().contains(BASIC_SITE_URL))
+                .map(MessageEntity::getText)
+                .findFirst().get();
+
+        meTubeService.addNewVideoToDownload(url, "mp4");
         Long chatId = telegramMessage.getChatId();
         SendMessage message = new SendMessage();
         message.setChatId(chatId);
-        message.setText(restMeTubeService.hashCode() + "");
+        message.setText("Видео загружается");
         return message;
     }
 
@@ -34,9 +45,11 @@ public class TestYouTube extends AbstractBotResolver{
         return null;
     }
 
+
+    // TODO: сделать цепочку от родителя к потомка с hasSome...
     @Override
     public boolean identifyResolver(Update update) {
-        return update.getMessage().getEntities().stream().anyMatch(i -> i.getText().contains("youtube")) ||  update.getMessage().getText().contains("youtube");
+        return super.identifyResolver(update) && update.getMessage().getEntities().stream().anyMatch(messageEntity -> messageEntity.getText().contains(BASIC_SITE_URL));
     }
 
     @Override

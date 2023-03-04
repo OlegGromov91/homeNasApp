@@ -1,4 +1,4 @@
-package home.app.service.exceptions;
+package home.app.exceptions;
 
 public class DownloadedDirectoryNotAvailableException extends RuntimeException {
 
