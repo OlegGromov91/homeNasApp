@@ -9,7 +9,6 @@ public enum VideoFormat {
 
     MP_4("mp4"),
     MP_3("mp3"),
-    UNKNOWN("Неизвестный формат"),
     ;
 
     private final String format;
@@ -19,7 +18,7 @@ public enum VideoFormat {
     }
 
     public static VideoFormat extractVideoFormat(String format) {
-        return Arrays.stream(VideoFormat.values()).filter(f -> f.getFormat().equals(format)).findFirst().orElse(VideoFormat.UNKNOWN);
+        return Arrays.stream(VideoFormat.values()).filter(f -> f.getFormat().equals(format)).findFirst().orElse(VideoFormat.MP_4);
     }
 
 }

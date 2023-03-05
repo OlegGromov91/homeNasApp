@@ -7,7 +7,9 @@
       <module fileurl="file://$PROJECT_DIR$/core/data/data.iml" filepath="$PROJECT_DIR$/core/data/data.iml" />
       <module fileurl="file://$PROJECT_DIR$/home-nus-application.iml" filepath="$PROJECT_DIR$/home-nus-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/infrastructure/infrastructure.iml" filepath="$PROJECT_DIR$/core/infrastructure/infrastructure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/adapter/me-tube-adapter/me-tube-adapter.iml" filepath="$PROJECT_DIR$/adapter/me-tube-adapter/me-tube-adapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/adapter/qb-torrent-adapter/qb-torrent-adapter.iml" filepath="$PROJECT_DIR$/adapter/qb-torrent-adapter/qb-torrent-adapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schedule/schedule.iml" filepath="$PROJECT_DIR$/schedule/schedule.iml" />
       <module fileurl="file://$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/telegram-bot-adapter.iml" filepath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/telegram-bot-adapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/ui/ui.iml" filepath="$PROJECT_DIR$/ui/ui.iml" />
       <module fileurl="file://$PROJECT_DIR$/ui/ui-adapter/ui-adapter.iml" filepath="$PROJECT_DIR$/ui/ui-adapter/ui-adapter.iml" />

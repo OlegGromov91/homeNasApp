@@ -5,16 +5,21 @@ import home.app.exceptions.ExtractNameFromYoutubeException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
+import java.io.File;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 
 @Component
 public class MeTubeUtils {
 
     private static final String YOUTUBE_TITLE_POSTFIX = " - YouTube";
-    private static final String DOWNLOADING_FILE_POSTFIX_TYPE = ".part";
 
-
-//Arrays.stream(file.list()).filter(i -> i.endsWith(".part")).forEach(i -> System.out.println(i));
+    @Value("${home-application.meTube.downloadedPath}")
+    private String downloadedPath;
 
     public String getVideoNameFromYouTube(String uri) {
         try {
@@ -26,6 +31,12 @@ public class MeTubeUtils {
             return "";
         }
     }
+
+    public List<String> getVideoFromDisk() {
+        File file = new File(downloadedPath);
+        return (Objects.nonNull(file.list())) ? List.of(file.list()) : Collections.EMPTY_LIST;
+    }
+
 
     private String extractVideoNameFromTitle(String rawName) {
         boolean isNameValid = !Strings.isNullOrEmpty(rawName) && rawName.length() > YOUTUBE_TITLE_POSTFIX.length();

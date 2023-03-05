@@ -8,6 +8,7 @@
         <module>adapter</module>
         <module>web-starter</module>
         <module>core</module>
+        <module>schedule</module>
     </modules>
 
     <parent>

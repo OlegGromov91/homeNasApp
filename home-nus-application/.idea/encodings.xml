@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/adapter/me-tube-adapter/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/core/data/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/core/infrastructure/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schedule/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web-starter/src/main/java" charset="UTF-8" />
   </component>
