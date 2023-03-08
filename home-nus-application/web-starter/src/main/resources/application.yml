@@ -17,16 +17,35 @@ spring:
 
 home-application:
   uri:
-    root: "http://192.168.0.12"
-  qbTorrent:
-    port: ":20909"
+    root: "http://192.168.84.136"
+  q-bit-torrent:
+    port: ":10095"
+    login:
+      uri: "/api/v2/auth/login"
+      username: "admin"
+      password: "adminadmin"
     uri:
-      getAllData: "/api/v2/sync/maindata"
-      deleteTorrent: "/api/v2/torrents/delete"
-      pauseTorrent: "/api/v2/torrents/pause"
-      resumeTorrent: "/api/v2/torrents/resume"
-      downloadTorrent: "/api/v2/torrents/add"
-    requestTimeout: 1
+      get-all-data: "/api/v2/sync/maindata"
+      delete-torrent: "/api/v2/torrents/delete"
+      pause-torrent: "/api/v2/torrents/pause"
+      resume-torrent: "/api/v2/torrents/resume"
+      download-torrent: "/api/v2/torrents/add"
+    request-timeout: 1
+    torrent-category:
+      is-need-download-selectivity-by-user: false
+      root-dataset-media-path: "/media"
+      mappings:
+        '{
+        "Музыка":"/music",
+        "Видео":"/video"
+          }'
+  meTube:
+    port: ":10216"
+    downloadedPath: "Z:\\videos"
+    quality: "best"
+    uri:
+      addVideoUri: "/add"
+
 
 bot:
   name: "home_nas_app_bot"

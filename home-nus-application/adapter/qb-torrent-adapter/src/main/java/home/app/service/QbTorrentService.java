@@ -1,6 +1,5 @@
 package home.app.service;
 
-import home.app.model.TorrentCategory;
 import home.app.view.qbTorrent.TorrentView;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +16,7 @@ public interface QbTorrentService {
 
     void resumeTorrent(String torrentHashName);
 
-    void downloadTorrent(@NotNull byte[] file, @NotNull String fileName, TorrentCategory torrentCategory);
+    void downloadTorrent(@NotNull byte[] file, @NotNull String fileName, String category, String savePath);
 
     void deleteTorrent(String torrentHashName);
 

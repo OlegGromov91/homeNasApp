@@ -1,7 +1,6 @@
 package home.app.configuration;
 
 import home.app.service.enums.MenuCommands;
-import home.app.service.enums.TorrentFileResolverButtonData;
 import home.app.service.enums.TorrentMenuResolverButtonData;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,15 +20,6 @@ import static org.springframework.beans.factory.config.ConfigurableBeanFactory.S
 
 @Configuration
 public class BotConfiguration {
-
-    @Bean(value = "torrentFileInlineKeyboardMarkup")
-    public InlineKeyboardMarkup torrentFileInlineKeyboardMarkup() {
-        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
-        inlineKeyboardMarkup.setKeyboard(
-                List.of(Arrays.stream(TorrentFileResolverButtonData.values()).map(TorrentFileResolverButtonData::getButton).collect(Collectors.toList()))
-        );
-        return inlineKeyboardMarkup;
-    }
 
     @Bean(value = "torrentMenuInlineKeyboardMarkup")
     public InlineKeyboardMarkup torrentMenuInlineKeyboardMarkup() {

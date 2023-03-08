@@ -1,10 +1,8 @@
 package home.app.service;
 
-import home.app.model.TorrentCategory;
+import home.app.service.rest.RestQbTorrentService;
 import home.app.view.qbTorrent.SizeView;
 import home.app.view.qbTorrent.TorrentView;
-import home.app.service.rest.RestQbTorrentService;
-
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,17 +21,17 @@ public class MockQbTorrentService implements QbTorrentService {
     //TODO у телеграмма могут быть проблеммы с длинной строки и в ActionsTorrentMenuBotResolver лучше использовать id из базы
     public List<TorrentView> getInfoAboutAllDownloadingTorrents() {
         return List.of(TorrentView.builder()
-                .hash("3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3")
-                .name("Mock")
-                .rootPath("MockRootPath")
-                .rootPath("MockContentPath")
-                .rawTotalSize(444L)
-                .convertedTotalSize(SizeView.builder().size(3.4).unit("Mb").build())
-                .downloadedPercent(50.)
-                .convertedDownloadedSize(SizeView.builder().size(5.5).unit("Mb").build())
-                .downloadedPercent(3.3)
-                .state("Приостановлен")
-                .build()
+                        .hash("3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3")
+                        .name("Mock")
+                        .rootPath("MockRootPath")
+                        .rootPath("MockContentPath")
+                        .rawTotalSize(444L)
+                        .convertedTotalSize(SizeView.builder().size(3.4).unit("Mb").build())
+                        .downloadedPercent(50.)
+                        .convertedDownloadedSize(SizeView.builder().size(5.5).unit("Mb").build())
+                        .downloadedPercent(3.3)
+                        .state("Приостановлен")
+                        .build()
                 ,
                 TorrentView.builder()
                         .hash("3cd13f28cdc138b87165gggbcb2d4ab0ee7956e3")
@@ -65,7 +63,8 @@ public class MockQbTorrentService implements QbTorrentService {
 
     public void downloadTorrent(@NotNull byte[] file,
                                 @NotNull String fileName,
-                                TorrentCategory torrentCategory) {
+                                String category,
+                                String savePath) {
         log.debug("Its OK");
     }
 

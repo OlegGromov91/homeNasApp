@@ -25,7 +25,7 @@ public class RestMeTubeService {
     private String quality;
     @Value("${home-application.meTube.uri.addVideoUri}")
     private String addVideoUri;
-    @Value("${home-application.qbTorrent.requestTimeout}")
+    @Value("${home-application.q-bit-torrent.request-timeout}")
     private Long requestTimeout;
 
     @Autowired

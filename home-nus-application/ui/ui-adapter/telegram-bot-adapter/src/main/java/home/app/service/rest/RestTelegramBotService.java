@@ -21,7 +21,7 @@ public class RestTelegramBotService {
     private String fileInfoUri;
     @Value("${bot.file-storage}")
     private String fileStorageUri;
-    @Value("${home-application.qbTorrent.requestTimeout}")
+    @Value("${home-application.q-bit-torrent.request-timeout}")
     private Long requestTimeout;
 
     @Autowired

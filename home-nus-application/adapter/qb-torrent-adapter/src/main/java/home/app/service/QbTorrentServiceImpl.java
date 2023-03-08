@@ -1,6 +1,5 @@
 package home.app.service;
 
-import home.app.model.TorrentCategory;
 import home.app.model.qbTorrent.Torrent;
 import home.app.repository.TorrentRepository;
 import home.app.repository.UserRepository;
@@ -56,12 +55,13 @@ public class QbTorrentServiceImpl implements QbTorrentService {
     @Override
     public void downloadTorrent(@NotNull byte[] file,
                                 @NotNull String fileName,
-                                TorrentCategory torrentCategory) {
+                                @NotNull String savePath,
+                                String category) {
         restQbTorrentService.loginBefore();
-        if (Objects.nonNull(torrentCategory)) {
-            restQbTorrentService.downloadTorrent(file, fileName, torrentCategory.getDescription(), torrentCategory.getSavePath());
+        if (Objects.nonNull(category)) {
+            restQbTorrentService.downloadTorrent(file, fileName, category, savePath);
         } else {
-            restQbTorrentService.downloadTorrent(file, fileName, null, null);
+            restQbTorrentService.downloadTorrent(file, fileName, null, savePath);
         }
     }
 

@@ -13,7 +13,6 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
 
 import javax.validation.constraints.NotNull;
 import java.io.IOException;
@@ -30,30 +29,27 @@ public class RestQbTorrentService {
 
     @Value("${home-application.uri.root}")
     private String rootUri;
-    @Value("${home-application.qbTorrent.port}")
+    @Value("${home-application.q-bit-torrent.port}")
     private String port;
-    @Value("${home-application.qbTorrent.uri.getAllData}")
+    @Value("${home-application.q-bit-torrent.uri.get-all-data}")
     private String allDataUri;
-    @Value("${home-application.qbTorrent.uri.deleteTorrent}")
+    @Value("${home-application.q-bit-torrent.uri.delete-torrent}")
     private String deleteTorrentUri;
-    @Value("${home-application.qbTorrent.uri.pauseTorrent}")
+    @Value("${home-application.q-bit-torrent.uri.pause-torrent}")
     private String pauseTorrentUri;
-    @Value("${home-application.qbTorrent.uri.resumeTorrent}")
+    @Value("${home-application.q-bit-torrent.uri.resume-torrent}")
     private String resumeTorrentUri;
-    @Value("${home-application.qbTorrent.uri.downloadTorrent}")
+    @Value("${home-application.q-bit-torrent.uri.download-torrent}")
     private String downloadTorrentUri;
-    @Value("${home-application.qbTorrent.login.uri}")
+    @Value("${home-application.q-bit-torrent.login.uri}")
     private String loginUri;
-    @Value("${home-application.qbTorrent.login.username}")
+    @Value("${home-application.q-bit-torrent.login.username}")
     private String loginUserName;
-    @Value("${home-application.qbTorrent.login.password}")
+    @Value("${home-application.q-bit-torrent.login.password}")
     private String loginUserPassword;
-    @Value("${home-application.qbTorrent.requestTimeout}")
+    @Value("${home-application.q-bit-torrent.request-timeout}")
     private Long requestTimeout;
 
-
-    private final String COOKIE_CREATE_ERROR = "error when login -> response code is OK but, cannot create cookie";
-    private final String LOGIN_ERROR = "error when login -> response code is %s";
     private final String REQUEST_HASH_KEY = "hashes";
     private final String REQUEST_DELETE_FILES_KEY = "deleteFiles";
 
@@ -144,20 +140,9 @@ public class RestQbTorrentService {
                     .header("Content-Type", "application/x-www-form-urlencoded")
                     .body(BodyInserters.fromFormData("username", loginUserName).with("password", loginUserPassword))
                     .exchangeToMono(clientResponse -> {
-                        if (clientResponse.statusCode().is2xxSuccessful()) {
-                            Optional<ResponseCookie> responseCookie = Optional.ofNullable(clientResponse.cookies().getFirst("SID"));
-                            if (responseCookie.isEmpty()) {
-                                return clientResponse
-                                        .createException()
-                                        .flatMap(resp -> Mono.error(new RestQbTorrentException(COOKIE_CREATE_ERROR)));
-                            }
-                            responseCookie.ifPresent(value -> extractingCookie.set(value.getName() + "=" + value.getValue()));
-                            return clientResponse.bodyToMono(String.class);
-                        } else {
-                            return clientResponse
-                                    .createException()
-                                    .flatMap(resp -> Mono.error(new RestQbTorrentException(String.format(LOGIN_ERROR, clientResponse.statusCode().toString()))));
-                        }
+                        Optional<ResponseCookie> responseCookie = Optional.ofNullable(clientResponse.cookies().getFirst("SID"));
+                        responseCookie.map(value -> value.getName() + "=" + value.getValue()).ifPresent(extractingCookie::set);
+                        return clientResponse.bodyToMono(String.class);
                     })
                     .block(Duration.of(requestTimeout, ChronoUnit.MINUTES));
             this.cookie.set(extractingCookie.get());
