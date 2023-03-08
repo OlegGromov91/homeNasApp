@@ -35,6 +35,7 @@ public class QbTorrentServiceImpl implements QbTorrentService {
      */
     @Transactional
     public List<TorrentView> getInfoAboutAllDownloadingTorrents() {
+        restQbTorrentService.loginBefore();
         List<TorrentView> torrentViews = restQbTorrentService.getAllDownloadingTorrents();
         torrentViews.forEach(this::updateTorrent);
         return torrentViews;
@@ -42,11 +43,13 @@ public class QbTorrentServiceImpl implements QbTorrentService {
 
     @Override
     public void pauseTorrent(String torrentHashName) {
+        restQbTorrentService.loginBefore();
         restQbTorrentService.pauseTorrent(torrentHashName);
     }
 
     @Override
     public void resumeTorrent(String torrentHashName) {
+        restQbTorrentService.loginBefore();
         restQbTorrentService.resumeTorrent(torrentHashName);
     }
 
@@ -54,6 +57,7 @@ public class QbTorrentServiceImpl implements QbTorrentService {
     public void downloadTorrent(@NotNull byte[] file,
                                 @NotNull String fileName,
                                 TorrentCategory torrentCategory) {
+        restQbTorrentService.loginBefore();
         if (Objects.nonNull(torrentCategory)) {
             restQbTorrentService.downloadTorrent(file, fileName, torrentCategory.getDescription(), torrentCategory.getSavePath());
         } else {
@@ -63,11 +67,13 @@ public class QbTorrentServiceImpl implements QbTorrentService {
 
     @Override
     public void deleteTorrent(String torrentHashName) {
+        restQbTorrentService.loginBefore();
         restQbTorrentService.deleteTorrent(torrentHashName, Boolean.FALSE);
     }
 
     @Override
     public void deleteTorrentAndData(String torrentHashName) {
+        restQbTorrentService.loginBefore();
         restQbTorrentService.deleteTorrent(torrentHashName, Boolean.TRUE);
     }
 

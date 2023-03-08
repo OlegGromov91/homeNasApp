@@ -87,6 +87,7 @@ public class MeTubeJob {
             meTubeService.retryVideoDownloading(video);
         } else if (isFileDownloadedMark) {
             video.setStatus(DONE);
+            //telegramBot.execute()
         }
 
     }

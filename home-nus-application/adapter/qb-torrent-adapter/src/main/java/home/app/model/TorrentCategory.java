@@ -5,7 +5,8 @@ import lombok.Getter;
 @Getter
 public enum TorrentCategory {
 
-    MUSIC("Музыка", "/downloads/media/music"),
+    //MUSIC("Музыка", "/downloads/media/music"),
+    MUSIC("Музыка", "/media/music"),
     VIDEO("Видео", "/downloads/media/video"),
     FILM("Фильм", "/downloads/media/films"),
     SERIAL("Сериал", "/downloads/media/serials"),
