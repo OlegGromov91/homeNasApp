@@ -55,7 +55,7 @@ public class TorrentFileBotResolver extends FileBotResolver {
     private static final String SUFFIX_BUTTON_NAME = "TG_";
     private static final String WITHOUT_CATEGORIES = "Загрузить";
 
-
+    //TODO доделать isNeedDownloadSelectivityByUser
     @PostConstruct
     public void init() {
         if (Strings.isNullOrEmpty(rootDatasetPath)) {
@@ -79,7 +79,8 @@ public class TorrentFileBotResolver extends FileBotResolver {
             }
             torrentCategories = preParedTorrentCategory;
         }
-        inlineKeyboardMarkup.setKeyboard(List.of(buttons));
+
+        inlineKeyboardMarkup.setKeyboard(calculateRows(buttons));
     }
 
     @Override
@@ -182,6 +183,25 @@ public class TorrentFileBotResolver extends FileBotResolver {
 
     private InlineKeyboardButton buildButton(String text) {
         return InlineKeyboardButton.builder().text(text).callbackData(SUFFIX_BUTTON_NAME + text).build();
+    }
+
+    private List<List<InlineKeyboardButton>> calculateRows(List<InlineKeyboardButton> buttons) {
+        int rowMaxSize = 3;
+        int row = 3;
+        int fullRows = buttons.size() / rowMaxSize;
+        int iterator = 0;
+        int remainder = buttons.size() - rowMaxSize * fullRows;
+        List<List<InlineKeyboardButton>> buttonRows = new ArrayList<>();
+
+        for (int i = 0; i < fullRows; i++) {
+            buttonRows.add(buttons.subList(iterator, row));
+            iterator += rowMaxSize;
+            row += rowMaxSize;
+        }
+        if (remainder != 0) {
+            buttonRows.add(buttons.subList(buttons.size() - remainder, buttons.size()));
+        }
+        return buttonRows;
     }
 
 
