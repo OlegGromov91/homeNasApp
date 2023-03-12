@@ -32,25 +32,25 @@ public class RestMeTubeService {
     private WebClient webClient;
 
     public void downloadVideo(@NonNull String url, @NonNull String format) {
-//        String uri = rootUri + port + addVideoUri;
-//        JSONObject body = new JSONObject(Map.of(
-//                "url", url,
-//                "quality", quality,
-//                "format", format
-//        ));
-//        try {
-//            webClient.post()
-//                    .uri(uri)
-//                    .header("Content-Type", "application/json")
-//                    .body(BodyInserters.fromValue(body.toString()))
-//                    .retrieve()
-//                    .bodyToMono(new ParameterizedTypeReference<String>() {
-//                    })
-//                    .block(Duration.of(requestTimeout, ChronoUnit.MINUTES));
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            throw new RestMeTubeException("get error when try request to " + uri + " cause " + e);
-//        }
+        String uri = rootUri + port + addVideoUri;
+        JSONObject body = new JSONObject(Map.of(
+                "url", url,
+                "quality", quality,
+                "format", format
+        ));
+        try {
+            webClient.post()
+                    .uri(uri)
+                    .header("Content-Type", "application/json")
+                    .body(BodyInserters.fromValue(body.toString()))
+                    .retrieve()
+                    .bodyToMono(new ParameterizedTypeReference<String>() {
+                    })
+                    .block(Duration.of(requestTimeout, ChronoUnit.MINUTES));
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RestMeTubeException("get error when try request to " + uri + " cause " + e);
+        }
     }
 
 

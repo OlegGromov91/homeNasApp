@@ -4,15 +4,9 @@
     <list default="true" id="d7f15aeb-fb9c-43d3-99ac-b2ebd773258d" name="Default Changelist" comment="refactoring callBack function in resolver">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adapter/me-tube-adapter/src/main/java/home/app/service/rest/RestMeTubeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapter/me-tube-adapter/src/main/java/home/app/service/rest/RestMeTubeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/model/TorrentCategory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/MockQbTorrentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/MockQbTorrentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/QbTorrentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/QbTorrentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/QbTorrentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/QbTorrentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/rest/RestQbTorrentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/rest/RestQbTorrentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/configuration/BotConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/configuration/BotConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/enums/TorrentFileResolverButtonData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/AbstractBotResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/AbstractBotResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/file/TorrentFileBotResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/file/TorrentFileBotResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/rest/RestTelegramBotService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/rest/RestTelegramBotService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/menu/torrent/ActionTorrentMenuBotResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/menu/torrent/ActionTorrentMenuBotResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-starter/src/main/java/home/app/HomeNusApplicationStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-starter/src/main/java/home/app/HomeNusApplicationStarter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-starter/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web-starter/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-starter/web-starter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/web-starter/web-starter.iml" afterDir="false" />
@@ -98,7 +92,7 @@
     <property name="ToolWindowAnt.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web-starter/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../BabushkinPogreb" />
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -212,7 +206,17 @@
         <serviceView>
           <option name="contentProportion" value="0.14007571" />
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:MySQL - home_nus_app@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:MySQL - home_nus_app@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@544fd2ca" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -267,7 +271,8 @@
       <workItem from="1677328598241" duration="6999000" />
       <workItem from="1677922116071" duration="20821000" />
       <workItem from="1678026726500" duration="6424000" />
-      <workItem from="1678263626392" duration="23901000" />
+      <workItem from="1678263626392" duration="26630000" />
+      <workItem from="1678523374169" duration="3604000" />
     </task>
     <task id="LOCAL-00001" summary="added resolve services for tg bot">
       <created>1674992246411</created>
@@ -388,7 +393,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678286457361</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="refactoring torrent bot">
+      <created>1678296660164</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1678296660164</updated>
+    </task>
+    <task id="LOCAL-00019" summary="added button calculation raws">
+      <created>1678300343753</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1678300343753</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,7 +428,9 @@
     <MESSAGE value="realisation youTube video download" />
     <MESSAGE value="added meTube schedule" />
     <MESSAGE value="added login methdo to qBittorent" />
-    <option name="LAST_COMMIT_MESSAGE" value="added login methdo to qBittorent" />
+    <MESSAGE value="refactoring torrent bot" />
+    <MESSAGE value="added button calculation raws" />
+    <option name="LAST_COMMIT_MESSAGE" value="added button calculation raws" />
   </component>
   <component name="WindowStateProjectService">
     <state x="556" y="181" key="#Plugins" timestamp="1673792884903">
@@ -456,54 +477,54 @@
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="694" y="270" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1675529206435" />
-    <state x="519" y="399" width="1116" height="637" key="#xdebugger.evaluate" timestamp="1678293219742">
+    <state x="532" y="399" width="1116" height="637" key="#xdebugger.evaluate" timestamp="1678297913740">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="519" y="399" width="1116" height="637" key="#xdebugger.evaluate/0.0.1920.1036@0.0.1920.1036" timestamp="1678293219742" />
-    <state x="366" y="122" width="1108" height="914" key="CommitChangelistDialog2" timestamp="1678286456721">
+    <state x="532" y="399" width="1116" height="637" key="#xdebugger.evaluate/0.0.1920.1036@0.0.1920.1036" timestamp="1678297913740" />
+    <state x="366" y="122" width="1108" height="914" key="CommitChangelistDialog2" timestamp="1678300342973">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="366" y="122" width="1108" height="914" key="CommitChangelistDialog2/0.0.1920.1036@0.0.1920.1036" timestamp="1678286456721" />
-    <state width="1034" height="466" key="DebuggerActiveHint" timestamp="1678294321414">
+    <state x="366" y="122" width="1108" height="914" key="CommitChangelistDialog2/0.0.1920.1036@0.0.1920.1036" timestamp="1678300342973" />
+    <state width="1034" height="466" key="DebuggerActiveHint" timestamp="1678297954751">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1034" height="466" key="DebuggerActiveHint/0.0.1920.1036@0.0.1920.1036" timestamp="1678294321414" />
-    <state x="744" y="277" key="FileChooserDialogImpl" timestamp="1673797373048">
+    <state width="1034" height="466" key="DebuggerActiveHint/0.0.1920.1036@0.0.1920.1036" timestamp="1678297954751" />
+    <state x="744" y="277" key="FileChooserDialogImpl" timestamp="1678526340110">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="744" y="277" key="FileChooserDialogImpl/0.0.1920.1036@0.0.1920.1036" timestamp="1673797373048" />
-    <state width="1878" height="343" key="GridCell.Tab.0.bottom" timestamp="1678296490021">
+    <state x="744" y="277" key="FileChooserDialogImpl/0.0.1920.1036@0.0.1920.1036" timestamp="1678526340110" />
+    <state width="1878" height="80" key="GridCell.Tab.0.bottom" timestamp="1678526969388">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1878" height="343" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1678296490021" />
-    <state width="1878" height="343" key="GridCell.Tab.0.center" timestamp="1678296490021">
+    <state width="1878" height="80" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1678526969388" />
+    <state width="1878" height="80" key="GridCell.Tab.0.center" timestamp="1678526969388">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1878" height="343" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1678296490021" />
-    <state width="1878" height="343" key="GridCell.Tab.0.left" timestamp="1678296490021">
+    <state width="1878" height="80" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1678526969388" />
+    <state width="1878" height="80" key="GridCell.Tab.0.left" timestamp="1678526969388">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1878" height="343" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1678296490021" />
-    <state width="1878" height="343" key="GridCell.Tab.0.right" timestamp="1678296490021">
+    <state width="1878" height="80" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1678526969388" />
+    <state width="1878" height="80" key="GridCell.Tab.0.right" timestamp="1678526969388">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1878" height="343" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1678296490021" />
-    <state width="1878" height="343" key="GridCell.Tab.1.bottom" timestamp="1678296489894">
+    <state width="1878" height="80" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1678526969388" />
+    <state width="1878" height="80" key="GridCell.Tab.1.bottom" timestamp="1678526969248">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1878" height="343" key="GridCell.Tab.1.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1678296489894" />
-    <state width="1878" height="343" key="GridCell.Tab.1.center" timestamp="1678296489894">
+    <state width="1878" height="80" key="GridCell.Tab.1.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1678526969248" />
+    <state width="1878" height="80" key="GridCell.Tab.1.center" timestamp="1678526969248">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1878" height="343" key="GridCell.Tab.1.center/0.0.1920.1036@0.0.1920.1036" timestamp="1678296489894" />
-    <state width="1878" height="343" key="GridCell.Tab.1.left" timestamp="1678296489894">
+    <state width="1878" height="80" key="GridCell.Tab.1.center/0.0.1920.1036@0.0.1920.1036" timestamp="1678526969248" />
+    <state width="1878" height="80" key="GridCell.Tab.1.left" timestamp="1678526969248">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1878" height="343" key="GridCell.Tab.1.left/0.0.1920.1036@0.0.1920.1036" timestamp="1678296489894" />
-    <state width="1878" height="343" key="GridCell.Tab.1.right" timestamp="1678296489894">
+    <state width="1878" height="80" key="GridCell.Tab.1.left/0.0.1920.1036@0.0.1920.1036" timestamp="1678526969248" />
+    <state width="1878" height="80" key="GridCell.Tab.1.right" timestamp="1678526969248">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1878" height="343" key="GridCell.Tab.1.right/0.0.1920.1036@0.0.1920.1036" timestamp="1678296489894" />
+    <state width="1878" height="80" key="GridCell.Tab.1.right/0.0.1920.1036@0.0.1920.1036" timestamp="1678526969248" />
     <state width="187" height="454" key="HiddenNamespacesPopup" timestamp="1670680702906">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
@@ -524,10 +545,10 @@
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="565" y="229" key="VCS.ChangeListViewerDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1677252705275" />
-    <state x="556" y="255" key="Vcs.Push.Dialog.v2" timestamp="1678286463648">
+    <state x="556" y="255" key="Vcs.Push.Dialog.v2" timestamp="1678300354517">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="556" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1036@0.0.1920.1036" timestamp="1678286463648" />
+    <state x="556" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1036@0.0.1920.1036" timestamp="1678300354517" />
     <state width="964" height="522" key="XDebugger.FullValuePopup" timestamp="1673714303243">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
@@ -552,14 +573,14 @@
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="735" y="242" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1675514661394" />
-    <state x="516" y="258" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1678286792257">
+    <state x="516" y="258" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1678526880864">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="516" y="258" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1036@0.0.1920.1036" timestamp="1678286792257" />
-    <state x="936" y="174" width="665" height="774" key="find.popup" timestamp="1678292011965">
+    <state x="516" y="258" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1036@0.0.1920.1036" timestamp="1678526880864" />
+    <state x="936" y="174" width="665" height="774" key="find.popup" timestamp="1678526798877">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="936" y="174" width="665" height="774" key="find.popup/0.0.1920.1036@0.0.1920.1036" timestamp="1678292011965" />
+    <state x="936" y="174" width="665" height="774" key="find.popup/0.0.1920.1036@0.0.1920.1036" timestamp="1678526798877" />
     <state x="404" y="312" key="new project wizard" timestamp="1677949301117">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
@@ -585,44 +606,122 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/file/TorrentFileBotResolver.java</url>
-          <line>162</line>
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/file/TorrentFileBotResolver.java</url>
-          <line>153</line>
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/QbTorrentServiceImpl.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/file/TorrentFileBotResolver.java</url>
-          <line>156</line>
-          <option name="timeStamp" value="102" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/file/TorrentFileBotResolver.java</url>
-          <line>155</line>
-          <option name="timeStamp" value="103" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/file/TorrentFileBotResolver.java</url>
-          <line>154</line>
-          <option name="timeStamp" value="104" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/QbTorrentServiceImpl.java</url>
+          <url>file://$PROJECT_DIR$/adapter/me-tube-adapter/src/main/java/home/app/service/MeTubeService.java</url>
           <line>59</line>
-          <option name="timeStamp" value="119" />
+          <option name="timeStamp" value="156" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/adapter/qb-torrent-adapter/src/main/java/home/app/service/QbTorrentServiceImpl.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="120" />
+          <url>file://$PROJECT_DIR$/adapter/me-tube-adapter/src/main/java/home/app/service/MeTubeService.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="157" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/adapter/me-tube-adapter/src/main/java/home/app/service/MeTubeService.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/adapter/me-tube-adapter/src/main/java/home/app/service/MeTubeService.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="159" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/adapter/me-tube-adapter/src/main/java/home/app/service/MeTubeService.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="160" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/adapter/me-tube-adapter/src/main/java/home/app/service/MeTubeService.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="161" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/adapter/me-tube-adapter/src/main/java/home/app/service/MeTubeService.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="162" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/adapter/me-tube-adapter/src/main/java/home/app/service/MeTubeService.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="163" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/url/YouTubeResolver.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="164" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/url/YouTubeResolver.java</url>
+          <line>30</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="165" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/url/YouTubeResolver.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="166" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/url/YouTubeResolver.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="167" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/url/YouTubeResolver.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="168" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/url/YouTubeResolver.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="169" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/url/YouTubeResolver.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="170" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/url/YouTubeResolver.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="171" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/url/YouTubeResolver.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="172" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/url/YouTubeResolver.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="173" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/adapter/me-tube-adapter/src/main/java/home/app/service/MeTubeService.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="174" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/adapter/me-tube-adapter/src/main/java/home/app/service/MeTubeService.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="175" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/adapter/me-tube-adapter/src/main/java/home/app/service/MeTubeService.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="176" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/adapter/me-tube-adapter/src/main/java/home/app/service/MeTubeService.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="177" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/adapter/me-tube-adapter/src/main/java/home/app/service/MeTubeService.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="178" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

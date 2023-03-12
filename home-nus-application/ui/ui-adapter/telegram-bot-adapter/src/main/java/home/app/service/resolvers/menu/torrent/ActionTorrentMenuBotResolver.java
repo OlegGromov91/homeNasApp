@@ -1,8 +1,8 @@
 package home.app.service.resolvers.menu.torrent;
 
 import com.google.common.base.Strings;
-import home.app.view.qbTorrent.TorrentView;
 import home.app.service.resolvers.BotResolver;
+import home.app.view.qbTorrent.TorrentView;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
@@ -11,6 +11,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMa
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Component
@@ -32,10 +33,7 @@ public class ActionTorrentMenuBotResolver extends TorrentMenuBotResolver {
         if (update.hasCallbackQuery() && !Strings.isNullOrEmpty(update.getCallbackQuery().getData())) {
             CallbackQuery callbackQuery = update.getCallbackQuery();
             String buttonData = callbackQuery.getData();
-            try {
-                return (buttonData.contains(CALLBACK_DATA));
-            } catch (IllegalArgumentException ignored) {
-            }
+            return Objects.nonNull(buttonData) && buttonData.contains(CALLBACK_DATA);
         }
         return false;
     }

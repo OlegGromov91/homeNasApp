@@ -1,6 +1,5 @@
 package home.app.service.resolvers;
 
-import home.app.service.MockQbTorrentService;
 import home.app.service.QbTorrentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,7 +27,7 @@ public abstract class AbstractBotResolver implements BotResolver {
             CallbackQuery callbackQuery = update.getCallbackQuery();
             return processCallbackQuery(callbackQuery);
         }
-        throw new UnsupportedOperationException("can not find data for resolver + " + type());
+        throw new UnsupportedOperationException("can not find resolver");
     }
 
     protected abstract EditMessageText processCallbackQuery(CallbackQuery callbackQuery);

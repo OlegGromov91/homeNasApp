@@ -9,6 +9,7 @@ import home.app.repository.TelegramFilesRepository;
 import home.app.repository.UserRepository;
 import home.app.service.resolvers.BotResolver;
 import home.app.service.rest.RestTelegramBotService;
+import home.app.utils.TelegramBotUtil;
 import org.json.JSONObject;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,8 @@ public class TorrentFileBotResolver extends FileBotResolver {
     private UserRepository userRepository;
     @Autowired
     private TelegramFilesRepository telegramFilesRepository;
+    @Autowired
+    private TelegramBotUtil telegramBotUtil;
 
     private InlineKeyboardMarkup inlineKeyboardMarkup;
 
@@ -67,10 +70,13 @@ public class TorrentFileBotResolver extends FileBotResolver {
         if (Objects.isNull(torrentCategories) || torrentCategories.isEmpty()) {
             torrentCategories = new HashMap<>();
             torrentCategories.put(WITHOUT_CATEGORIES, rootDatasetPath);
-            buttons = torrentCategories.keySet().stream().map(this::buildButton).collect(Collectors.toList());
+            buttons = torrentCategories.keySet().stream()
+                    .map(button -> telegramBotUtil.buildButton(button, SUFFIX_BUTTON_NAME))
+                    .collect(Collectors.toList());
         } else {
-            buttons = torrentCategories.keySet().stream().map(this::buildButton).collect(Collectors.toList());
-
+            buttons = torrentCategories.keySet().stream()
+                    .map(button -> telegramBotUtil.buildButton(button, SUFFIX_BUTTON_NAME))
+                    .collect(Collectors.toList());
             String userTemplate = (isNeedDownloadSelectivityByUser) ? "%s/" : "";
             Map<String, String> preParedTorrentCategory = new HashMap<>();
             for (String key : torrentCategories.keySet()) {
@@ -79,8 +85,7 @@ public class TorrentFileBotResolver extends FileBotResolver {
             }
             torrentCategories = preParedTorrentCategory;
         }
-
-        inlineKeyboardMarkup.setKeyboard(calculateRows(buttons));
+        inlineKeyboardMarkup.setKeyboard(telegramBotUtil.calculateRows(buttons));
     }
 
     @Override
@@ -180,29 +185,5 @@ public class TorrentFileBotResolver extends FileBotResolver {
         qbTorrentService.downloadTorrent(file, tgFile.getFileName(), path, category);
         return tgFile.getFileName();
     }
-
-    private InlineKeyboardButton buildButton(String text) {
-        return InlineKeyboardButton.builder().text(text).callbackData(SUFFIX_BUTTON_NAME + text).build();
-    }
-
-    private List<List<InlineKeyboardButton>> calculateRows(List<InlineKeyboardButton> buttons) {
-        int rowMaxSize = 3;
-        int row = 3;
-        int fullRows = buttons.size() / rowMaxSize;
-        int iterator = 0;
-        int remainder = buttons.size() - rowMaxSize * fullRows;
-        List<List<InlineKeyboardButton>> buttonRows = new ArrayList<>();
-
-        for (int i = 0; i < fullRows; i++) {
-            buttonRows.add(buttons.subList(iterator, row));
-            iterator += rowMaxSize;
-            row += rowMaxSize;
-        }
-        if (remainder != 0) {
-            buttonRows.add(buttons.subList(buttons.size() - remainder, buttons.size()));
-        }
-        return buttonRows;
-    }
-
 
 }

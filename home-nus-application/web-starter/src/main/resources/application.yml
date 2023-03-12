@@ -36,16 +36,21 @@ home-application:
       root-dataset-media-path: "/media"
       mappings:
         '{
-        "Музыка":"/music",
-        "Видео":"/video"
+                    "Музыка":"/music",
+                    "Видео":"/videos",
+                    "Фильм":"/films",
+                    "Сериал":"/serials",
+                    "Игра":"/games",
+                    "Программы":"/program",
+                    "Операционные системы":"/os",
+                    "Другое":"/other"
           }'
   meTube:
     port: ":10216"
-    downloadedPath: "Z:\\videos"
+    downloadedPath: "\\\\192.168.84.136\\media"
     quality: "best"
     uri:
       addVideoUri: "/add"
-
 
 bot:
   name: "home_nas_app_bot"
