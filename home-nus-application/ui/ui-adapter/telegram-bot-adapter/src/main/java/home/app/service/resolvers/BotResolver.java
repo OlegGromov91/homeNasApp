@@ -5,7 +5,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.io.Serializable;
 
-public interface BotResolver {
+public interface BotResolver extends CallbackQueryable, MessageAble {
 
     BotApiMethod<? extends Serializable> resolve(Update update);
 

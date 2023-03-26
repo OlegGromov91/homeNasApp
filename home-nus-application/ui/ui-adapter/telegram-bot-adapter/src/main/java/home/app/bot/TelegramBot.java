@@ -1,6 +1,6 @@
 package home.app.bot;
 
-import home.app.service.BotService;
+import home.app.service.BotResolverService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -17,7 +17,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     @Value(value = "${bot.token}")
     private String botToken;
     @Autowired
-    private BotService botService;
+    private BotResolverService botResolverService;
     @Autowired
     private SetMyCommands menuCommands;
 
@@ -28,10 +28,9 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-
         try {
             execute(menuCommands);
-            execute(botService.resolve(update));
+            execute(botResolverService.resolve(update));
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }

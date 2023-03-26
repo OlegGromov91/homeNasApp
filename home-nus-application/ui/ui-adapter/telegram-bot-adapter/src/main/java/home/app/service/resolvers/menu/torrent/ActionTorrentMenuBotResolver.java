@@ -8,7 +8,6 @@ import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageTe
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 
 import java.util.List;
 import java.util.Objects;
@@ -44,30 +43,21 @@ public class ActionTorrentMenuBotResolver extends TorrentMenuBotResolver impleme
     protected InlineKeyboardMarkup buildKeyboardFromTorrents(String action) {
 
         List<TorrentView> torrentDataViews = qbTorrentService.getInfoAboutAllDownloadingTorrents();
-        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
-        inlineKeyboardMarkup.setKeyboard(
-                torrentDataViews.stream().map(torrent -> List.of(
-                        InlineKeyboardButton.builder().text(torrent.getName()).callbackData(CALLBACK_DATA + action + torrent.getHash()).build()
-                        )
-                ).collect(Collectors.toList())
-        );
-        return inlineKeyboardMarkup;
+
+        return buildKeyboardKeyboardMarkup(1,
+                torrentDataViews.stream().collect(Collectors.toMap(TorrentView::getName, torrentView -> CALLBACK_DATA + action + torrentView.getHash())));
     }
 
     private String action(CallbackQuery callbackQuery) {
         String buttonData = callbackQuery.getData();
-        String torrentHash = null;
         if (buttonData.contains(PAUSE_ACTION)) {
-            torrentHash = extractTorrentHash(buttonData, PAUSE_ACTION);
-            qbTorrentService.pauseTorrent(torrentHash);
+            qbTorrentService.pauseTorrent(extractTorrentHash(buttonData, PAUSE_ACTION));
             return "Торрент успешно поставлен на паузу";
         } else if (buttonData.contains(RESUME_ACTION)) {
-            torrentHash = extractTorrentHash(buttonData, RESUME_ACTION);
-            qbTorrentService.resumeTorrent(torrentHash);
+            qbTorrentService.resumeTorrent(extractTorrentHash(buttonData, RESUME_ACTION));
             return "Торрент снова загружается";
         } else if (buttonData.contains(DELETE_ACTION)) {
-            torrentHash = extractTorrentHash(buttonData, DELETE_ACTION);
-            qbTorrentService.deleteTorrentAndData(torrentHash);
+            qbTorrentService.deleteTorrentAndData(extractTorrentHash(buttonData, DELETE_ACTION));
             return "Торрент и скаченные файлы успешно удалены";
         }
         throw new UnsupportedOperationException("Cannot find operation for data " + buttonData);

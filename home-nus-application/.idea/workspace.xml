@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7f15aeb-fb9c-43d3-99ac-b2ebd773258d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/bot/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/bot/TelegramBot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/BotService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/BotResolverService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/AbstractBotResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/AbstractBotResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/BotResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/BotResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/MessageAble.java" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/MessageAble.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/file/TorrentFileBotResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/file/TorrentFileBotResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/menu/torrent/ActionTorrentMenuBotResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui-adapter/telegram-bot-adapter/src/main/java/home/app/service/resolvers/menu/torrent/ActionTorrentMenuBotResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-starter/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web-starter/src/main/resources/application.yml" afterDir="false" />
     </list>
@@ -265,7 +263,7 @@
       <workItem from="1678263626392" duration="26630000" />
       <workItem from="1678523374169" duration="3604000" />
       <workItem from="1678635451444" duration="1289000" />
-      <workItem from="1679827230675" duration="21039000" />
+      <workItem from="1679827230675" duration="21306000" />
     </task>
     <task id="LOCAL-00001" summary="added resolve services for tg bot">
       <created>1674992246411</created>
@@ -414,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679843959648</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="refactoring">
+      <created>1679852806202</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1679852806202</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,10 +490,10 @@
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="532" y="399" width="1116" height="637" key="#xdebugger.evaluate/0.0.1920.1036@0.0.1920.1036" timestamp="1679848446001" />
-    <state x="366" y="122" width="1108" height="914" key="CommitChangelistDialog2" timestamp="1679843959024">
+    <state x="366" y="122" width="1108" height="914" key="CommitChangelistDialog2" timestamp="1679852865019">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="366" y="122" width="1108" height="914" key="CommitChangelistDialog2/0.0.1920.1036@0.0.1920.1036" timestamp="1679843959024" />
+    <state x="366" y="122" width="1108" height="914" key="CommitChangelistDialog2/0.0.1920.1036@0.0.1920.1036" timestamp="1679852865019" />
     <state width="1034" height="466" key="DebuggerActiveHint" timestamp="1679851844743">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
@@ -585,10 +590,10 @@
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="620" y="237" key="run.anything.popup/0.0.1920.1036@0.0.1920.1036" timestamp="1678296581316" />
-    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1677246784665">
+    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1679852880479">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup/0.0.1920.1036@0.0.1920.1036" timestamp="1677246784665" />
+    <state x="623" y="226" width="672" height="678" key="search.everywhere.popup/0.0.1920.1036@0.0.1920.1036" timestamp="1679852880479" />
     <state x="501" y="206" key="spring file set editor" timestamp="1673793024769">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>

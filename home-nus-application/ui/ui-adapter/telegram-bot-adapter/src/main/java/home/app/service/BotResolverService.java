@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class BotService {
+public class BotResolverService {
 
     @Autowired
     @Lazy

@@ -1,5 +1,6 @@
 package home.app.service.resolvers;
 
+import home.app.service.BotCommonService;
 import home.app.service.QbTorrentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,10 +13,12 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.io.Serializable;
 
-public abstract class AbstractBotResolver implements BotResolver {
+public abstract class AbstractBotResolver extends AbstractMarkupAbleBotResolver {
 
     @Autowired
     protected QbTorrentService qbTorrentService;
+    @Autowired
+    protected BotCommonService commonService;
 
     @Override
     @Transactional
