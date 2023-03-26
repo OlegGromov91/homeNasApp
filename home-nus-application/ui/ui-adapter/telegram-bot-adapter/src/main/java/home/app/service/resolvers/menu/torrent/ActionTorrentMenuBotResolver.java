@@ -1,7 +1,7 @@
 package home.app.service.resolvers.menu.torrent;
 
 import com.google.common.base.Strings;
-import home.app.service.resolvers.BotResolver;
+import home.app.service.resolvers.CallbackQueryable;
 import home.app.view.qbTorrent.TorrentView;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
@@ -15,19 +15,13 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Component
-public class ActionTorrentMenuBotResolver extends TorrentMenuBotResolver {
+public class ActionTorrentMenuBotResolver extends TorrentMenuBotResolver implements CallbackQueryable {
 
     protected static final String CALLBACK_DATA = "TORRENT_ACTION_";
     protected static final String DELETE_ACTION = "DELETE_";
     protected static final String PAUSE_ACTION = "PAUSE_";
     protected static final String RESUME_ACTION = "RESUME_";
 
-    @Override
-    public Class<? extends BotResolver> type() {
-        return this.getClass();
-    }
-
-    // TODO Заменить механиз игнорирования исключения
     @Override
     public boolean identifyCallBackResolver(Update update) {
         if (update.hasCallbackQuery() && !Strings.isNullOrEmpty(update.getCallbackQuery().getData())) {
@@ -40,25 +34,19 @@ public class ActionTorrentMenuBotResolver extends TorrentMenuBotResolver {
 
     @Override
     protected EditMessageText processCallbackQuery(CallbackQuery callbackQuery) {
-
         String data = action(callbackQuery);
-
-        Long chatId = extractChatIdFromCallbackQuery(callbackQuery);
-        Integer messageId = callbackQuery.getMessage().getMessageId();
-        EditMessageText message = new EditMessageText();
-        message.setText(data);
-        message.setChatId(chatId);
-        message.setMessageId(messageId);
-
-        return message;
+        return getPreFilledCallbackMessage(callbackQuery)
+                .text(data)
+                .build();
     }
 
+    //TODO идем в базу и берем торренты оттуда
     protected InlineKeyboardMarkup buildKeyboardFromTorrents(String action) {
 
-        List<TorrentView> torrentDatumViews = qbTorrentService.getInfoAboutAllDownloadingTorrents();
+        List<TorrentView> torrentDataViews = qbTorrentService.getInfoAboutAllDownloadingTorrents();
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         inlineKeyboardMarkup.setKeyboard(
-                torrentDatumViews.stream().map(torrent -> List.of(
+                torrentDataViews.stream().map(torrent -> List.of(
                         InlineKeyboardButton.builder().text(torrent.getName()).callbackData(CALLBACK_DATA + action + torrent.getHash()).build()
                         )
                 ).collect(Collectors.toList())
@@ -66,7 +54,6 @@ public class ActionTorrentMenuBotResolver extends TorrentMenuBotResolver {
         return inlineKeyboardMarkup;
     }
 
-    // TODO Обращение к базе будет делать сервис qbTorrent
     private String action(CallbackQuery callbackQuery) {
         String buttonData = callbackQuery.getData();
         String torrentHash = null;

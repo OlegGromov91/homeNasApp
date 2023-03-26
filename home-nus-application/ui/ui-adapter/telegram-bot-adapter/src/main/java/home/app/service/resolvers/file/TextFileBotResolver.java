@@ -17,8 +17,8 @@ import static home.app.service.enums.FileSuffix.TXT;
 public class TextFileBotResolver extends FileBotResolver {
 
     @Override
-    public boolean identifyResolver(Update update) {
-        return super.identifyResolver(update) && identifyFileType(update);
+    public boolean identifyMessageResolver(Update update) {
+        return super.identifyMessageResolver(update) && identifyFileType(update);
     }
 
     @Override
@@ -45,8 +45,4 @@ public class TextFileBotResolver extends FileBotResolver {
         return false;
     }
 
-    @Override
-    public Class<? extends BotResolver> type() {
-        return this.getClass();
-    }
 }

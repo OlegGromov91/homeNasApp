@@ -89,13 +89,8 @@ public class TorrentFileBotResolver extends FileBotResolver {
     }
 
     @Override
-    public Class<? extends BotResolver> type() {
-        return this.getClass();
-    }
-
-    @Override
-    public boolean identifyResolver(Update update) {
-        return super.identifyResolver(update) && identifyFileType(update);
+    public boolean identifyMessageResolver(Update update) {
+        return super.identifyMessageResolver(update) && identifyFileType(update);
     }
 
     @Override

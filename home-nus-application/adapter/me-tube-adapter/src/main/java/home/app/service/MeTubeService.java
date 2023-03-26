@@ -34,7 +34,7 @@ public class MeTubeService {
     private final static String appErrorMessage = "Приложение отправит файл загружаться, но не будет контроллировать этот процесс, что может привести к тому, что видео не будет загруженно";
 
     @Transactional
-    public void addNewVideoToDownload(String url, String format) {
+    public MeTubeVideo addNewVideoToDownload(String url, String format) {
 
         String videoName = meTubeUtils.getVideoNameFromYouTube(url);
         MeTubeVideoStatus status = (Strings.isNullOrEmpty(videoName)) ? MeTubeVideoStatus.ERROR : MeTubeVideoStatus.IN_QUEUE;
@@ -49,12 +49,12 @@ public class MeTubeService {
                 .build();
 
         meTubeRepository.save(video);
+        return video;
     }
 
     public void retryVideoDownloading(MeTubeVideo video) {
-        download(video.getUrl(),  video.getVideoFormat().getFormat());
+        download(video.getUrl(), video.getVideoFormat().getFormat());
     }
-
 
     private void download(String url, String format) {
         boolean isPathNotAvailable = Strings.isNullOrEmpty(downloadedPath);

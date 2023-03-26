@@ -2,6 +2,7 @@ package home.app.meTube;
 
 import home.app.bot.TelegramBot;
 import home.app.model.meTube.MeTubeVideo;
+import home.app.model.meTube.enums.MeTubeVideoStatus;
 import home.app.repository.MeTubeRepository;
 import home.app.service.MeTubeService;
 import home.app.util.MeTubeUtils;
@@ -44,6 +45,8 @@ public class MeTubeJob {
     @Autowired
     private TelegramBot telegramBot;
 
+    private static final List<MeTubeVideoStatus> IN_JOB_STATUSES = List.of(IN_QUEUE, DOWNLOADING);
+
     /* TODO: обработать статус Ошибка
      если файл в ошибке, то сообщаем пользователю о данных о файле (не здесь, а в тг резолвере) и говорим что файл не был загружен, все равно пытаться загружать его или удалить?
      * если пытаться загружать, то не будем парсить имя
@@ -57,13 +60,26 @@ public class MeTubeJob {
         if (filesInDisk.isEmpty()) {
             return;
         }
-        List<MeTubeVideo> videos = meTubeRepository.findByStatusIn(List.of(IN_QUEUE, DOWNLOADING));
+        List<MeTubeVideo> videos = meTubeRepository.findByStatusIn(IN_JOB_STATUSES);
         if (videos.isEmpty()) {
             return;
         }
         videos.forEach(video -> retryJob(video, filesInDisk));
         meTubeRepository.saveAll(videos);
     }
+
+
+    /**
+     * А) MeTubeService:
+
+     * 1) оборачивать в try catch метод загрузки
+     * 2) перед загрузкой лезим в базу, смотрим, если такая ссылка уже есть, то обновляем статус у файла и кидаем
+     * в загрузки
+
+     * Б) джоба:
+     * 1)
+     *
+     */
 
 
     private void retryJob(MeTubeVideo video, List<String> filesInDisk) {

@@ -19,9 +19,9 @@ public class TorrentView {
     private String name;
     private String rootPath;
     private String contentPath;
-    private Long rawTotalSize;
+    private Number rawTotalSize;
     private SizeView convertedTotalSize;
-    private Integer rawDownloadedSize;
+    private Number rawDownloadedSize;
     private SizeView convertedDownloadedSize;
     private Double downloadedPercent;
     private String state;

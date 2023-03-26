@@ -28,7 +28,7 @@ public class MeTubeVideo {
     @Column(name = "CREATING_DATE")
     private LocalDateTime creatingDate;
 
-    @Column(name = "URL", nullable = false, unique = true)
+    @Column(name = "URL", nullable = false)
     private String url;
 
     @Column(name = "VIDEO_STATUS")

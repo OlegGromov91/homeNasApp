@@ -10,7 +10,7 @@ public abstract class MenuBotResolver extends AbstractBotResolver {
 
 
     @Override
-    public boolean identifyResolver(Update update) {
+    public boolean identifyMessageResolver(Update update) {
         if (update.hasMessage() && update.getMessage().getEntities().size() == 1) {
             MessageEntity entity = update.getMessage().getEntities().get(0);
             return entity.getType().equals(MenuCommands.TYPE) && identifyCommand(update);

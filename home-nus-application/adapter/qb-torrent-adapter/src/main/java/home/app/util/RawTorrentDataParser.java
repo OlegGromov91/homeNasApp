@@ -64,8 +64,8 @@ public class RawTorrentDataParser {
                     .name(String.valueOf(raw.get(RawKeysQbTorrent.NAME.getKey())))
                     .rootPath(String.valueOf(raw.get(RawKeysQbTorrent.ROOT_PATH.getKey())))
                     .contentPath(String.valueOf(raw.get(RawKeysQbTorrent.CONTENT_PATH.getKey())))
-                    .rawTotalSize((Long) raw.get(RawKeysQbTorrent.TOTAL_SIZE.getKey()))
-                    .rawDownloadedSize((Integer) raw.get(RawKeysQbTorrent.DOWNLOADED.getKey()))
+                    .rawTotalSize((Number) raw.get(RawKeysQbTorrent.TOTAL_SIZE.getKey()))
+                    .rawDownloadedSize((Number) raw.get(RawKeysQbTorrent.DOWNLOADED.getKey()))
                     .state(String.valueOf(raw.get(RawKeysQbTorrent.STATE.getKey())))
                     .torrentCategory(String.valueOf(raw.get(RawKeysQbTorrent.CATEGORY.getKey())))
                     .build();

@@ -22,7 +22,7 @@ public class BotService {
     public BotApiMethod<? extends Serializable> resolve(Update update) {
 
             BotResolver botResolver = resolvers.stream()
-                    .filter(resolver -> resolver.identifyResolver(update) || resolver.identifyCallBackResolver(update))
+                    .filter(resolver -> resolver.identifyMessageResolver(update) || resolver.identifyCallBackResolver(update))
                     .findFirst().orElseThrow(() -> new BotResolveException("Can not find resolver"));
             return botResolver.resolve(update);
 

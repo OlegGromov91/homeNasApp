@@ -2,7 +2,6 @@ package home.app.service.resolvers.menu.torrent;
 
 import com.google.common.base.Strings;
 import home.app.service.enums.TorrentMenuResolverButtonData;
-import home.app.service.resolvers.BotResolver;
 import home.app.view.qbTorrent.TorrentView;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
@@ -16,10 +15,8 @@ import java.util.stream.Collectors;
 @Component
 public class ShowAllTorrentsMenuBotResolver extends ActionTorrentMenuBotResolver {
 
-    @Override
-    public Class<? extends BotResolver> type() {
-        return this.getClass();
-    }
+    private static final String TORRENT_LIST_OF_EMPTY = "Список загрузок пуст";
+
 
     @Override
     public boolean identifyCallBackResolver(Update update) {
@@ -34,19 +31,16 @@ public class ShowAllTorrentsMenuBotResolver extends ActionTorrentMenuBotResolver
         return false;
     }
 
+    //TODO возможно нужно лезть в базу
     @Override
     protected EditMessageText processCallbackQuery(CallbackQuery callbackQuery) {
-        List<TorrentView> torrentDatumViews = qbTorrentService.getInfoAboutAllDownloadingTorrents();
+        List<TorrentView> torrentDataViews = qbTorrentService.getInfoAboutAllDownloadingTorrents();
+        String data = torrentDataViews.isEmpty() ? TORRENT_LIST_OF_EMPTY : torrentDataViews.stream().map(TorrentView::getTorrentInfo).collect(Collectors.joining());
+        return getPreFilledCallbackMessage(callbackQuery)
+                .text(data)
+                .build();
 
-        String data = torrentDatumViews.isEmpty() ? "Список загрузок пуст" : torrentDatumViews.stream().map(TorrentView::getTorrentInfo).collect(Collectors.joining());
 
-        Long chatId = extractChatIdFromCallbackQuery(callbackQuery);
-        Integer messageId = callbackQuery.getMessage().getMessageId();
-        EditMessageText message = new EditMessageText();
-        message.setText(data);
-        message.setChatId(chatId);
-        message.setMessageId(messageId);
-        return message;
     }
 
 }

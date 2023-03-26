@@ -14,6 +14,8 @@ import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.Map;
 
+import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
+
 @Service
 public class RestMeTubeService {
 
@@ -41,7 +43,7 @@ public class RestMeTubeService {
         try {
             webClient.post()
                     .uri(uri)
-                    .header("Content-Type", "application/json")
+                    .header(CONTENT_TYPE, "application/json")
                     .body(BodyInserters.fromValue(body.toString()))
                     .retrieve()
                     .bodyToMono(new ParameterizedTypeReference<String>() {

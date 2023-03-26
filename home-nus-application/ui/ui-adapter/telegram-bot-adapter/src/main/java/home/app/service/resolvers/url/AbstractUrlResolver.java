@@ -8,7 +8,7 @@ public abstract class AbstractUrlResolver extends AbstractBotResolver {
     protected final static String TYPE = "url";
 
     @Override
-    public boolean identifyResolver(Update update) {
+    public boolean identifyMessageResolver(Update update) {
         return update.hasMessage() && update.getMessage().hasEntities() &&
                 update.getMessage().getEntities().stream().anyMatch(messageEntity -> messageEntity.getType().equals(TYPE));
     }

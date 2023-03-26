@@ -40,6 +40,7 @@ public class QbTorrentServiceImpl implements QbTorrentService {
         return torrentViews;
     }
 
+
     @Override
     public void pauseTorrent(String torrentHashName) {
         restQbTorrentService.loginBefore();

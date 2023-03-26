@@ -9,15 +9,13 @@ public interface BotResolver {
 
     BotApiMethod<? extends Serializable> resolve(Update update);
 
-    Class<? extends BotResolver> type();
-
     /**
      * Метод должен однозначно определить подходит ли резолвер для данных, приходящих с телеграмма
      *
      * @param update
      * @return
      */
-    boolean identifyResolver(Update update);
+    boolean identifyMessageResolver(Update update);
 
     boolean identifyCallBackResolver(Update update);
 

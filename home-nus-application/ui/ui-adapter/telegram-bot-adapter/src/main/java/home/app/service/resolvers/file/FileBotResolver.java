@@ -12,7 +12,7 @@ public abstract class FileBotResolver extends AbstractBotResolver {
      * @return
      */
     @Override
-    public boolean identifyResolver(Update update) {
+    public boolean identifyMessageResolver(Update update) {
         return update.hasMessage() && (update.getMessage().hasDocument() || update.getMessage().hasAudio());
     }
 

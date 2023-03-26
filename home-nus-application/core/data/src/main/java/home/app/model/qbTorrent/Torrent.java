@@ -34,7 +34,7 @@ public class Torrent {
     private String contentPath;
 
     @Column(name = "RAW_TOTAL_SIZE")
-    private Long rawTotalSize;
+    private Number rawTotalSize;
 
     @Embedded
     @AttributeOverrides({
@@ -44,7 +44,7 @@ public class Torrent {
     private Size convertedTotalSize;
 
     @Column(name = "RAW_DOWNLOADED_SIZE")
-    private Integer rawDownloadedSize;
+    private Number rawDownloadedSize;
 
     @Embedded
     @AttributeOverrides({
