@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - home_nus_app@localhost" uuid="d77c5d79-7eb3-4794-8ffc-4de6ee4f18e0">
-      <database-info product="MySQL" version="8.0.26" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.21 (Revision: 33f65445a1bcc544eb0120491926484da168f199)" dbms="MYSQL" exact-version="8.0.26" exact-driver-version="8.0">
-        <extra-name-characters>#@</extra-name-characters>
-        <identifier-quote-string>`</identifier-quote-string>
+    <data-source name="PostgreSQL - home_app@localhost" uuid="92d1fbc6-fee4-4dd5-bdc8-e75b1c744139">
+      <database-info product="PostgreSQL" version="15.2 (Ubuntu 15.2-1.pgdg22.04+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="15.2" exact-driver-version="42.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
-      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>developer</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="schema" qname="home_nus_app" />
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
         </introspection-scope>
       </schema-mapping>
     </data-source>

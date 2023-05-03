@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="MySQL - home_nus_app@localhost" uuid="d77c5d79-7eb3-4794-8ffc-4de6ee4f18e0">
-      <driver-ref>mysql.8</driver-ref>
+    <data-source source="LOCAL" name="PostgreSQL - home_app@localhost" uuid="92d1fbc6-fee4-4dd5-bdc8-e75b1c744139">
+      <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/home_nus_app</jdbc-url>
-      <driver-properties>
-        <property name="serverTimezone" value="UTC" />
-      </driver-properties>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/home_app</jdbc-url>
     </data-source>
   </component>
 </project>

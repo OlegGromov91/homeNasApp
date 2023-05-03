@@ -1,8 +1,9 @@
 spring:
   datasource:
-    url: "jdbc:mysql://localhost:3306/home_nus_app"
+#    url: "jdbc:mysql://localhost:3306/home_nus_app"
+    url: "jdbc:postgresql://localhost:5432/home_app"
     username: "developer"
-    password: "password"
+    password: "1234qwer0!"
   jpa:
     show-sql: true
     hibernate:

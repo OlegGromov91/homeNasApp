@@ -58,7 +58,7 @@ public class HomeNusApplicationStarter implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        doWeb();
+      //  doWeb();
     }
 
     @Autowired
