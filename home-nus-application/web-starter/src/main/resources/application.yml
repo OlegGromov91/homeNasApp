@@ -32,7 +32,6 @@ home-application:
       download-torrent: "/api/v2/torrents/add"
     request-timeout: 1
     torrent-category:
-      is-need-download-selectivity-by-user: false
       root-dataset-media-path: "/media"
       mappings:
         '{
