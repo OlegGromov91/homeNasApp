@@ -1,24 +1,29 @@
+server:
+  port: 8090
 spring:
   datasource:
-#    url: "jdbc:mysql://localhost:3306/home_nus_app"
     url: "jdbc:postgresql://localhost:5432/home_app"
     username: "developer"
     password: "1234qwer0!"
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop
+#      ddl-auto: update
       use-new-id-generator-mappings: false
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
   liquibase:
     enabled: false
     change-log: classpath:liquibase/changeset-master.xml
-
+# for ubuntu need:
+# 1) install nfs-common sudo apt install nfs-common
+# 2) create directory (for example: sudo mkdir /mnt/nas_disk)
+# 3) use mount command: sudo mount 192.168.0.12:/mnt/media/torrent /mnt/nas_disk
 home-application:
   uri:
-    root: "http://192.168.84.136"
+    root: "http://192.168.0.12"
   q-bit-torrent:
     port: ":10095"
     login:
@@ -33,7 +38,7 @@ home-application:
       download-torrent: "/api/v2/torrents/add"
     request-timeout: 1
     torrent-category:
-      root-dataset-media-path: "/media"
+      root-dataset-media-path: "/torrent"
       mappings:
         '{
                     "Музыка":"/music",
@@ -47,7 +52,8 @@ home-application:
           }'
   meTube:
     port: ":10216"
-    downloadedPath: "\\\\192.168.84.136\\media"
+#    downloadedPath: "\\\\192.168.0.12\\torrent"
+    downloadedPath: "/mnt/nas_disk"
     quality: "best"
     uri:
       addVideoUri: "/add"
@@ -57,5 +63,8 @@ bot:
   token: ""
   file-info: "https://api.telegram.org/bot{token}/getFile?file_id={fileId}"
   file-storage: "https://api.telegram.org/file/bot{token}/{filePath}"
+
+
+#  psql -h localhost -d home_app -U developer -p 5432;
 
 
