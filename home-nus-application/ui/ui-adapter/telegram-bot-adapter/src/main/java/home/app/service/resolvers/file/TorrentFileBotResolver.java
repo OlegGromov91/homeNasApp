@@ -22,10 +22,7 @@ import static home.app.service.enums.FileSuffix.TORRENT;
 @Component
 public class TorrentFileBotResolver extends FileBotResolver {
 
-
     private InlineKeyboardMarkup inlineKeyboardMarkup;
-
-
     @Value("#{${home-application.q-bit-torrent.torrent-category.mappings}}")
     private Map<String, String> torrentCategories;
     @Value("${home-application.q-bit-torrent.torrent-category.root-dataset-media-path}")

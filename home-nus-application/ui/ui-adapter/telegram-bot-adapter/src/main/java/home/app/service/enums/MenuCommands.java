@@ -6,6 +6,7 @@ import org.telegram.telegrambots.meta.api.objects.commands.BotCommand;
 @Getter
 public enum MenuCommands {
     TORRENT_MENU_COMMAND("/torrent", "Торрент качалка", new BotCommand("/torrent", "Торрент качалка")),
+    TEST("/test", "Кнопка отладки", new BotCommand("/test", "Кнопка отладки")),
     ;
 
     private final String command;

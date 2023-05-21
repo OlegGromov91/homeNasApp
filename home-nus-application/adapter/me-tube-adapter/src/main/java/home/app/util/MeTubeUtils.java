@@ -37,7 +37,6 @@ public class MeTubeUtils {
         return (Objects.nonNull(file.list())) ? List.of(file.list()) : Collections.EMPTY_LIST;
     }
 
-
     private String extractVideoNameFromTitle(String rawName) {
         boolean isNameValid = !Strings.isNullOrEmpty(rawName) && rawName.length() > YOUTUBE_TITLE_POSTFIX.length();
         if (isNameValid) {

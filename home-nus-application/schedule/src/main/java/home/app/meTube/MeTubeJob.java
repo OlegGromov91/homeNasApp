@@ -1,8 +1,8 @@
 package home.app.meTube;
 
-import home.app.bot.TelegramBot;
 import home.app.model.meTube.MeTubeVideo;
 import home.app.model.meTube.enums.MeTubeVideoStatus;
+import home.app.model.meTube.enums.VideoFormat;
 import home.app.repository.MeTubeRepository;
 import home.app.service.MeTubeService;
 import home.app.util.MeTubeUtils;
@@ -35,6 +35,7 @@ import static home.app.model.meTube.enums.MeTubeVideoStatus.*;
 public class MeTubeJob {
 
     private static final String DOWNLOADING_FILE_POSTFIX_TYPE = ".part";
+    private static final String NOT_SUPPORTED_TYPE = "?NOT_SUPPORT?";
 
     @Autowired
     private MeTubeRepository meTubeRepository;
@@ -42,8 +43,6 @@ public class MeTubeJob {
     private MeTubeUtils meTubeUtils;
     @Autowired
     private MeTubeService meTubeService;
-    @Autowired
-    private TelegramBot telegramBot;
 
     private static final List<MeTubeVideoStatus> IN_JOB_STATUSES = List.of(IN_QUEUE, DOWNLOADING);
 
@@ -54,7 +53,6 @@ public class MeTubeJob {
 
     TODO: отправлять юзеру сообщения о том, что файл загружен
      */
-
     public void schedule() {
         List<String> filesInDisk = meTubeUtils.getVideoFromDisk();
         if (filesInDisk.isEmpty()) {
@@ -68,27 +66,13 @@ public class MeTubeJob {
         meTubeRepository.saveAll(videos);
     }
 
-
-    /**
-     * А) MeTubeService:
-
-     * 1) оборачивать в try catch метод загрузки
-     * 2) перед загрузкой лезим в базу, смотрим, если такая ссылка уже есть, то обновляем статус у файла и кидаем
-     * в загрузки
-
-     * Б) джоба:
-     * 1)
-     *
-     */
-
-
     private void retryJob(MeTubeVideo video, List<String> filesInDisk) {
 
         boolean isFileDownloadingMark = false;
         boolean isFileDownloadedMark = false;
 
         for (String file : filesInDisk) {
-            if (!file.contains(video.getName())) {
+            if (!isFileNameSameAsInDisk(file, video.getName())) {
                 continue;
             }
             if (file.endsWith(DOWNLOADING_FILE_POSTFIX_TYPE)) {
@@ -103,8 +87,18 @@ public class MeTubeJob {
             meTubeService.retryVideoDownloading(video);
         } else if (isFileDownloadedMark) {
             video.setStatus(DONE);
-            //telegramBot.execute()
         }
 
+    }
+
+    private boolean isFileNameSameAsInDisk(String fileNameInDisk, String name) {
+        if (fileNameInDisk.endsWith(DOWNLOADING_FILE_POSTFIX_TYPE)) {
+            fileNameInDisk = fileNameInDisk.substring(0, fileNameInDisk.length() - DOWNLOADING_FILE_POSTFIX_TYPE.length());
+        }
+        fileNameInDisk = VideoFormat.deleteFormatFromName(fileNameInDisk)
+                .map(fileName -> fileName.replaceAll("\\W", ""))
+                .orElse(NOT_SUPPORTED_TYPE);
+        name = name.replaceAll("\\W", "");
+        return !fileNameInDisk.equals(NOT_SUPPORTED_TYPE) && fileNameInDisk.contains(name);
     }
 }
