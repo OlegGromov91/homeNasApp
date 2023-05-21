@@ -25,7 +25,7 @@
         </dependency>
         <dependency>
             <groupId>ru.local</groupId>
-            <artifactId>telegram-bot-adapter</artifactId>
+            <artifactId>telegram-bot</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

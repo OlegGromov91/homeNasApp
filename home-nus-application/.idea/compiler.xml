@@ -7,13 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="qb-torrent-adapter" />
         <module name="web-starter" />
         <module name="me-tube-adapter" />
         <module name="data" />
+        <module name="telegram-bot" />
         <module name="schedule" />
         <module name="infrastructure" />
-        <module name="telegram-bot-adapter" />
+        <module name="qb-torrent-adapter" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -25,7 +25,7 @@
       <module name="me-tube-adapter" target="11" />
       <module name="qb-torrent-adapter" target="11" />
       <module name="schedule" target="11" />
-      <module name="telegram-bot-adapter" target="11" />
+      <module name="telegram-bot" target="11" />
       <module name="ui" target="11" />
       <module name="ui-adapter" target="11" />
       <module name="web-starter" target="11" />
@@ -38,7 +38,7 @@
       <module name="me-tube-adapter" options="-parameters" />
       <module name="qb-torrent-adapter" options="-parameters" />
       <module name="schedule" options="-parameters" />
-      <module name="telegram-bot-adapter" options="-parameters" />
+      <module name="telegram-bot" options="-parameters" />
       <module name="web-starter" options="-parameters" />
     </option>
   </component>

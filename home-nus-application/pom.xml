@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>ui</module>
+        <module>core</module>
         <module>adapter</module>
         <module>web-starter</module>
-        <module>core</module>
+        <module>telegram-bot</module>
         <module>schedule</module>
     </modules>
 

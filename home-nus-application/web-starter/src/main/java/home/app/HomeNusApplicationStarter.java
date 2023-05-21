@@ -1,5 +1,6 @@
 package home.app;
 
+import home.app.bot.TelegramBot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,6 +17,9 @@ public class HomeNusApplicationStarter implements CommandLineRunner {
 
     @Autowired
     TestData preFill;
+
+    @Autowired
+    TelegramBot telegramBot;
 
     public static void main(String[] args) {
         SpringApplication.run(HomeNusApplicationStarter.class, args);
