@@ -14,7 +14,6 @@ public abstract class AbstractMarkupAbleBotResolver implements BotResolver {
 
     protected InlineKeyboardMarkup buildKeyboardKeyboardMarkup(Map<String, String> textAndCallBackData) {
         return buildKeyboardKeyboardMarkup(INITIAL_MAX_BUTTON_SIZE_ON_ROW, textAndCallBackData);
-
     }
 
     protected InlineKeyboardMarkup buildKeyboardKeyboardMarkup(int maxButtonOnRow, Map<String, String> textAndCallBackData) {

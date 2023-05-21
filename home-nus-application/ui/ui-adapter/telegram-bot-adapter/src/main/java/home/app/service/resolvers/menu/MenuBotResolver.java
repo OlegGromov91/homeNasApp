@@ -11,7 +11,8 @@ public abstract class MenuBotResolver extends AbstractBotResolver {
 
     @Override
     public boolean identifyMessageResolver(Update update) {
-        if (update.hasMessage() && update.getMessage().getEntities().size() == 1) {
+        boolean isUpdateHasOneEntity = update.hasMessage() && update.getMessage().hasEntities() && update.getMessage().getEntities().size() == 1;
+        if (isUpdateHasOneEntity) {
             MessageEntity entity = update.getMessage().getEntities().get(0);
             return entity.getType().equals(MenuCommands.TYPE) && identifyCommand(update);
         }

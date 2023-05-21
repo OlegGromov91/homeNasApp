@@ -23,7 +23,8 @@ public class BotResolverService {
 
             BotResolver botResolver = resolvers.stream()
                     .filter(resolver -> resolver.identifyMessageResolver(update) || resolver.identifyCallBackResolver(update))
-                    .findFirst().orElseThrow(() -> new BotResolveException("Can not find resolver"));
+                    .findFirst()
+                    .orElseThrow(() -> new BotResolveException("Can not find resolver"));
             return botResolver.resolve(update);
 
     }

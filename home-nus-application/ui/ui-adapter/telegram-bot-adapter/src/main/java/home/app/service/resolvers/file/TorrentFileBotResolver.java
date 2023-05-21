@@ -102,8 +102,9 @@ public class TorrentFileBotResolver extends FileBotResolver {
         String data = callbackQuery.getData().replace(SUFFIX_BUTTON_NAME, "");
         String fileName = commonService.uploadFileToTorrentApplication(
                 userId,
-                torrentCategories.keySet().stream().filter(key -> key.equals(data)).findFirst().orElse(null),
-                torrentCategories.get(data));
+                torrentCategories.get(data),
+                torrentCategories.keySet().stream().filter(key -> key.equals(data)).findFirst().orElse(null)
+        );
 
         return getPreFilledCallbackMessage(callbackQuery)
                 .text(String.format(CALL_BACK_MESSAGE, fileName))

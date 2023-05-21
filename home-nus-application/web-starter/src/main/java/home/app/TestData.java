@@ -1,27 +1,57 @@
-package home.app.service;
+package home.app;
 
-import home.app.service.rest.RestQbTorrentService;
+import home.app.model.qbTorrent.Torrent;
+import home.app.model.user.ApplicationUser;
+import home.app.model.user.TelegramUser;
+import home.app.repository.TorrentRepository;
+import home.app.repository.UserRepository;
+import home.app.utils.converters.ApplicationTypeConverter;
 import home.app.view.qbTorrent.SizeView;
 import home.app.view.qbTorrent.TorrentView;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Slf4j
-@Service
-//@Primary
-public class MockQbTorrentService implements QbTorrentService {
+@Component
+public class TestData {
 
     @Autowired
-    private RestQbTorrentService restQbTorrentService;
+    private ApplicationTypeConverter converter;
+    @Autowired
+    private TorrentRepository torrentRepository;
+    @Autowired
+    UserRepository userRepository;
 
-    //TODO у телеграмма могут быть проблеммы с длинной строки и в ActionsTorrentMenuBotResolver лучше использовать id из базы
-    public List<TorrentView> getInfoAboutAllDownloadingTorrents() {
-        return List.of(TorrentView.builder()
+
+    public void preFilledAllData(){
+        preFilledTestUsers();
+        preFilledTestTorrents();
+    }
+
+    public void preFilledTestUsers() {
+
+
+        List<ApplicationUser> users = List.of(
+                ApplicationUser.builder()
+                        .firstName("TestUser")
+                        .telegramUser(buildTgUser(544908050L, "Oleg"))
+                        .build()
+        );
+
+        userRepository.saveAll(users);
+
+        Optional<ApplicationUser> user = userRepository.findByTelegramUserId(544908050L);
+        log.debug("user with id 544908050L isPresent? = " + user.isPresent());
+    }
+
+    public void preFilledTestTorrents() {
+
+        List<TorrentView> torrentViews = List.of(TorrentView.builder()
                         .hash("3cd13f28cdc138b871658b4bcb2d4ab0ee7956e3")
                         .name("Mock")
                         .rootPath("MockRootPath")
@@ -60,30 +90,19 @@ public class MockQbTorrentService implements QbTorrentService {
                         .state("downloading")
                         .build()
         );
-    }
+        List<Torrent> torrents = torrentViews.parallelStream()
+                .map(torrent -> converter.convert(torrent, Torrent.class))
+                .collect(Collectors.toList());
 
-    public void downloadTorrent(@NotNull byte[] file,
-                                @NotNull String fileName,
-                                String category,
-                                String savePath) {
-        log.debug("Its OK");
-    }
-
-    public void pauseTorrent(String torrentHashName) {
-        log.debug("Its OK");
-    }
-
-    public void resumeTorrent(String torrentHashName) {
-        log.debug("Its OK");
-    }
-
-    public void deleteTorrent(String torrentHashName) {
-        log.debug("Its OK");
-    }
-
-    public void deleteTorrentAndData(String torrentHashName) {
-        log.debug("Its OK");
+        torrentRepository.saveAll(torrents);
     }
 
 
+    private TelegramUser buildTgUser(Long id, String name) {
+        return TelegramUser.builder()
+                .id(id)
+                .firstName(name)
+                .isBot(false)
+                .build();
+    }
 }
