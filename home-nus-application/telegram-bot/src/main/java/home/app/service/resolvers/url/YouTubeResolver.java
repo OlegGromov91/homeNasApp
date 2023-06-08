@@ -3,7 +3,6 @@ package home.app.service.resolvers.url;
 import home.app.model.meTube.MeTubeVideo;
 import home.app.model.meTube.enums.MeTubeVideoStatus;
 import home.app.service.MeTubeService;
-import home.app.service.resolvers.BotResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -34,14 +33,12 @@ public class YouTubeResolver extends AbstractUrlResolver {
         String url = telegramMessage.getEntities().stream()
                 .filter(messageEntity -> messageEntity.getText().contains(BASIC_SITE_URL))
                 .map(MessageEntity::getText)
-                .findFirst().get();
+                .findFirst().orElseThrow(() -> new RuntimeException("can not parse url"));
 
-        MeTubeVideo video = meTubeService.addNewVideoToDownload(url, "mp4");
-        Long chatId = telegramMessage.getChatId();
-        SendMessage message = new SendMessage();
-        message.setChatId(chatId);
-        message.setText("Видео загружается");
-        return message;
+         MeTubeVideo video = meTubeService.addNewVideoToDownload(url, "mp4");
+         telegramMessage.getChatId();
+        return getPreFilledMessage(telegramMessage).text(createMessage(video)).build();
+
     }
 
     // TODO: сделать цепочку от родителя к потомка с hasSome...
