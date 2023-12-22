@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/adapter/adapter.iml" filepath="$PROJECT_DIR$/adapter/adapter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/core/data/data.iml" filepath="$PROJECT_DIR$/core/data/data.iml" />
-      <module fileurl="file://$PROJECT_DIR$/home-nus-application.iml" filepath="$PROJECT_DIR$/home-nus-application.iml" />
-      <module fileurl="file://$PROJECT_DIR$/core/infrastructure/infrastructure.iml" filepath="$PROJECT_DIR$/core/infrastructure/infrastructure.iml" />
-      <module fileurl="file://$PROJECT_DIR$/adapter/me-tube-adapter/me-tube-adapter.iml" filepath="$PROJECT_DIR$/adapter/me-tube-adapter/me-tube-adapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/adapter/qb-torrent-adapter/qb-torrent-adapter.iml" filepath="$PROJECT_DIR$/adapter/qb-torrent-adapter/qb-torrent-adapter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/schedule/schedule.iml" filepath="$PROJECT_DIR$/schedule/schedule.iml" />
-      <module fileurl="file://$PROJECT_DIR$/telegram-bot/telegram-bot.iml" filepath="$PROJECT_DIR$/telegram-bot/telegram-bot.iml" />
       <module fileurl="file://$PROJECT_DIR$/ui/ui-adapter/ui-adapter.iml" filepath="$PROJECT_DIR$/ui/ui-adapter/ui-adapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-starter/web-starter.iml" filepath="$PROJECT_DIR$/web-starter/web-starter.iml" />
     </modules>

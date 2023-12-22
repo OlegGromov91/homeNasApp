@@ -25,6 +25,7 @@ public class HomeNusApplicationStarter implements CommandLineRunner {
         SpringApplication.run(HomeNusApplicationStarter.class, args);
     }
 
+
     @Override
     public void run(String... args) {
         preFill.preFilledTestUsers();

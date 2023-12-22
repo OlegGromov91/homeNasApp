@@ -7,28 +7,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="web-starter" />
+        <module name="schedule" />
+        <module name="qb-torrent-adapter" />
         <module name="me-tube-adapter" />
         <module name="data" />
-        <module name="telegram-bot" />
-        <module name="schedule" />
         <module name="infrastructure" />
-        <module name="qb-torrent-adapter" />
+        <module name="telegram-bot" />
+        <module name="web-starter" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="adapter" target="11" />
-      <module name="core" target="11" />
-      <module name="data" target="11" />
-      <module name="home-nus-application" target="11" />
-      <module name="infrastructure" target="11" />
-      <module name="me-tube-adapter" target="11" />
-      <module name="qb-torrent-adapter" target="11" />
-      <module name="schedule" target="11" />
-      <module name="telegram-bot" target="11" />
       <module name="ui" target="11" />
       <module name="ui-adapter" target="11" />
-      <module name="web-starter" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
